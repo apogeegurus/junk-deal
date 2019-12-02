@@ -59,7 +59,7 @@
                         </b-form-group>
 
                         <b-btn variant="primary" block class="submit-btn-qoute">SUBMIT</b-btn>
-                        <b-btn variant="secondary" block @click="openQuote = false">Cancel</b-btn>
+                        <b-btn variant="secondary" block @click="openQuote = false" class="d-lg-none d-block">Cancel</b-btn>
                     </section>
                 </b-form>
             </b-container>
