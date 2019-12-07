@@ -17,7 +17,7 @@
         <!--Banner Section End-->
 
         <!--Services Section Start-->
-        <services></services>
+        <services :services="services"></services>
         <!--Services Section End-->
 
         <!--Banner Section Start-->
@@ -51,7 +51,13 @@
     export default {
         components: { Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services },
         data() {
-            return {}
+            return {
+                services : [
+                    { title: "Residential Junk Removal", img: "service-1.jpg", description: "Our Residential Junk Removal services gives you an easy solution for de-cluttering your home or clearing your yard from unwanted junk."},
+                    { title: "Commercial Junk Removal", img: "service-2.jpg", description: "Junk Deal is your one-stop-shop for your Commercial Junk Removal needs. We take anything from file cabinets to electronic waste."},
+                    { title: "Office Furniture Liquidators", img: "service-3.jpg", description: "Junk Deal offers an Office Furniture Liquidators service that can help you with getting rid of unwanted office furniture or anything else you need removed from your work space."},
+                ]
+            }
         }
     }
 </script>

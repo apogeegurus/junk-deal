@@ -8,6 +8,8 @@ Vue.use(Router);
 
 const MAIN_ROUTES = [
     {path: '/', name: 'home',       component: () => import('../views/Home'),               meta: { title : 'Home' }},
+    {path: '/contact', name: 'contact',    component: () => import('../views/Contact'),            meta: { title : 'Contact' }},
+    {path: '/services', name: 'services',    component: () => import('../views/Service'),            meta: { title : 'Service' }},
     {path: '*', name: 'error404',   component: () => import('../views/Errors/Error404'),    meta: { title : '404' }},
 ];
 

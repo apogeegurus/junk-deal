@@ -27,11 +27,11 @@
                             <b-dropdown-item href="#">Tesimonials</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown text="Services" right no-caret class="menu-item">
-                            <b-dropdown-item href="#">Residential Junk Removal</b-dropdown-item>
-                            <b-dropdown-item href="#">Commercial Junk Removal</b-dropdown-item>
-                            <b-dropdown-item href="#">Office Furniture Liquidators</b-dropdown-item>
+                            <b-dropdown-item :to="{name: 'services'}">Residential Junk Removal</b-dropdown-item>
+                            <b-dropdown-item :to="{name: 'services'}">Commercial Junk Removal</b-dropdown-item>
+                            <b-dropdown-item :to="{name: 'services'}">Office Furniture Liquidators</b-dropdown-item>
                         </b-nav-item-dropdown>
-                        <b-nav-item to="#contact" class="menu-item">Contact Us</b-nav-item>
+                        <b-nav-item :to="{ name: 'contact' }" class="menu-item">Contact Us</b-nav-item>
                     </section>
                 </b-navbar-nav>
             </b-collapse>
@@ -68,6 +68,9 @@
         },
         methods: {
             scrollToTop() {
+                if(this.$route.name !== 'home') {
+                    this.$router.push({name: 'home'})
+                }
                 window.scrollTo(0,0);
             }
         },

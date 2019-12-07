@@ -5,6 +5,9 @@ footer{
   .footer--bottom{
     background-color: $fontColorDark;
     color:#fff;
+    @media screen and (max-width: 992px){
+       padding-bottom: 60px !important;
+    }
   }
   .footer-areas a{
     display: inline-block;

@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 mb-4 position-relative d-none d-lg-block overflow-hidden" >
-        <b-img src="/img/home/triangle-left.svg" class="triangle--full__width" data-aos="right-left"></b-img>
+        <b-img src="/img/home/triangle-left.svg" class="triangle--full__width" data-aos="right-left" v-if="!hideTriangle" data-aos-offset="300"></b-img>
         <b-container>
             <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold">VIDEO</h2>
 
@@ -21,6 +21,12 @@
 
 <script>
     export default {
+        props: {
+            hideTriangle: {
+                type: Boolean,
+                default: false
+            }
+        },
         data() {
             return {
                 videos : [
@@ -41,14 +47,5 @@
     z-index: 0;
     width: 100%;
     height: 100%;
-}
-
-[data-aos="right-left"] {
-    transform: translateX(100%);
-    transition-property: transform;
-
-    &.aos-animate {
-        transform: translateX(0);
-    }
 }
 </style>

@@ -2,7 +2,7 @@
     <div class="p-0 p-lg-4 mt-4 junks" id="services" data-aos="fade">
         <b-container>
             <b-row>
-                <b-col class="text-center mt-3 mt-lg-0 p-0__mobile" lg="4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
+                <b-col class="text-center mt-3 mt-lg-0 p-0__mobile" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
                     <b-img :src="`/img/home/services/${service.img}`" class="services--img_rounded"></b-img>
 
                     <section class="text-left px-3 px-lg-0">
@@ -19,14 +19,8 @@
 
 <script>
     export default {
-        data() {
-            return {
-                services : [
-                    { title: "Residential Junk Removal", img: "service-1.jpg", description: "Our Residential Junk Removal services gives you an easy solution for de-cluttering your home or clearing your yard from unwanted junk."},
-                    { title: "Commercial Junk Removal", img: "service-2.jpg", description: "Junk Deal is your one-stop-shop for your Commercial Junk Removal needs. We take anything from file cabinets to electronic waste."},
-                    { title: "Office Furniture Liquidators", img: "service-3.jpg", description: "Junk Deal offers an Office Furniture Liquidators service that can help you with getting rid of unwanted office furniture or anything else you need removed from your work space."},
-                ]
-            }
+        props: {
+            services: Array
         }
     }
 </script>

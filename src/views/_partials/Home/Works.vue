@@ -59,15 +59,6 @@
     width: 100%;
 }
 
-[data-aos="left-right"] {
-    transform: translateX(-100%);
-    transition-property: transform;
-
-    &.aos-animate {
-        transform: translateX(0);
-    }
-}
-
 @media screen and (max-width:992px){
     .icons--chevron__rotate{
         transform: rotate(90deg);

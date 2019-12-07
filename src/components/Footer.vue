@@ -18,6 +18,14 @@
                             HEADQUARTERS
                             <a href="#"  class="d-block text-white">3641 Haven Ave., Suite C, Menlo Park, CA 94025</a>
                         </p>
+
+                        <div class="social-icons d-flex justify-content-between pr-0 pr-lg-5">
+                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a v-b-tooltip.hover title="Twitter" href="" class="text-white"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white"><i class="fab fa-youtube fa-2x"></i></a>
+                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white"><i class="fab fa-yelp fa-2x"></i></a>
+                            <a v-b-tooltip.hover title="Map" href="" class="text-white"><i class="fas fa-map-marker-alt fa-2x"></i></a>
+                        </div>
                     </b-col>
                     <b-col cols="8" class="d-none d-lg-block">
                         <h2 class="jd-text-22 jd-title text-white d-block">What We Do:</h2>
@@ -175,34 +183,7 @@
                                 </section>
 
                                 <h2 class="jd-title mt-3 jd-text-22 without-border" id="contact">Contact Us</h2>
-                                <b-form>
-                                    <b-form-group class="mb-3">
-                                        <b-input type="text" placeholder="Enter Name" class="jd-input"  v-validate="'required'" name="name"></b-input>
-                                        <span v-if="veeErrors.has('name')" class="text-danger jd-text-12">
-                                        {{ veeErrors.first('name') }}
-                                    </span>
-                                    </b-form-group>
-                                    <b-form-group class="mb-3">
-                                        <b-input type="email" placeholder="Enter Email" class="jd-input" v-validate="'required|email'" name="email"></b-input>
-                                        <span v-if="veeErrors.has('email')" class="text-danger jd-text-12">
-                                        {{ veeErrors.first('email') }}
-                                    </span>
-                                    </b-form-group>
-                                    <b-form-group class="mb-3">
-                                        <b-input type="text" placeholder="Enter Subject" class="jd-input" v-validate="'required'" name="subject"></b-input>
-                                        <span v-if="veeErrors.has('subject')" class="text-danger jd-text-12">
-                                        {{ veeErrors.first('subject') }}
-                                    </span>
-                                    </b-form-group>
-                                    <b-form-group class="mb-3">
-                                        <b-textarea placeholder="Enter Message" rows="4" class="jd-input" v-validate="'required|min:50'" name="message"></b-textarea>
-                                        <span v-if="veeErrors.has('message')" class="text-danger jd-text-12">
-                                        {{ veeErrors.first('message') }}
-                                    </span>
-                                    </b-form-group>
-
-                                    <b-btn variant="primary" block>SUBMIT</b-btn>
-                                </b-form>
+                                <contact-form></contact-form>
                             </b-col>
                         </b-row>
                     </b-col>
@@ -213,7 +194,8 @@
 </template>
 
 <script>
+    import ContactForm from "./ContactForm";
     export default {
-
+        components: { ContactForm }
     }
 </script>

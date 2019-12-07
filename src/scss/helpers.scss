@@ -43,3 +43,22 @@ h2.jd-title {
 .jd-text-light{color: $fontColorLight;}
 .jd-theme-color{color: $themeColor;}
 .jd-theme-color-50{color: rgba(239, 78, 35, 0.5);}
+
+
+[data-aos="left-right"] {
+  transform: translateX(-100%);
+  transition-property: transform;
+
+  &.aos-animate {
+    transform: translateX(0);
+  }
+}
+
+[data-aos="right-left"] {
+  transform: translateX(100%);
+  transition-property: transform;
+
+  &.aos-animate {
+    transform: translateX(0);
+  }
+}
