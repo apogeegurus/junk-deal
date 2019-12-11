@@ -89,13 +89,15 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    padding: 10px 15px;
-    width: 75px;
-    border-radius: 10px 0 0 10px;
+    width: 66px;
+    height: 69px;
+    border-radius: 20px 0 0 20px;
     background: #EF4E23;
     color: #fff;
     cursor: pointer;
     z-index: 5;
+    text-align: right;
+    padding: 5px 9px 6px 8px;
 }
 .mobile-bottom-btn{
     position: fixed;
