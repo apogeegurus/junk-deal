@@ -35,7 +35,11 @@
             </b-container>
 
             <quote-form :shown.sync="openQuote" :hide-desktop="true"></quote-form>
-            <iframe width="100%" height="650" frameborder="0" style="margin-bottom:-6px" src="https://www.google.com/maps/embed/v1/place?q=3641%20Haven%20Ave.%2C%20Suite%20C%2C%20Menlo%20Park%2C%20CA%2094025&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk" allowfullscreen></iframe>
+            <div class="map-container" @click="clickedMap = true" @mouseleave="clickedMap = false" :class="{ clicked : clickedMap }">
+                <iframe width="100%" height="650" frameborder="0" style="margin-bottom:-6px"
+                        src="https://www.google.com/maps/embed/v1/place?q=3641%20Haven%20Ave.%2C%20Suite%20C%2C%20Menlo%20Park%2C%20CA%2094025&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk"
+                        allowfullscreen></iframe>
+            </div>
         </section>
     </div>
 </template>
@@ -48,7 +52,8 @@
         components: {ContactForm, QuoteForm},
         data() {
             return {
-                openQuote: false
+                openQuote: false,
+                clickedMap: false
             }
         },
         created() {
@@ -66,6 +71,19 @@
         top: 13%;
         z-index: 0;
         width: 50%;
+    }
+
+    .map-container {
+        width: 100%;
+    }
+    .map-container iframe{
+        width: 100%;
+        display: block;
+        pointer-events: none;
+        position: relative; /* IE needs a position other than static */
+    }
+    .map-container.clicked iframe{
+        pointer-events: auto;
     }
 
     @media screen and (max-width: 992px) {
