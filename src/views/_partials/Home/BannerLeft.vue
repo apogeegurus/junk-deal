@@ -4,7 +4,7 @@
             <b-img src="/img/home/banners/banner-2.png" class="w-100" data-aos="fade" data-aos-duration="1000"></b-img>
         </section>
         <b-container class="fade--text__rotate">
-            <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold" data-aos="left-right"  data-aos-offset="100" data-aos-duration="1000">
+            <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase" data-aos="left-right"  data-aos-offset="100" data-aos-duration="1000">
                 Stress free, On time, On budget
             </h2>
         </b-container>

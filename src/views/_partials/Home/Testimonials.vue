@@ -1,7 +1,7 @@
 <template>
     <div class="my-4 position-relative">
         <b-container>
-            <i class="fas fa-quote-right quote"></i>
+            <b-img src="/img/home/quote.svg" width="75px" class="quote"></b-img>
         </b-container>
 
         <carousel :per-page="1" :paginationEnabled="false">
@@ -9,10 +9,7 @@
                 <b-container>
                     <div class="justify-content-between d-flex align-items-center">
                         <h2 class="ml-5 text-white jd-text-22 pl-5">{{ testimonial.name }}</h2>
-                        <div class="align-self-start jd-text-21">
-                            <i class="fas fa-star jd-theme-color" v-for="i in testimonial.feedback"></i>
-                            <i class="fas fa-star" v-for="j in (5 - testimonial.feedback)"></i>
-                        </div>
+                        <b-img src="/img/home/5_star.svg" width="124px"></b-img>
                     </div>
                     <p class="jd-text-dark jd-text-18 text-justify mt-4">
                         {{ testimonial.message }}
