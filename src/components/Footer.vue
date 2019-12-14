@@ -20,11 +20,18 @@
                         </p>
 
                         <div class="social-icons d-flex justify-content-between pr-0 pr-lg-5">
-                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white"><i class="fab fa-facebook fa-2x"></i></a>
-                            <a v-b-tooltip.hover title="Twitter" href="" class="text-white"><i class="fab fa-twitter fa-2x"></i></a>
-                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white"><i class="fab fa-youtube fa-2x"></i></a>
-                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white"><i class="fab fa-yelp fa-2x"></i></a>
-                            <a v-b-tooltip.hover title="Map" href="" class="text-white"><i class="fas fa-map-marker-alt fa-2x"></i></a>
+                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white">
+                                <b-img src="/img/social/fb.svg" width="32px"></b-img>
+                            </a>
+                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white">
+                                <b-img src="/img/social/youtube.svg" width="32px"></b-img>
+                            </a>
+                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white">
+                                <b-img src="/img/social/yelp.svg" width="32px"></b-img>
+                            </a>
+                            <a v-b-tooltip.hover title="BBB" href="" class="text-white">
+                                <b-img src="/img/social/bbb.svg" width="32px"></b-img>
+                            </a>
                         </div>
                     </b-col>
                     <b-col cols="8" class="d-none d-lg-block">
