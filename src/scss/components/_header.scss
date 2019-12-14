@@ -1,6 +1,20 @@
 header{
   position: relative;
   z-index: 990;
+
+  & nav.fixed-top {
+    background: transparent !important;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: blur(27px);
+    }
+  }
   .dropdown-menu{
     border-top: 2px solid #EF4E23;
     border-bottom: 10px solid #EF4E23;

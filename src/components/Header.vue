@@ -1,6 +1,6 @@
 <template>
     <b-navbar toggleable="lg" type="light" variant="white" class="shadow" :fixed="isFixed ? 'top' : ''">
-        <b-container class="align-items-center d-flex">
+        <b-container class="align-items-center d-flex z-index-3">
             <b-navbar-brand :to="{ name: 'home' }">
                 <b-img src="/img/logo.svg" width="200px" height="69px"></b-img>
             </b-navbar-brand>
@@ -98,6 +98,10 @@
     z-index: 5;
     text-align: right;
     padding: 5px 9px 6px 8px;
+}
+.z-index-3{
+    position: relative;
+    z-index: 3;
 }
 .mobile-bottom-btn{
     position: fixed;
