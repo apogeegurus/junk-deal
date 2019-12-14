@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 mt-4 position-relative" id="how-it-works">
-        <b-img src="/img/home/triangle-right.svg" class="triangle" data-aos="left-right"></b-img>
+        <b-img src="/img/home/triangle-right.svg" class="triangle" data-aos="left-right" data-aos-duration="1000"></b-img>
         <b-container class="position-relative">
             <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold jd-text-25__mobile mb-5 mb-lg-3">How It Works</h2>
             <p class="text-center jd-text-22 jd-text-dark jd-text-18__mobile mb-5">Our process is very simple, you schedule your junk removal, we call to let you know we are heading your
@@ -13,7 +13,7 @@
             <section class="d-flex flex-row flex-lg-column">
                 <b-row class="border--right__mobile">
                     <b-col v-for="(step, key) in steps" :key="`step-img-${key}`" class="d-flex align-items-center flex-column flex-lg-row mb-lg-0 step--item">
-                        <b-img :src="`/img/home/works/${step.img}`" data-aos="flip-left" class="step--image__mobile"></b-img>
+                        <b-img :src="`/img/home/works/${step.img}`" data-aos="flip-left" class="step--image__mobile" data-aos-duration="1000"></b-img>
                         <template v-if="(key + 1) !== steps.length">
                             <div class="d-flex align-self-center align-self-lg-start m-0 mt-lg-2 mt-lg-5 ml-lg-5 icons--chevron__rotate">
                                 <i class="fas fa-chevron-right jd-text-50 jd-theme-color-50"></i>

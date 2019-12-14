@@ -8,7 +8,7 @@
             </b-container>
         </section>
 
-        <b-container class="mt-3 mb-5 pb-5" data-aos="fade-up">
+        <b-container class="mt-3 mb-5 pb-5" data-aos="fade-up"  data-aos-duration="1000">
             <section class="d-flex text--service__rotate">
                 <h3 class="text--service__mobile d-block d-lg-none text-uppercase jd-font-bold">
                     Full Service Junk Removal San Francisco Bay Area

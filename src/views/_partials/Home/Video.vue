@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 mb-4 position-relative d-none d-lg-block overflow-hidden" >
-        <b-img src="/img/home/triangle-left.svg" class="triangle--full__width" data-aos="right-left" v-if="!hideTriangle" data-aos-offset="300"></b-img>
+        <b-img src="/img/home/triangle-left.svg" class="triangle--full__width" data-aos="right-left" v-if="!hideTriangle" data-aos-offset="300" data-aos-duration="1000"></b-img>
         <b-container>
             <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold">VIDEO</h2>
 
