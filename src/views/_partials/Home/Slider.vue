@@ -1,13 +1,6 @@
 <template>
     <div class="position-relative">
-        <section class="overflow-hidden">
-            <vue-flux
-                    :options="vfOptions"
-                    :images="vfImages"
-                    :transitions="vfTransitions"
-                    ref="slider">
-            </vue-flux>
-        </section>
+        <app-slider :images="images"></app-slider>
 
         <div class="w-100 position-absolute w-100 h-100 top-0 z-index-max">
             <b-container class="position-relative w-100 h-100">
@@ -20,7 +13,7 @@
 
 <script>
     import QuoteForm from "../../../components/QuoteForm";
-    import { VueFlux } from 'vue-flux';
+    import AppSlider from "./AppSlider";
 
     export default {
         props: {
@@ -29,17 +22,15 @@
                 default: false
             }
         },
-        components: { QuoteForm, VueFlux },
+        components: { QuoteForm, AppSlider },
         data() {
             return {
                 openQuote: false,
-                vfOptions: {
-                    autoplay: true,
-                    delay: 9000
-                },
-                vfImages: [ '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg'],
-                vfTransitions: [ 'fade' ]
+                images: [ '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg', '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg' ],
             }
+        },
+        mounted() {
+            Slider('slideshow');
         },
         created() {
             this.$root.$on('openQuote',  () => {
@@ -74,7 +65,7 @@
         transform: scale(1,1);
     }
     50% {
-        transform: scale(1.2,1.2);
+        transform: scale(1.4,1.4);
     }
     100% {
         transform: scale(1,1);

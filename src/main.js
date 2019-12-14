@@ -13,11 +13,13 @@ import NoLayout from './layouts/NoLayout';
 import './scss/main.scss';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Vue2TouchEvents from 'vue2-touch-events';
 
 Vue.component('default-layout', DefaultLayout);
 Vue.component('admin-layout', AdminLayout);
 Vue.component('no-layout', NoLayout);
 Vue.use(BootstrapVue);
+Vue.use(Vue2TouchEvents);
 Vue.use(VueCarousel);
 Vue.use(VeeValidate, {
   inject: true,

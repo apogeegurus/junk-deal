@@ -4,7 +4,7 @@
         <slider :without-hero="true"></slider>
         <!--Slider Section End-->
 
-        <b-container class="text-center">
+        <b-container class="text-center mt-4">
             <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">Full Service Residential Junk Removal &
                 Hauling Services</h1>
             <h2 class="jd-text-22 jd-text-18__mobile jd-text-light jd-font-medium">A Reliable Source For All Of Your
