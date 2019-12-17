@@ -127,7 +127,7 @@
 
     #get-quote {
         position: absolute;
-        right: 15px;
+        right: 120px;
         top: 0;
         width: 254px;
         height: 100%;

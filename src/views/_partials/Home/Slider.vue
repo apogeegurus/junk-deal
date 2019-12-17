@@ -5,8 +5,9 @@
         <div class="w-100 position-absolute w-100 h-100 top-0 z-index-max">
             <b-container class="position-relative w-100 h-100">
                 <b-img src="/img/home/heroes.png" class="home-heroes d-none d-lg-block" v-if="!withoutHero"></b-img>
-                <quote-form :shown.sync="openQuote"></quote-form>
             </b-container>
+
+            <quote-form :shown.sync="openQuote"></quote-form>
         </div>
     </div>
 </template>
