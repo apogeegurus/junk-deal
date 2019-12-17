@@ -21,16 +21,16 @@
 
                         <div class="social-icons d-flex justify-content-between pr-0 pr-lg-5">
                             <a v-b-tooltip.hover title="Facebook" href="" class="text-white">
-                                <b-img src="/img/social/fb.svg" width="32px"></b-img>
+                                <b-img src="/img/social/fb.svg" width="60px"></b-img>
                             </a>
                             <a v-b-tooltip.hover title="Youtube" href="" class="text-white">
-                                <b-img src="/img/social/youtube.svg" width="32px"></b-img>
+                                <b-img src="/img/social/youtube.svg" width="60px"></b-img>
                             </a>
                             <a v-b-tooltip.hover title="Yelp" href="" class="text-white">
-                                <b-img src="/img/social/yelp.svg" width="32px"></b-img>
+                                <b-img src="/img/social/yelp.svg" width="60px"></b-img>
                             </a>
                             <a v-b-tooltip.hover title="BBB" href="" class="text-white">
-                                <b-img src="/img/social/bbb.svg" width="32px"></b-img>
+                                <b-img src="/img/social/bbb.svg" width="60px"></b-img>
                             </a>
                         </div>
                     </b-col>
@@ -206,3 +206,12 @@
         components: { ContactForm }
     }
 </script>
+
+<style lang="scss">
+    .social-icons a{
+        transition: .3s ease;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+</style>
