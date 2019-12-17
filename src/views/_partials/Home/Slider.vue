@@ -29,9 +29,6 @@
                 images: [ '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg', '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg' ],
             }
         },
-        mounted() {
-            Slider('slideshow');
-        },
         created() {
             this.$root.$on('openQuote',  () => {
                 this.openQuote = true;
