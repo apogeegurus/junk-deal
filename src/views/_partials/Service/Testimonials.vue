@@ -19,7 +19,7 @@
                             <i class="fas fa-star" v-for="j in (5 - testimonial.feedback)"></i>
                         </div>
                     </section>
-                    <p class="jd-text-dark jd-text-18 text-justify px-4 mb-0 py-3">
+                    <p class="jd-text-dark jd-text-18 text-justify px-4 mb-0 py-4">
                         {{ testimonial.message }}
                     </p>
                 </section>
@@ -34,11 +34,11 @@
         data() {
             return {
                 testimonials: [
-                    { name: "Anjeanette M.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help…This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help…", feedback: 5},
-                    { name: "John Doe", message: " This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help…", feedback: 3},
-                    { name: "Emma Doe.", message: " This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help…", feedback: 4},
-                    { name: "Layla G.", message: " This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help…", feedback: 1},
-                    { name: "Jack B.", message: " This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help…", feedback: 5}
+                    { name: "Anjeanette M.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 5},
+                    { name: "John Doe", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 3},
+                    { name: "Emma Doe.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 4},
+                    { name: "Layla G.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 1},
+                    { name: "Jack B.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 5}
                 ]
             }
         }
