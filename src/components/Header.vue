@@ -56,7 +56,7 @@
     export default {
         data() {
             return {
-                isFixed : false,
+                isFixed : true,
                 scrollY: null,
                 phone: { label: "650 995 7500", value: "6509957500" }
             }

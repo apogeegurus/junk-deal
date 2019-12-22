@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home-section">
         <slider></slider>
 
         <b-container class="text-center mt-5">
@@ -63,7 +63,7 @@
 </script>
 
 <style scoped lang="scss">
-    @media screen and (max-width:992px){
-
+    .home-section{
+        padding-top: 100px;
     }
 </style>

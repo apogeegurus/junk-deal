@@ -1,6 +1,7 @@
 header{
-  position: relative;
+  position: fixed;
   z-index: 990;
+  width: 100%;
 
   & nav.fixed-top {
     background: transparent !important;
