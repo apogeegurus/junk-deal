@@ -19,17 +19,17 @@
                             <a href="#"  class="d-block text-white">3641 Haven Ave., Suite C, Menlo Park, CA 94025</a>
                         </p>
 
-                        <div class="social-icons d-flex justify-content-between pr-0 pr-lg-5">
-                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white">
+                        <div class="social-icons d-flex justify-content-start pr-0 pr-lg-5 d-block d-lg-none">
+                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white mr-4">
                                 <b-img src="/img/social/fb.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white">
+                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white mr-4">
                                 <b-img src="/img/social/youtube.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white">
+                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white mr-4">
                                 <b-img src="/img/social/yelp.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="BBB" href="" class="text-white">
+                            <a v-b-tooltip.hover title="BBB" href="" class="text-white mr-4">
                                 <b-img src="/img/social/bbb.svg" width="60px"></b-img>
                             </a>
                         </div>
@@ -117,6 +117,21 @@
                                 </ul>
                             </b-col>
                         </b-row>
+
+                        <div class="social-icons d-flex justify-content-start pr-0 pr-lg-5">
+                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white mr-4">
+                                <b-img src="/img/social/fb.svg" width="60px"></b-img>
+                            </a>
+                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white mr-4">
+                                <b-img src="/img/social/youtube.svg" width="60px"></b-img>
+                            </a>
+                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white mr-4">
+                                <b-img src="/img/social/yelp.svg" width="60px"></b-img>
+                            </a>
+                            <a v-b-tooltip.hover title="BBB" href="" class="text-white mr-4">
+                                <b-img src="/img/social/bbb.svg" width="60px"></b-img>
+                            </a>
+                        </div>
                     </b-col>
                 </b-row>
             </b-container>
