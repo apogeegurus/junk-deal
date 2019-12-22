@@ -11,7 +11,7 @@
 
         <carousel :perPageCustom="[[0, 1], [993, 4]]" :paginationEnabled="false" autoplay loop :autoplay-timeout="7000" autoplay-hover-pause>
             <slide :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
-                <section :class="`bg-${key + 1} h-100 pb-4 testimonials`">
+                <section :class="`bg-${key + 1} h-100 testimonials`">
                     <section class="headline d-flex flex-column px-4 py-3">
                         <h2 class="text-white jd-text-22 position-relative z-1">{{ testimonial.name }}</h2>
                         <div class="align-self-start jd-text-21 position-relative z-1">
@@ -19,7 +19,7 @@
                             <i class="fas fa-star" v-for="j in (5 - testimonial.feedback)"></i>
                         </div>
                     </section>
-                    <p class="jd-text-dark jd-text-18 text-justify mt-4 px-4">
+                    <p class="jd-text-dark jd-text-18 text-justify px-4 mb-0 py-3">
                         {{ testimonial.message }}
                     </p>
                 </section>
