@@ -98,6 +98,11 @@
     z-index: 5;
     text-align: right;
     padding: 5px 9px 6px 8px;
+    opacity: 0.9;
+    transition: 0.3s ease;
+    &:hover{
+        opacity: 1;
+    }
 }
 .z-index-3{
     position: relative;
