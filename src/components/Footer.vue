@@ -41,37 +41,32 @@
                             <b-col class="mt-3">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             House cleanouts
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Junk Hauling services
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Garbage Removal
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Hot Tub Removal
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Washer & Dryer removal
                                         </a>
                                     </li>
@@ -80,37 +75,32 @@
                             <b-col class="mt-3">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Furniture Removal
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Construction Debris
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Foreclosure cleanout
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Estate cleanout services
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-white py-1 d-block jd-text-18">
-                                            <i class="fas fa-chevron-left text-white"></i>
-                                            <i class="fas fa-chevron-left text-white-50 ml--3 mr-2"></i>
+                                        <a href="#" class="text-white py-1 d-block jd-text-18 d-flex align-content-center">
+                                             <img src="/img/icons/arrow_left_white.svg"  alt="" width="18px" class="mr-2"/>
                                             Property cleanout services
                                         </a>
                                     </li>

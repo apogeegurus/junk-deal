@@ -18,9 +18,8 @@
                     <b-col class="d-flex mt-0 mt-lg-3" v-for="(service, key) in services" :key="`service-${key}`">
                         <ul class="list-unstyled m-0">
                             <li v-for="(item, itemKey) in service" :key="`service-item-${itemKey}`">
-                                <a href="#" class="jd-text-dark py-1 d-block jd-text-18">
-                                    <i class="fas fa-chevron-left jd-theme-color d-none d-lg-inline-block"></i>
-                                    <i class="fas fa-chevron-left jd-theme-color-50 ml--3 mr-2 d-none d-lg-inline-block"></i>
+                                <a href="#" class="jd-text-dark py-1 d-block jd-text-18 align-items-center d-flex">
+                                    <img src="/img/icons/arrow_left.svg"  alt="" width="18px" class="mr-2 d-none d-lg-block"/>
                                     {{ item.label }}
                                 </a>
                             </li>

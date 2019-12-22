@@ -15,8 +15,7 @@
                     <b-col v-for="(step, key) in steps" :key="`step-img-${key}`" class="d-flex flex-column flex-lg-row align-items-center mb-lg-0 step--item">
                         <template v-if="step.isArrow">
                             <div class="d-flex align-self-center align-self-lg-start m-0 mt-lg-2 mt-lg-5 ml-lg-5 icons--chevron__rotate">
-                                <i class="fas fa-chevron-right jd-text-50 jd-theme-color-50"></i>
-                                <i class="fas fa-chevron-right jd-text-50 ml--10 jd-theme-color"></i>
+                                <img src="/img/icons/arrow_right.svg"  alt="" width="50px"/>
                             </div>
                         </template>
                         <b-img :src="`/img/home/works/${step.img}`" data-aos="flip-left" class="step--image__mobile" data-aos-duration="1000" v-else></b-img>
