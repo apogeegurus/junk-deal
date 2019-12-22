@@ -41,7 +41,7 @@
         <section class="d-flex d-lg-none mobile-bottom-btn">
             <a :href="`tel:${ phone.value }`" >
                 <i class="fas fa-phone mr-2"></i>
-                Make a call
+                MAKE A CALL
             </a>
             <p  @click="$root.$emit('openQuote')">
                 <i class="fas fa-align-right mr-2"></i>

@@ -1,7 +1,13 @@
 <template>
     <b-form id="get-quote" class="p-3 d-none d-lg-block" :class="{ 'd-must-show' : shown, 'd-lg-none-important' : hideDesktop}">
         <section class="position-relative index-1">
-            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-12">GET YOUR FREE QUOTE</h3>
+            <div class="text-right mb-5 d-block d-lg-none">
+                <a :href="`tel:650 995 7500`" class="jd-font-medium jd-text-20">
+                    <i class="fas fa-phone-square"></i>
+                    650 995 7500
+                </a>
+            </div>
+            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-12 text-center text-md-left jd-text-20__mobile">GET YOUR FREE QUOTE</h3>
             <b-form-group class="mb-4">
                 <b-input type="text" placeholder="Enter Name" class="jd-input" v-validate="'required'"
                          name="name"></b-input>
@@ -36,7 +42,7 @@
                 <b-col cols="12" md="6" class="pl-md-2">
                     <b-form-group class="mb-4 position-relative">
                         <i class="fas fa-calendar-alt position-absolute calendar-icon"></i>
-                        <datetime class="input-datetime" v-validate="'required'" data-vv-name="date" placeholder="Date" v-model="quote.date"></datetime>
+                        <datepicker v-validate="'required'" data-vv-name="date" placeholder="Date" v-model="quote.date" input-class="jd-input w-100 pl-25__input"></datepicker>
                         <span v-if="veeErrors.has('date')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('date') }}
                                 </span>
@@ -59,10 +65,10 @@
 </template>
 
 <script>
-    import datetime from 'vuejs-datetimepicker'
+    import Datepicker from 'vuejs-datepicker';
 
     export default {
-        components: { datetime },
+        components: { Datepicker },
         props: {
             shown: {
                 type: Boolean,
@@ -77,9 +83,6 @@
                 }
             }
         },
-        mounted() {
-          document.querySelector('.input-datetime input#tj-datetime-input').setAttribute('placeholder', 'Date');
-        },
         watch: {
             shown : function (newVal) {
                 if(newVal) document.body.classList.add('overflow-hidden');
@@ -90,6 +93,102 @@
 </script>
 
 <style scoped lang="scss">
+    /deep/.pl-25__input{
+        padding-left: 25px;
+        font-size: 12px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    /deep/.vdp-datepicker__calendar{
+        right: 0;
+        border: none;
+        background: rgba(255,255,255,0.8);
+        @media screen and (max-width: 992px){
+            width: 100%;
+        }
+        @media screen and (min-width: 992px){
+            width: 230px;
+        }
+        .cell.selected{
+            background: #EF4E23 !important;
+            color: #fff;
+        }
+
+        .cell:not(.day-header):hover{
+            border: 1px solid #EF4E23 !important;
+        }
+
+        .cell{
+            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .cell.day-header{
+            color: #EF4E23;
+        }
+
+        header {
+            span {
+                background: #EF4E23 !important;
+                color:#fff;
+
+                &.prev:after{
+                    content: '';
+                    background: url('/img/icons/arrow_left_white.svg') no-repeat;
+                    background-size: contain;
+                    width: 15px;
+                    height: 15px;
+                    border: none;
+                    margin-left: 0;
+                }
+
+                &.next:after{
+                    content: '';
+                    background: url('/img/icons/arrow_left_white.svg') no-repeat;
+                    background-size: contain;
+                    width: 15px;
+                    height: 15px;
+                    transform: rotate(180deg);
+                    transform-origin: 0 2.5px;
+                    border: none;
+                    margin-left: 10px;
+                }
+
+                &.day__month_btn{
+                    font-size: 12px;
+                }
+            }
+            + div {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    height: 10px;
+                    background: #EF4E23;
+                    width: 100%;
+                    left: 0;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    backdrop-filter: blur(27px);
+                }
+
+                span {
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+        }
+
+    }
     .index-1 {
         z-index: 1;
     }

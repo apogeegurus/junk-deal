@@ -12,6 +12,9 @@ body{
   border-right:none;
   border-left:none;
   background-color: rgba(255, 255, 255, 0.6);
+  &::placeholder{
+    font-size: 12px;
+  }
 }
 
 h2.jd-title {
