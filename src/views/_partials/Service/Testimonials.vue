@@ -9,7 +9,7 @@
             </b-container>
         </section>
 
-        <carousel :perPageCustom="[[0, 1], [993, 4]]" :paginationEnabled="false" >
+        <carousel :perPageCustom="[[0, 1], [993, 4]]" :paginationEnabled="false" autoplay loop :autoplay-timeout="7000" autoplay-hover-pause>
             <slide :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
                 <section :class="`bg-${key + 1} h-100 pb-4 testimonials`">
                     <section class="headline d-flex flex-column px-4 py-3">
