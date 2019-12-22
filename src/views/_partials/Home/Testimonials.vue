@@ -1,12 +1,9 @@
 <template>
     <div class="my-4 position-relative">
-        <b-container>
-            <b-img src="/img/home/quote.svg" width="75px" class="quote"></b-img>
-        </b-container>
-
         <carousel :per-page="1" :paginationEnabled="false">
             <slide :class="`p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
-                <b-container>
+                <b-container class="position-relative">
+                    <b-img src="/img/home/quote.svg" width="75px" class="quote"></b-img>
                     <div class="justify-content-between d-flex align-items-center">
                         <h2 class="ml-5 text-white jd-text-22 pl-5">{{ testimonial.name }}</h2>
                         <b-img src="/img/home/5_star.svg" width="124px"></b-img>
@@ -37,9 +34,12 @@
 </script>
 
 <style scoped lang="scss">
+/deep/.VueCarousel-wrapper{
+    overflow: visible;
+}
 .quote{
     position: absolute;
-    top: -10%;
+    top: -40%;
     font-size: 60px;
     z-index: 1;
     color:#EF4E23;
@@ -59,5 +59,13 @@
 }
 .bg-5{
     background: rgba(158, 172, 53, 0.3);
+}
+
+/deep/.VueCarousel-wrapper:after{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 </style>
