@@ -35,13 +35,13 @@ h2.jd-title {
 .bottom-line-def-color{
   &:after{
     content: "";
-    height: 5px;
+    height: 7px;
     width: 100px;
     background: $themeColor;
     display: block;
     margin-top: 15px;
     margin-bottom: 15px;
-    border-radius: 10px;
+    border-radius: 150px;
   }
 }
 
