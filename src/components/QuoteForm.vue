@@ -7,7 +7,7 @@
                     650 995 7500
                 </a>
             </div>
-            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-12 text-center text-md-left jd-text-20__mobile">GET YOUR FREE QUOTE</h3>
+            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-12 text-center text-lg-left jd-text-20__mobile">GET YOUR FREE QUOTE</h3>
             <b-form-group class="mb-4">
                 <b-input type="text" placeholder="Enter Name" class="jd-input" v-validate="'required'"
                          name="name"></b-input>
@@ -130,6 +130,8 @@
         }
 
         header {
+            position: relative;
+            z-index: 5;
             span {
                 background: #EF4E23 !important;
                 color:#fff;
@@ -229,7 +231,7 @@
         right: 120px;
         top: 0;
         width: 254px;
-        height: 100%;
+        height: calc(100% + 30px);
 
         input, textarea {
             font-size: 12px;

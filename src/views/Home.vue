@@ -61,9 +61,3 @@
         }
     }
 </script>
-
-<style scoped lang="scss">
-    .home-section{
-        padding-top: 100px;
-    }
-</style>
