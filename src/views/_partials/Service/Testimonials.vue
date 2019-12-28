@@ -3,33 +3,32 @@
         <section class="color-header p-2 mb-3 mt-5">
             <b-container>
                 <h2 class="position-relative header text-white">
-                    <i class="fas fa-quote-right quote d-none d-lg-block"></i>
+                    <b-img src="/img/home/quote_silver.svg" width="75px" class="quote" />
                     TESTIMONIALS
                 </h2>
             </b-container>
         </section>
 
-        <carousel :perPageCustom="[[0, 1], [993, 4]]" :paginationEnabled="false" autoplay loop :autoplay-timeout="7000" autoplay-hover-pause>
-            <slide :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
+        <carousel loop  :dots="false" :nav="false" :items="4" autoplay autoplayHoverPause :autoplayTimeout="3000" :responsive="{0: { items:1 }, 992: { items: 3 }, 1200: { items: 4 }}">
+            <div :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
                 <section :class="`bg-${key + 1} h-100 testimonials`">
                     <section class="headline d-flex flex-column px-4 py-3">
                         <h2 class="text-white jd-text-22 position-relative z-1">{{ testimonial.name }}</h2>
-                        <div class="align-self-start jd-text-21 position-relative z-1">
-                            <i class="fas fa-star text-white" v-for="i in testimonial.feedback"></i>
-                            <i class="fas fa-star" v-for="j in (5 - testimonial.feedback)"></i>
-                        </div>
+                        <b-img src="/img/home/5_star_white.svg" width="124px" class="w-124"></b-img>
                     </section>
                     <p class="jd-text-dark jd-text-18 text-justify px-4 mb-0 py-4">
                         {{ testimonial.message }}
                     </p>
                 </section>
-            </slide>
+            </div>
         </carousel>
     </div>
 </template>
 
 <script>
+    import carousel from 'vue-owl-carousel'
     export default {
+        components: { carousel },
         name: 'ServiceTestimonials',
         data() {
             return {
@@ -82,6 +81,10 @@
     .testimonials{
         border-radius: 0;
     }
+}
+
+.w-124 {
+    width: 124px !important;
 }
 
 .color-header{

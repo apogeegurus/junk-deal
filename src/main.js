@@ -5,8 +5,6 @@ import store from './store'
 import './registerServiceWorker'
 import BootstrapVue from 'bootstrap-vue'
 import VeeValidate from 'vee-validate'
-import VueCarousel from 'vue-carousel';
-
 import DefaultLayout from './layouts/Default';
 import AdminLayout from './layouts/Admin';
 import NoLayout from './layouts/NoLayout';
@@ -18,7 +16,6 @@ Vue.component('default-layout', DefaultLayout);
 Vue.component('admin-layout', AdminLayout);
 Vue.component('no-layout', NoLayout);
 Vue.use(BootstrapVue);
-Vue.use(VueCarousel);
 Vue.use(VeeValidate, {
   inject: true,
   fieldsBagName: 'veeFields',

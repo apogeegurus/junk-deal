@@ -1,24 +1,26 @@
 <template>
     <div class="my-4 position-relative">
-        <carousel :per-page="1" :paginationEnabled="false" autoplay loop :autoplay-timeout="7000" autoplay-hover-pause>
-            <slide :class="`p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
-                <b-container class="position-relative">
-                    <b-img src="/img/home/quote.svg" width="75px" class="quote"></b-img>
-                    <div class="justify-content-between d-flex align-items-center">
-                        <h2 class="ml-5 text-white jd-text-22 pl-5">{{ testimonial.name }}</h2>
-                        <b-img src="/img/home/5_star.svg" width="124px"></b-img>
-                    </div>
-                    <p class="jd-text-dark jd-text-18 text-justify mt-4">
-                        {{ testimonial.message }}
-                    </p>
-                </b-container>
-            </slide>
+        <carousel loop  :dots="false" :nav="false" :items="1" autoplay autoplayHoverPause :autoplayTimeout="3000">
+           <div  :class="`p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
+               <b-container class="position-relative">
+                   <b-img src="/img/home/quote.svg" width="75px" class="quote"></b-img>
+                   <div class="justify-content-between d-flex align-items-center">
+                       <h2 class="ml-5 text-white jd-text-22 pl-5">{{ testimonial.name }}</h2>
+                       <b-img src="/img/home/5_star.svg" width="124px" class="w-124"></b-img>
+                   </div>
+                   <p class="jd-text-dark jd-text-18 text-justify mt-4">
+                       {{ testimonial.message }}
+                   </p>
+               </b-container>
+           </div>
         </carousel>
     </div>
 </template>
 
 <script>
+    import carousel from 'vue-owl-carousel'
     export default {
+        components: { carousel  },
         data() {
             return {
                 testimonials: [
@@ -34,15 +36,20 @@
 </script>
 
 <style scoped lang="scss">
-/deep/.VueCarousel-wrapper{
+/deep/.owl-stage-outer{
     overflow: visible;
 }
-.quote{
+.quote {
     position: absolute;
     top: -40%;
     font-size: 60px;
     z-index: 1;
     color:#EF4E23;
+    width: 75px !important;
+}
+
+.w-124 {
+    width: 124px !important;
 }
 
 .bg-1{
@@ -59,13 +66,5 @@
 }
 .bg-5{
     background: rgba(158, 172, 53, 0.3);
-}
-
-/deep/.VueCarousel-wrapper:after{
-    content: '.';
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
 }
 </style>
