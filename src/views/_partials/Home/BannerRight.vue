@@ -1,7 +1,7 @@
 <template>
     <div class="position-relative pt-180">
         <b-img src="/img/home/banner-triangle-right.svg" class="triangle"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
-        <b-container class="fade--text__rotate">
+        <b-container class="fade--text__rotate text-center">
             <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="150" data-aos-duration="1500">
                 Full Service Junk Removal – San Francisco Bay Area
             </h2>
