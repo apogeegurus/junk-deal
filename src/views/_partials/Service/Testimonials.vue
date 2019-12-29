@@ -9,7 +9,7 @@
             </b-container>
         </section>
 
-        <carousel loop  :dots="false" :nav="false" :items="4" autoplay autoplayHoverPause :autoplayTimeout="3000" :responsive="{0: { items:1 }, 992: { items: 3 }, 1200: { items: 4 }}">
+        <carousel loop  :dots="false" :nav="false" :items="4" autoplay autoplayHoverPause :autoplaySpeed="1500" :autoplayTimeout="5000" :responsive="{0: { items:1 }, 992: { items: 3 }, 1200: { items: 4 }}">
             <div :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
                 <section :class="`bg-${key + 1} h-100 testimonials`">
                     <section class="headline d-flex flex-column px-4 py-3">
