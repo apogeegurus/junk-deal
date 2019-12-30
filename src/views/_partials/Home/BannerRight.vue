@@ -20,6 +20,7 @@
 .triangle{
     position: absolute;
     top: -30px;
+    width: 50vw;
 }
 .pt-180{
     padding-top: 130px;

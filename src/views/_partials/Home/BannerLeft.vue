@@ -23,6 +23,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 50vw;
 }
 .pb-85{
     padding-bottom: 180px;

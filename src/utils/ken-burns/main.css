@@ -37,11 +37,11 @@
     -webkit-transition-duration: 6s, 10s;
     -moz-transition-property: opacity, -moz-transform;
     -moz-transition-duration: 6s, 10s;
-    -ms-transition-property: opacity, -ms-transform;
+    -ms-transition: opacity, -ms-transform;
     -ms-transition-duration: 6s, 10s;
     -o-transition-property: opacity, -o-transform;
     -o-transition-duration: 6s, 10s;
-    transition-property: opacity, transform;
+    transition: opacity, transform;
     transition-duration: 6s, 10s;
 }
 
