@@ -17,6 +17,7 @@ export default function() {
 // you can increase or decrease this value to get different effects
     window.setInterval(kenBurns, 6000);
 
+    setTimeout(kenBurns, 500);
 // the third variable is to keep track of where we are in the loop
 // if it is set to 1 (instead of 0) it is because the first image is styled when the page loads
     var images          = document.getElementById('slideshow').getElementsByTagName('img'),
@@ -33,6 +34,5 @@ export default function() {
         if(i===1){ images[numberOfImages-1].className = "";}
         if(i>1){ images[i-2].className = "";}
         i++;
-
     }
 };
