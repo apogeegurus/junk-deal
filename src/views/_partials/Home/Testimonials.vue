@@ -1,6 +1,6 @@
 <template>
     <div class="my-4 position-relative">
-        <carousel loop  :dots="false" :nav="false" :items="1" autoplay autoplayHoverPause :autoplaySpeed="1500" :autoplayTimeout="5000">
+        <carousel loop  :dots="false" :nav="false" :items="1" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000">
            <div  :class="`p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
                <b-container class="position-relative">
                    <b-img src="/img/home/quote.svg" width="75px" class="quote"></b-img>
