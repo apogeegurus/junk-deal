@@ -1,12 +1,23 @@
 <template>
-    <div class="position-relative pt-180">
-        <b-img src="/img/home/banner-triangle-right.svg" class="triangle"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
-        <b-container class="fade--text__rotate text-center">
-            <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="150" data-aos-duration="1500">
+    <div class="position-relative">
+        <b-img src="/img/home/banner-triangle-right.svg" class="triangle small"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+        <b-img src="/img/home/banner-triangle-right-big.svg" class="triangle big"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+        <b-container class="fade--text__rotate text-center z-index-2 position-relative">
+            <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="200" data-aos-duration="1500">
                 Full Service Junk Removal – San Francisco Bay Area
             </h2>
         </b-container>
-        <b-img src="/img/home/banners/banner-1.png" class="w-100" data-aos="fade" data-aos-duration="1000" data-aos-offset="400"></b-img>
+        <div class="position-relative">
+            <div class="banner-images">
+                <div class="arrow"></div>
+                <div class="arrow"></div>
+            </div>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </div>
     </div>
 </template>
 
@@ -17,20 +28,168 @@
 </script>
 
 <style scoped lang="scss">
-.triangle{
+.bubble{
     position: absolute;
-    top: -30px;
+    background: rgba(192,192,192,0.6);
+    border-radius: 1000px;
+    &:nth-child(2){
+        width: 80px;
+        height: 80px;
+        top: 150px;
+        right: 320px;
+        animation-delay: 1s;
+    }
+    &:nth-child(3){
+        width: 70px;
+        height: 70px;
+        top: 50px;
+        right: 20px;
+        animation-delay: 4s;
+    }
+    &:nth-child(4){
+        width: 90px;
+        height: 90px;
+        top: 120px;
+        right: 600px;
+        animation-delay: 6s;
+    }
+
+    &:nth-child(5){
+        width: 100px;
+        height: 100px;
+        top: 250px;
+        right: 50px;
+        animation-delay: 6s;
+    }
+
+    &:nth-child(6){
+        width: 80px;
+        height: 80px;
+        top: 180px;
+        left: 950px;
+        animation-delay: 6s;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(27px);
+        border-radius: 1000px;
+        animation: 1s bubbleEffect forwards;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    animation: 2s bubbleEffect forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bubbleEffect {
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%{
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    75%{
+        opacity: 0.5;
+        transform: scale(1.3);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+.banner-images {
+    position: relative;
+    height: 400px;
+    background: url("/img/home/banners/banner-1.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 1720px;
+    margin-left: auto;
+    margin-top: -65px;
+    @media screen and (min-width: 1720px){
+        margin-top: -175px;
+    }
+
+    .arrow{
+        position: absolute;
+        &:first-child{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 200px solid #fff;
+            border-right: 1720px solid transparent;
+            @media screen and (max-width: 1720px){
+                border-top: 100px solid #fff;
+            }
+        }
+
+        &:last-child{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 200px solid #fff;
+            border-right: 1720px solid transparent;
+            @media screen and (max-width: 1720px){
+                border-bottom: 100px solid #fff;
+            }
+        }
+    }
+}
+.z-index-2{
+    z-index: 10;
+}
+.triangle{
+    position: relative;
+    z-index: 5;
     width: 50vw;
+    height: 200px;
+    &.big{
+        display: none;
+    }
+    &.small{
+        display: block;
+    }
+
+    @media screen and (min-width: 1720px){
+        z-index: 2;
+        &.big{
+            display: block;
+        }
+        &.small{
+            display: none;
+        }
+    }
 }
 .pt-180{
     padding-top: 130px;
 }
 .fade--text__rotate {
     position: absolute;
-    top: 135px;
+    top: -20px;
     left: 0;
     right: 0;
     height: 40px;
-    transform: rotate(-5deg);
+    transform: rotate(-4deg);
+    @media screen and (min-width: 1720px){
+        top: -80px;
+        transform: rotate(-7deg);
+    }
 }
 </style>
