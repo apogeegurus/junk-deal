@@ -7,7 +7,7 @@
                    :key="imageIndex"
                    @click="index = imageIndex"
             >
-                <b-img :src="image"  class="w-100"></b-img>
+                <b-img :src="image"  class="w-100 h-200px"></b-img>
             </b-col>
         </b-row>
     </section>
@@ -17,22 +17,11 @@
     import VueGallery from 'vue-gallery';
 
     export default {
+        props: {
+          images: Array
+        },
         data() {
             return {
-                images: [
-                    '/img/gallery/1.png',
-                    '/img/gallery/2.png',
-                    '/img/gallery/3.png',
-                    '/img/gallery/4.png',
-                    '/img/gallery/5.png',
-                    '/img/gallery/6.png',
-                    '/img/gallery/7.png',
-                    '/img/gallery/8.png',
-                    '/img/gallery/9.png',
-                    '/img/gallery/10.png',
-                    '/img/gallery/11.png',
-                    '/img/gallery/12.png'
-                ],
                 index: null
             };
         },
@@ -43,5 +32,20 @@
 </script>
 
 <style scoped lang="scss">
-
+/deep/.h-200px{
+    height: 166px;
+    object-fit: cover;
+}
+/deep/.blueimp-gallery{
+    background: rgba(255,255,255,0.1);
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(27px);
+    }
+}
 </style>

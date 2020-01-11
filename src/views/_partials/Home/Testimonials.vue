@@ -3,7 +3,8 @@
         <carousel loop  :dots="false" :nav="false" :items="1" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000">
            <div  :class="`p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
                <b-container class="position-relative">
-                   <b-img src="/img/home/quote.svg" width="75px" class="quote"></b-img>
+                   <b-img src="/img/home/quote.svg" width="75px" class="quote" v-if="!silverQuote"></b-img>
+                   <b-img src="/img/home/quote_silver.svg" width="75px" class="quote" v-else></b-img>
                    <div class="justify-content-between d-flex align-items-center">
                        <h2 class="ml-5 text-white jd-text-22 pl-5">{{ testimonial.name }}</h2>
                        <b-img src="/img/home/5_star.svg" width="124px" class="w-124"></b-img>
@@ -20,6 +21,9 @@
 <script>
     import carousel from 'vue-owl-carousel'
     export default {
+        props: {
+            silverQuote: Boolean
+        },
         components: { carousel  },
         data() {
             return {
@@ -46,6 +50,10 @@
     z-index: 1;
     color:#EF4E23;
     width: 75px !important;
+    @media screen and (max-width: 992px){
+        top: -30%;
+        left: 0;
+    }
 }
 
 .w-124 {

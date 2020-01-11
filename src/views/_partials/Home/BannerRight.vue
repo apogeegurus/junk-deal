@@ -1,29 +1,39 @@
 <template>
     <div class="position-relative">
-        <b-img src="/img/home/banner-triangle-right.svg" class="triangle small"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
-        <b-img src="/img/home/banner-triangle-right-big.svg" class="triangle big"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
-        <b-container class="fade--text__rotate text-center z-index-2 position-relative">
-            <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="200" data-aos-duration="1500">
-                Full Service Junk Removal – San Francisco Bay Area
-            </h2>
-        </b-container>
+        <template v-if="!onlyImage">
+            <b-img src="/img/home/banner-triangle-right.svg" class="triangle small"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+            <b-img src="/img/home/banner-triangle-right-big.svg" class="triangle big"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+            <b-container class="fade--text__rotate text-center z-index-2 position-relative">
+                <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="200" data-aos-duration="1500">
+                    Full Service Junk Removal – San Francisco Bay Area
+                </h2>
+            </b-container>
+        </template>
         <div class="position-relative">
-            <div class="banner-images">
+            <div class="banner-images" :style="{backgroundImage : `url(${image})`}" :class="{'mt-0' : onlyImage}">
                 <div class="arrow"></div>
                 <div class="arrow"></div>
             </div>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
+            <template v-if="!onlyImage">
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-
+        props: {
+            image: String,
+            onlyImage: {
+                type: Boolean,
+                default: false
+            }
+        }
     }
 </script>
 
@@ -112,12 +122,13 @@
 .banner-images {
     position: relative;
     height: 400px;
-    background: url("/img/home/banners/banner-1.jpg") no-repeat;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     width: 1720px;
     margin-left: auto;
     margin-top: -65px;
+    background-position: center;
     @media screen and (min-width: 1720px){
         margin-top: -175px;
     }

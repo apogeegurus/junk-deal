@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--Slider Section Start-->
-        <slider :without-hero="true"></slider>
+        <slider :without-hero="true" :images="images"></slider>
         <!--Slider Section End-->
 
         <b-container class="text-center mt-4">
@@ -17,12 +17,12 @@
         </b-container>
 
         <!--Specialize Section Start-->
-        <specialize></specialize>
+        <specialize :services="specialize"></specialize>
         <!--Specialize Section End-->
 
 
         <!--Gallery Section Start-->
-        <gallery></gallery>
+        <gallery :images="galleryImages"></gallery>
         <!--Gallery Section End-->
 
         <service-testimonials></service-testimonials>
@@ -58,6 +58,44 @@
         components: {Slider, Specialize, JdVideo, Gallery, Services, ServiceTestimonials},
         data() {
             return {
+                galleryImages: [
+                    '/img/gallery/1.png',
+                    '/img/gallery/2.png',
+                    '/img/gallery/3.png',
+                    '/img/gallery/4.png',
+                    '/img/gallery/5.png',
+                    '/img/gallery/6.png',
+                    '/img/gallery/7.png',
+                    '/img/gallery/8.png',
+                    '/img/gallery/9.png',
+                    '/img/gallery/10.png',
+                    '/img/gallery/11.png',
+                    '/img/gallery/12.png'
+                ],
+                specialize: [
+                    [
+                        { label: 'Furniture Removal' },
+                        { label: 'Office Clean Outs' },
+                        { label: 'Appliance Removal' },
+                        { label: 'House Clean Outs' },
+                        { label: 'Construction Debris' },
+                    ],
+                    [
+                        { label: 'Foreclosure Clean Outs' },
+                        { label: 'Estate Clean Outs' },
+                        { label: 'Property Clean Outs' },
+                        { label: 'Water Heater Removal' },
+                        { label: 'Junk Hauling Services' },
+                    ],
+                    [
+                        { label: 'Garbage Removal' },
+                        { label: 'E-Waste Removal' },
+                        { label: 'TV Disposal & Recycle' },
+                        { label: 'Trash Removal' },
+                        { label: 'Refrigerator Disposal' },
+                    ]
+                ],
+                images: [ '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg', '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg' ],
                 services: [
                     { title: "Commercial Junk Removal", img: "service-2.jpg", description: "Junk Deal is your one-stop-shop for your Commercial Junk Removal needs. We take anything from file cabinets to electronic waste."},
                     { title: "Office Furniture Liquidators", img: "service-3.jpg", description: "Junk Deal offers an Office Furniture Liquidators service that can help you with getting rid of unwanted office furniture or anything else you need removed from your work space."},

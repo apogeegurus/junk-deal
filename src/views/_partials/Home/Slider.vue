@@ -26,13 +26,17 @@
             withoutHero: {
                 type: Boolean,
                 default: false
-            }
+            },
+            isBackground: {
+                type: Boolean,
+                default: false
+            },
+            images: Array
         },
         components: { QuoteForm },
         data() {
             return {
-                openQuote: false,
-                images: [ '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg', '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg' ],
+                openQuote: false
             }
         },
         created() {

@@ -1,6 +1,6 @@
 <template>
     <div class="home-section">
-        <slider></slider>
+        <slider :images="images"></slider>
 
         <b-container class="text-center mt-5">
             <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">Junk Removal & Hauling Company</h1>
@@ -9,11 +9,11 @@
         </b-container>
 
         <!--Specialize Section Start-->
-        <specialize></specialize>
+        <specialize :services="specialize"></specialize>
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
-        <banner-right class="d-none d-lg-block"></banner-right>
+        <banner-right class="d-none d-lg-block" image="/img/home/banners/banner-1.jpg"></banner-right>
         <!--Banner Section End-->
 
         <!--Services Section Start-->
@@ -21,7 +21,7 @@
         <!--Services Section End-->
 
         <!--Banner Section Start-->
-        <banner-left class="d-none d-lg-block"></banner-left>
+        <banner-left class="d-none d-lg-block" image="/img/home/banners/banner-2.jpg"></banner-left>
         <!--Banner Section End-->
 
         <!--Works Section Start-->
@@ -52,6 +52,30 @@
         components: { Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services },
         data() {
             return {
+                specialize: [
+                    [
+                        { label: 'Furniture Removal' },
+                        { label: 'Office Clean Outs' },
+                        { label: 'Appliance Removal' },
+                        { label: 'House Clean Outs' },
+                        { label: 'Construction Debris' },
+                    ],
+                    [
+                        { label: 'Foreclosure Clean Outs' },
+                        { label: 'Estate Clean Outs' },
+                        { label: 'Property Clean Outs' },
+                        { label: 'Water Heater Removal' },
+                        { label: 'Junk Hauling Services' },
+                    ],
+                    [
+                        { label: 'Garbage Removal' },
+                        { label: 'E-Waste Removal' },
+                        { label: 'TV Disposal & Recycle' },
+                        { label: 'Trash Removal' },
+                        { label: 'Refrigerator Disposal' },
+                    ]
+                ],
+                images: [ '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg', '/img/home/slider/slider-1.jpg', '/img/home/slider/slider-2.jpg' ],
                 services : [
                     { title: "Residential Junk Removal", img: "service-1.jpg", description: "Our Residential Junk Removal services gives you an easy solution for de-cluttering your home or clearing your yard from unwanted junk."},
                     { title: "Commercial Junk Removal", img: "service-2.jpg", description: "Junk Deal is your one-stop-shop for your Commercial Junk Removal needs. We take anything from file cabinets to electronic waste."},

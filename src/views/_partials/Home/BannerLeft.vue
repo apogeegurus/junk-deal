@@ -1,29 +1,39 @@
 <template>
     <div class="position-relative">
         <div class="position-relative">
-            <div class="banner-images">
+            <div class="banner-images" :style="{backgroundImage : `url(${image})`}" :class="{'mt-0' : onlyImage}">
                 <div class="arrow"></div>
                 <div class="arrow"></div>
             </div>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
+            <template v-if="!onlyImage">
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+            </template>
         </div>
-        <b-container class="fade--text__rotate text-center z-index-2 position-relative">
-            <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="200" data-aos-duration="1500">
-                Stress free, On time, On budget
-            </h2>
-        </b-container>
-        <b-img src="/img/home/banner-triangle-left.svg" class="triangle small"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
-        <b-img src="/img/home/banner-triangle-left-big.svg" class="triangle big"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+        <template v-if="!onlyImage">
+            <b-container class="fade--text__rotate text-center z-index-2 position-relative">
+                <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="200" data-aos-duration="1500">
+                    Stress free, On time, On budget
+                </h2>
+            </b-container>
+            <b-img src="/img/home/banner-triangle-left.svg" class="triangle small"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+            <b-img src="/img/home/banner-triangle-left-big.svg" class="triangle big"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+        </template>
     </div>
 </template>
 
 <script>
     export default {
-
+        props: {
+            image: String,
+            onlyImage: {
+                type: Boolean,
+                default: false
+            }
+        }
     }
 </script>
 
@@ -114,6 +124,7 @@
         height: 400px;
         background: url("/img/home/banners/banner-2.jpg") no-repeat;
         background-attachment: fixed;
+        background-position: center;
         background-size: cover;
         width: 1720px;
         margin-right: auto;

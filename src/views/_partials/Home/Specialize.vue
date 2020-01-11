@@ -2,13 +2,13 @@
     <div id="specialize">
         <section class="headline jd-text-dark p-4">
             <b-container>
-                <p class="jd-text-29 m-0 text-center text-uppercase jd-text-20__mobile">
+                <p class="jd-text-29 m-0 text-uppercase jd-text-20__mobile" :class="{ 'text-center text-lg-left' : alignLeft, 'text-center': !alignLeft}">
                     We specialize in the following residential & commercial hauling services:
                 </p>
             </b-container>
         </section>
 
-        <b-container class="mt-3 mb-5 pb-5" data-aos="fade-up"  data-aos-duration="1000">
+        <b-container class="mt-3" data-aos="fade-up"  data-aos-duration="1000" :class="{'pb-0 mb-0' : bottomZero, 'mb-5 pb-5' : !bottomZero}">
             <section class="d-flex text--service__rotate">
                 <h3 class="text--service__mobile d-block d-lg-none text-uppercase jd-font-bold">
                     Full Service Junk Removal San Francisco Bay Area
@@ -33,31 +33,14 @@
 
 <script>
     export default {
+        props: {
+            alignLeft: Boolean,
+            services: Array,
+            bottomZero:Boolean
+        },
         data() {
             return {
-                services: [
-                    [
-                        { label: 'Furniture Removal' },
-                        { label: 'Office Clean Outs' },
-                        { label: 'Appliance Removal' },
-                        { label: 'House Clean Outs' },
-                        { label: 'Construction Debris' },
-                    ],
-                    [
-                        { label: 'Foreclosure Clean Outs' },
-                        { label: 'Estate Clean Outs' },
-                        { label: 'Property Clean Outs' },
-                        { label: 'Water Heater Removal' },
-                        { label: 'Junk Hauling Services' },
-                    ],
-                    [
-                        { label: 'Garbage Removal' },
-                        { label: 'E-Waste Removal' },
-                        { label: 'TV Disposal & Recycle' },
-                        { label: 'Trash Removal' },
-                        { label: 'Refrigerator Disposal' },
-                    ]
-                ]
+
             }
         }
     }
