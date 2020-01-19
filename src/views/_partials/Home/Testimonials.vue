@@ -1,10 +1,12 @@
 <template>
     <div class="my-4 position-relative">
+        <b-container class="position-relative quote-container" >
+            <b-img src="/img/home/quote.svg" width="75px" class="quote" v-if="!silverQuote"></b-img>
+            <b-img src="/img/home/quote_silver.svg" width="75px" class="quote" v-else></b-img>
+        </b-container>
         <carousel loop  :dots="false" :nav="false" :items="1" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000">
            <div  :class="`position-relative p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
                <b-container>
-                   <b-img src="/img/home/quote.svg" width="75px" class="quote" v-if="!silverQuote"></b-img>
-                   <b-img src="/img/home/quote_silver.svg" width="75px" class="quote" v-else></b-img>
                    <div class="justify-content-between d-flex align-items-center mt-4 mt-sm-0 text-nowrap">
                        <h2 class="ml-0 ml-sm-5 text-white jd-text-22 pl-0 pl-sm-5">{{ testimonial.name }}</h2>
                        <b-img src="/img/home/5_star.svg" width="124px" class="w-124"></b-img>
@@ -40,6 +42,11 @@
 </script>
 
 <style scoped lang="scss">
+.quote-container{
+    z-index: 5;
+    top:-20px
+}
+
 .quote {
     position: absolute;
     top: -10%;
