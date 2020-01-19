@@ -250,12 +250,15 @@
 
         &:before {
             content: '';
-            position: fixed;
+            position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
             backdrop-filter: blur(27px);
+            @media screen and (max-width: 992px) {
+                position: fixed;
+            }
         }
 
         @media screen and (max-width: 992px) {
