@@ -7,7 +7,7 @@
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-            <b-collapse id="nav-collapse" is-nav>
+            <b-collapse id="nav-collapse" is-nav v-model="showCollapse">
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto flex-column">
                     <b-nav-text class="color-default align-self-md-start align-self-lg-end">
@@ -58,13 +58,23 @@
             return {
                 isFixed : true,
                 scrollY: null,
-                phone: { label: "650 995 7500", value: "6509957500" }
+                phone: { label: "650 995 7500", value: "6509957500" },
+                showCollapse: false
             }
         },
         mounted() {
             window.addEventListener('scroll', (event) => {
                 this.scrollY = Math.round(window.scrollY);
             });
+
+            window.addEventListener('click', (event) => {
+                let classList = event.target.classList;
+                if(classList.contains('navbar-toggler-icon') || classList.contains('navbar-toggler'))
+                    return;
+                
+                this.showCollapse = false;
+
+            })
         },
         methods: {
             scrollToTop() {
