@@ -117,6 +117,10 @@
         margin-top: -175px;
     }
 
+    @media screen and (max-width:992px){
+        background-attachment:scroll
+    }
+
     .arrow{
         position: absolute;
         &:first-child{

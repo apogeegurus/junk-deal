@@ -113,6 +113,10 @@
         width: 1720px;
         margin-right: auto;
 
+        @media screen and (max-width:992px){
+            background-attachment:scroll
+        }
+
         .arrow{
             position: absolute;
             &:first-child{
