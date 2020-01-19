@@ -12,7 +12,7 @@
 
             <section class="d-flex flex-row flex-lg-column">
                 <b-row class="border--right__mobile flex-column flex-lg-row">
-                    <b-col v-for="(step, key) in steps" :key="`step-img-${key}`" class="d-flex flex-column flex-lg-row align-items-center mb-lg-0 step--item">
+                    <b-col v-for="(step, key) in steps" :key="`step-img-${key}`" class="d-flex flex-column flex-lg-row align-items-center mb-lg-0 step--item" style="flex:1">
                         <template v-if="step.isArrow">
                             <div class="d-flex align-self-center align-self-lg-start m-0 mt-lg-2 mt-lg-5 ml-lg-5 icons--chevron__rotate">
                                 <img src="/img/icons/arrow_right.svg"  alt="" width="50px"/>
