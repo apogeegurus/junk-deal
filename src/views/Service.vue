@@ -34,7 +34,7 @@
                 <b-container>
                     <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Our Additional Services Include but are Not Limited To:</h2>
                 </b-container>
-                <services :services="services"></services>
+                <services :services="services" class="mt-4"></services>
             </section>
             <b-img src="/img/home/triangle-left.svg" class="triangle--full__width d-none d-lg-block" data-aos="right-left" data-aos-offset="500"></b-img>
         </section>

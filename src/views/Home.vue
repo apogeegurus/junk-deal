@@ -17,7 +17,7 @@
         <!--Banner Section End-->
 
         <!--Services Section Start-->
-        <services :services="services"></services>
+        <services :services="services" class="mt-1 mt-lg-2"></services>
         <!--Services Section End-->
 
         <!--Banner Section Start-->

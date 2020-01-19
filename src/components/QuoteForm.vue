@@ -85,8 +85,14 @@
         },
         watch: {
             shown : function (newVal) {
-                if(newVal) document.body.classList.add('overflow-hidden');
-                else document.body.classList.remove('overflow-hidden');
+                if(newVal) {
+                    document.querySelector('body').classList.add('overflow-hidden');
+                    document.querySelector('html').classList.add('overflow-hidden');
+                }
+                else {
+                    document.querySelector('body').classList.remove('overflow-hidden');
+                    document.querySelector('html').classList.remove('overflow-hidden');
+                }
             }
         }
     }
@@ -260,6 +266,7 @@
             width: 100%;
             height: 100%;
             z-index: 6;
+            padding-bottom: 150px !important;
         }
     }
 
