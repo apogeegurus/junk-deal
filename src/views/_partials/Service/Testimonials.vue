@@ -3,7 +3,7 @@
         <section class="color-header p-2 mb-3 mt-5">
             <b-container>
                 <h2 class="position-relative header text-white">
-                    <b-img src="/img/home/quote_silver.svg" width="75px" class="quote" />
+                    <b-img src="/img/home/quote_silver.svg" width="75px" class="quote d-none d-sm-block" />
                     TESTIMONIALS
                 </h2>
             </b-container>
@@ -63,6 +63,9 @@
 .header{
     font-size: 50px;
     text-align: center;
+    @media screen and (max-width: 520px){
+        font-size: 32px;
+    }
 }
 .headline{
     position: relative;

@@ -232,6 +232,7 @@
         top: 0;
         width: 254px;
         height: calc(100% + 30px);
+        overflow-y: auto;
 
         input, textarea {
             font-size: 12px;

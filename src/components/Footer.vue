@@ -163,7 +163,7 @@
                                 </p>
 
                                 <section class="mb-3 d-block d-lg-none">
-                                    <b-img src="/img/footer/payments-mobile.svg"></b-img>
+                                    <b-img src="/img/footer/payments-mobile.svg" class="w-100"></b-img>
                                 </section>
 
                                 <section class="d-none d-lg-block">

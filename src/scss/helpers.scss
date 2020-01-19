@@ -76,3 +76,7 @@ h2.jd-title {
   font-size: 12px;
   @extend .jd-input
 }
+
+.owl-stage-outer{
+  overflow: visible !important;
+}

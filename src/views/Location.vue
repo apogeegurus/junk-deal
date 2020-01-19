@@ -16,7 +16,7 @@
                         Fill out our quote form for a free quote. Let us demonstrate our swiftness and professionalism that only a local professional can do. It only takes a couple of minutes to rid yourself of all of your unsightly rubbish.
                     </p>
 
-                    <specialize :align-left="true" :services="specialize" :bottom-zero="true"></specialize>
+                    <specialize :align-left="true" :services="specialize" :bottom-zero="true" class="my-3 my-lg-0"></specialize>
                 </b-col>
                 <b-col cols="3" class="jd-text-dark b-l-1 d-none d-lg-block">
                     <weather-section></weather-section>
@@ -41,7 +41,7 @@
             <weather-section class="order-lg-0 order-4 d-block d-lg-none px-4 mt-0"></weather-section>
             <testimonials class="mt-5 order-lg-0 order-5"></testimonials>
 
-            <banner-right :only-image="true" image="/img/location/banners/banner-1.jpg" class="order-lg-0 order-3"></banner-right>
+            <banner-right :only-image="true" image="/img/location/banners/banner-1.jpg" class="order-lg-0 order-3 overflow-hidden"></banner-right>
             <b-container class="order-lg-0 order-6">
                 <h2 class="jd-text-27 text-uppercase text-lg-center text-left jd-text-23__mobile">
                     <span class="jd-text-dark jd-font-bold">Facts about</span>

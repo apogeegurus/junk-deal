@@ -1,12 +1,12 @@
 <template>
     <div class="my-4 position-relative">
         <carousel loop  :dots="false" :nav="false" :items="1" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000">
-           <div  :class="`p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
-               <b-container class="position-relative">
+           <div  :class="`position-relative p-4 bg-${key + 1}`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
+               <b-container>
                    <b-img src="/img/home/quote.svg" width="75px" class="quote" v-if="!silverQuote"></b-img>
                    <b-img src="/img/home/quote_silver.svg" width="75px" class="quote" v-else></b-img>
-                   <div class="justify-content-between d-flex align-items-center">
-                       <h2 class="ml-5 text-white jd-text-22 pl-5">{{ testimonial.name }}</h2>
+                   <div class="justify-content-between d-flex align-items-center mt-4 mt-sm-0 text-nowrap">
+                       <h2 class="ml-0 ml-sm-5 text-white jd-text-22 pl-0 pl-sm-5">{{ testimonial.name }}</h2>
                        <b-img src="/img/home/5_star.svg" width="124px" class="w-124"></b-img>
                    </div>
                    <p class="jd-text-dark jd-text-18 text-justify mt-4">
@@ -40,19 +40,16 @@
 </script>
 
 <style scoped lang="scss">
-/deep/.owl-stage-outer{
-    overflow: visible;
-}
 .quote {
     position: absolute;
-    top: -40%;
+    top: -10%;
     font-size: 60px;
     z-index: 1;
     color:#EF4E23;
     width: 75px !important;
     @media screen and (max-width: 992px){
-        top: -30%;
-        left: 0;
+        top: -10%;
+        left: 20px;
     }
 }
 
