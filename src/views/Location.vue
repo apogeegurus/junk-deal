@@ -16,7 +16,7 @@
                         Fill out our quote form for a free quote. Let us demonstrate our swiftness and professionalism that only a local professional can do. It only takes a couple of minutes to rid yourself of all of your unsightly rubbish.
                     </p>
 
-                    <specialize :align-left="true" :services="specialize" :bottom-zero="true" class="my-3 my-lg-0"></specialize>
+                    <specialize :align-left="true" :services="specialize" classes="mb-4 mb-lg-0"></specialize>
                 </b-col>
                 <b-col cols="3" class="jd-text-dark b-l-1 d-none d-lg-block">
                     <weather-section></weather-section>

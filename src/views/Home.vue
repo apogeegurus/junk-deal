@@ -2,14 +2,14 @@
     <div class="home-section">
         <slider :images="images"></slider>
 
-        <b-container class="text-center mt-5">
+        <b-container class="text-center mt-0 mt-lg-5">
             <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">Junk Removal & Hauling Company</h1>
             <p class="jd-text-22 mt-3 jd-font-medium jd-text-18__mobile">Junk Deal is more than an average junk removal & hauling company. We can help you with organizing,
                 sorting, donations, packing, moving, storage, light demo and hauling services. </p>
         </b-container>
 
         <!--Specialize Section Start-->
-        <specialize :services="specialize"></specialize>
+        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'"></specialize>
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->

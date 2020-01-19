@@ -48,7 +48,7 @@
     color:#EF4E23;
     width: 75px !important;
     @media screen and (max-width: 992px){
-        top: -10%;
+        top: -7%;
         left: 20px;
     }
 }

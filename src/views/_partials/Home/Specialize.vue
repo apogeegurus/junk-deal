@@ -8,14 +8,14 @@
             </b-container>
         </section>
 
-        <b-container class="mt-3" data-aos="fade-up"  data-aos-duration="1000" :class="{'pb-0 mb-0' : bottomZero, 'mb-5 pb-5' : !bottomZero}">
+        <b-container class="mt-3" data-aos="fade-up"  data-aos-duration="1000" :class="{ [classes] : classes}">
             <section class="d-flex text--service__rotate">
                 <h3 class="text--service__mobile d-block d-lg-none text-uppercase jd-font-bold">
                     Full Service Junk Removal San Francisco Bay Area
                 </h3>
 
                 <b-row class="flex-lg-grow-1 flex-grow-0 d-flex flex-column flex-lg-row border--left__mobile">
-                    <b-col class="d-flex mt-0 mt-lg-3" v-for="(service, key) in services" :key="`service-${key}`">
+                    <b-col class="d-flex mt-0 mt-lg-3" v-for="(service, key) in services" :key="`service-${key}`" style="flex:1">
                         <ul class="list-unstyled m-0">
                             <li v-for="(item, itemKey) in service" :key="`service-item-${itemKey}`">
                                 <a href="#" class="jd-text-dark py-1 d-block jd-text-18 align-items-center d-flex">
@@ -36,7 +36,7 @@
         props: {
             alignLeft: Boolean,
             services: Array,
-            bottomZero:Boolean
+            classes:String
         },
         data() {
             return {
