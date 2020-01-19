@@ -58,7 +58,8 @@
     bottom: -110px;
     z-index: 10;
     width: 185%;
-    height: 200px;
+    height: 195px;
+    transform: rotate(-1deg);
 }
 
 .slide-section{
