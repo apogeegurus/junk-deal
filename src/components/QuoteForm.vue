@@ -112,6 +112,7 @@
         background: rgba(255,255,255,0.8);
         @media screen and (max-width: 992px){
             width: 100%;
+            bottom: 45px;
         }
         @media screen and (min-width: 992px){
             width: 230px;
@@ -249,7 +250,7 @@
 
         &:before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             bottom: 0;
