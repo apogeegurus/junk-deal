@@ -4,7 +4,7 @@
             <div id="slideshow">
                 <b-img class="slideshow-image" :src="image" v-for="(image, key) in images" :key="key"></b-img>
             </div>
-            <b-img src="/img/home/slider-triangle.svg" class="trinagle-bottom"></b-img>
+            <div class="trinagle-bottom"></div>
         </div>
 
         <div class="w-100 position-absolute w-100 h-100 top-0 z-index-max">
@@ -55,52 +55,57 @@
 
 .trinagle-bottom{
     position: absolute;
-    bottom: -110px;
+    width: 100%;
+    height: 100px;
+    transform: rotate(-5deg);
+    bottom: -290px;
     z-index: 10;
-    width: 185%;
-    height: 195px;
-    transform: rotate(-1deg);
+    background: #fff;
+    padding: 0 20px;
+    box-sizing: initial;
+    left: 0;
+    border-bottom: 280px solid #fff;
 }
 
 .slide-section{
-    height: 60vh;
+height: 60vh;
 }
 .slideshow {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
 }
 
 
 .top-0{
-    top: 0;
+top: 0;
 }
 .home-heroes{
-    position: absolute;
-    bottom: -20px;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    margin: auto;
+position: absolute;
+bottom: -20px;
+z-index: 1;
+left: 0;
+right: 0;
+margin: auto;
 }
 .z-index-max{
-    z-index: 980;
+z-index: 980;
 }
 
 /deep/.vue-flux{
-    animation: zoominoutsinglefeatured 20s infinite;
+animation: zoominoutsinglefeatured 20s infinite;
 }
 
 @keyframes zoominoutsinglefeatured {
-    0% {
-        transform: scale(1,1);
-    }
-    50% {
-        transform: scale(1.4,1.4);
-    }
-    100% {
-        transform: scale(1,1);
-    }
+0% {
+    transform: scale(1,1);
+}
+50% {
+    transform: scale(1.4,1.4);
+}
+100% {
+    transform: scale(1,1);
+}
 }
 </style>
