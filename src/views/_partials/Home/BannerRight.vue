@@ -20,6 +20,9 @@
                 <span class="bubble"></span>
                 <span class="bubble"></span>
                 <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
             </template>
         </div>
     </div>
@@ -42,43 +45,24 @@
     position: absolute;
     background: rgba(192,192,192,0.6);
     border-radius: 1000px;
-    &:nth-child(2){
-        width: 80px;
-        height: 80px;
-        top: 150px;
-        right: 320px;
-        animation-delay: 1s;
-    }
-    &:nth-child(3){
-        width: 70px;
-        height: 70px;
-        top: 50px;
-        right: 20px;
-        animation-delay: 4s;
-    }
-    &:nth-child(4){
-        width: 90px;
-        height: 90px;
-        top: 120px;
-        right: 600px;
-        animation-delay: 6s;
+
+    @for $i from 2 through 10 {
+        &:nth-child(#{$i}) {
+            width: #{20 * (11 - $i)}px;
+            height: #{20 * (11 - $i)}px;
+            animation-delay: #{$i}s;
+        }
     }
 
-    &:nth-child(5){
-        width: 100px;
-        height: 100px;
-        top: 250px;
-        right: 50px;
-        animation-delay: 6s;
-    }
+    &:nth-child(2){top: 50px;right: 50px;}
+    &:nth-child(3){top: 180px;right: 350px;}
+    &:nth-child(4){top: 100px;right: 650px;}
+    &:nth-child(5){top: 170px;right: 950px;}
+    &:nth-child(6){top: 160px;right: 1250px;}
+    &:nth-child(7){top: 300px;right: 200px;}
+    &:nth-child(8){top: 100px;right: 450px;}
+    &:nth-child(9){top: 250px;right: 850px;}
 
-    &:nth-child(6){
-        width: 80px;
-        height: 80px;
-        top: 180px;
-        left: 950px;
-        animation-delay: 6s;
-    }
     &:before {
         content: '';
         position: absolute;
@@ -88,7 +72,7 @@
         left: 0;
         backdrop-filter: blur(27px);
         border-radius: 1000px;
-        animation: 1s bubbleEffect forwards;
+        animation: 2s bubbleEffect forwards;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
     }
@@ -107,7 +91,7 @@
         transform: scale(1.1);
     }
     50%{
-        opacity: 1;
+        opacity: 0.9;
         transform: scale(1.2);
     }
     75%{

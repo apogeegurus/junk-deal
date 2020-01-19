@@ -11,6 +11,9 @@
                 <span class="bubble"></span>
                 <span class="bubble"></span>
                 <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
             </template>
         </div>
         <template v-if="!onlyImage">
@@ -42,43 +45,24 @@
         position: absolute;
         background: rgba(192,192,192,0.6);
         border-radius: 1000px;
-        &:nth-child(2){
-            width: 80px;
-            height: 80px;
-            top: 150px;
-            left: 320px;
-            animation-delay: 1s;
-        }
-        &:nth-child(3){
-            width: 70px;
-            height: 70px;
-            top: 50px;
-            left: 20px;
-            animation-delay: 4s;
-        }
-        &:nth-child(4){
-            width: 90px;
-            height: 90px;
-            top: 120px;
-            left: 600px;
-            animation-delay: 6s;
+
+        @for $i from 2 through 10 {
+            &:nth-child(#{$i}) {
+                width: #{20 * (11 - $i)}px;
+                height: #{20 * (11 - $i)}px;
+                animation-delay: #{$i}s;
+            }
         }
 
-        &:nth-child(5){
-            width: 100px;
-            height: 100px;
-            top: 250px;
-            left: 50px;
-            animation-delay: 6s;
-        }
+        &:nth-child(2){top: 50px;left: 50px;}
+        &:nth-child(3){top: 180px;left: 350px;}
+        &:nth-child(4){top: 100px;left: 650px;}
+        &:nth-child(5){top: 170px;left: 950px;}
+        &:nth-child(6){top: 160px;left: 1250px;}
+        &:nth-child(7){top: 300px;left: 200px;}
+        &:nth-child(8){top: 100px;left: 450px;}
+        &:nth-child(9){top: 250px;left: 850px;}
 
-        &:nth-child(6){
-            width: 80px;
-            height: 80px;
-            top: 180px;
-            left: 950px;
-            animation-delay: 6s;
-        }
         &:before {
             content: '';
             position: absolute;
@@ -88,7 +72,7 @@
             left: 0;
             backdrop-filter: blur(27px);
             border-radius: 1000px;
-            animation: 1s bubbleEffect forwards;
+            animation: 2s bubbleEffect forwards;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
         }
