@@ -25,11 +25,12 @@
         <gallery :images="galleryImages"></gallery>
         <!--Gallery Section End-->
 
-        <service-testimonials></service-testimonials>
+        <service-testimonials class="d-none d-lg-block"></service-testimonials>
+        <testimonials class="d-block d-lg-none mt-5" silver-quote></testimonials>
 
         <!--Services Section Start-->
         <section class="position-relative mt-5 px-lg-100 overflow-hidden">
-            <b-img src="/img/home/triangle-right.svg" class="triangle d-none d-lg-block" data-aos="left-right" data-aos-offset="300"></b-img>
+            <b-img src="/img/home/triangle-right.svg" class="triangle d-none d-lg-block"></b-img>
             <section class="position-relative z-index-1">
                 <b-container>
                     <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Our Additional Services Include but are Not Limited To:</h2>
@@ -53,9 +54,10 @@
     import Gallery from "../components/Gallery";
     import Services from "./_partials/Home/Services";
     import ServiceTestimonials from "./_partials/Service/Testimonials"
+    import Testimonials from "./_partials/Home/Testimonials"
 
     export default {
-        components: {Slider, Specialize, JdVideo, Gallery, Services, ServiceTestimonials},
+        components: {Slider, Specialize, JdVideo, Gallery, Services, ServiceTestimonials, Testimonials},
         data() {
             return {
                 galleryImages: [
