@@ -60,6 +60,12 @@
     width: 100%;
 }
 
+.step--image__mobile{
+    height: 200px;
+    width: 160px;
+    object-fit: contain;
+}
+
 @media screen and (max-width:992px){
     .icons--chevron__rotate{
         transform: rotate(90deg);
