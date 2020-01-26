@@ -7,7 +7,7 @@
                     650 995 7500
                 </a>
             </div>
-            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-12 text-center text-lg-left jd-text-20__mobile">GET YOUR FREE QUOTE</h3>
+            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-16 text-center jd-text-20__mobile get--quote-free-text">GET YOUR FREE QUOTE</h3>
             <b-form-group class="mb-4">
                 <b-input type="text" placeholder="Enter Name" class="jd-input" v-validate="'required'"
                          name="name"></b-input>
@@ -99,6 +99,13 @@
 </script>
 
 <style scoped lang="scss">
+    .get--quote-free-text{
+        opacity: 0.8;
+        line-height: 1.38;
+        letter-spacing: 0.8px;
+        text-align: center;
+        color: #ffffff;
+    }
     /deep/.pl-25__input{
         padding-left: 25px;
         font-size: 12px;
