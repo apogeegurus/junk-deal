@@ -1,9 +1,9 @@
 <template>
     <div id="specialize">
-        <section class="headline jd-text-dark p-4">
+        <section class="headline jd-text-dark">
             <b-container>
                 <p class="jd-text-29 m-0 text-uppercase jd-text-20__mobile" :class="{ 'text-center text-lg-left' : alignLeft, 'text-center': !alignLeft}">
-                    We specialize in the following residential & commercial hauling services:
+                    We specialize in the following <br> residential & commercial hauling services:
                 </p>
             </b-container>
         </section>
@@ -65,5 +65,13 @@
     .border--left__mobile{
         border-left: 3px solid #EF4E23;
     }
+}
+
+.headline p {
+    line-height: 1.03;
+    letter-spacing: 1.74px;
+    text-align: center;
+    color: #959595;
+    padding: 6.5px 0 !important;
 }
 </style>
