@@ -13,19 +13,18 @@
                     <b-col md="12" lg="4" class="mb-lg-0 mb-5">
                         <div class="d-flex align-content-center align-items-center">
                             <b-img src="/img/contact/phone.png"></b-img>
-                            <a href="tel:650-995-7500"
-                               class="ml-3 jd-text-18 jd-font-bold jd-text-light">650-995-7500</a>
+                            <a :href="`tel:${SITE_DETAILS.phone}`"
+                               class="ml-3 jd-text-18 jd-font-bold jd-text-light">{{ SITE_DETAILS.phone }}</a>
                         </div>
 
                         <div class="d-flex align-content-center align-items-center mt-2">
                             <b-img src="/img/contact/email.png"></b-img>
-                            <a href="mailto:info@junkdeal.com" class="ml-3 jd-text-18 jd-font-bold jd-text-light">info@junkdeal.com</a>
+                            <a :href="`mailto:${SITE_DETAILS.email}`" class="ml-3 jd-text-18 jd-font-bold jd-text-light">{{ SITE_DETAILS.email }}</a>
                         </div>
 
                         <div class="d-flex align-content-center align-items-center mt-2">
                             <b-img src="/img/contact/location.png"></b-img>
-                            <a href="tel:650-995-7500" class="ml-3 jd-text-18 jd-font-bold jd-text-light"> 3641 Haven
-                                Ave., Suite C, Menlo Park, CA 94025</a>
+                            <a href="tel:650-995-7500" class="ml-3 jd-text-18 jd-font-bold jd-text-light"> {{ SITE_DETAILS.location }}</a>
                         </div>
                     </b-col>
                     <b-col md="12" lg="6" offset-md="0" offset-lg="2">
@@ -37,7 +36,7 @@
             <quote-form :shown.sync="openQuote" :hide-desktop="true"></quote-form>
             <div class="map-container" @click="clickedMap = true" @mouseleave="clickedMap = false" :class="{ clicked : clickedMap }">
                 <iframe width="100%" height="650" frameborder="0" style="margin-bottom:-6px"
-                        src="https://www.google.com/maps/embed/v1/place?q=3641%20Haven%20Ave.%2C%20Suite%20C%2C%20Menlo%20Park%2C%20CA%2094025&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk"
+                        :src="`https://www.google.com/maps/embed/v1/place?q=${SITE_DETAILS.location}&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk`"
                         allowfullscreen></iframe>
             </div>
         </section>
@@ -47,7 +46,7 @@
 <script>
     import ContactForm from "../components/ContactForm";
     import QuoteForm from "../components/QuoteForm";
-
+    import { mapGetters } from "vuex";
     export default {
         components: {ContactForm, QuoteForm},
         data() {
@@ -60,6 +59,9 @@
             this.$root.$on('openQuote',  () => {
                 this.openQuote = true;
             })
+        },
+        computed: {
+            ...mapGetters(['SITE_DETAILS'])
         }
     }
 </script>

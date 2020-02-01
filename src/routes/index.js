@@ -9,9 +9,9 @@ Vue.use(Router);
 const MAIN_ROUTES = [
     {path: '/', name: 'home',       component: () => import('../views/Home'),               meta: { title : 'Home' }},
     {path: '/contact', name: 'contact',    component: () => import('../views/Contact'),            meta: { title : 'Contact' }},
-    {path: '/services', name: 'services',    component: () => import('../views/Service'),            meta: { title : 'Service' }},
+    {path: '/service/:slug', name: 'services',    component: () => import('../views/Service'),            meta: { title : 'Service' }},
     {path: '/thank-you', name: 'thankyou',    component: () => import('../views/ThankYou'),            meta: { title : 'Thank You' }},
-    {path: '/location', name: 'location',    component: () => import('../views/Location'),            meta: { title : 'Location' }},
+    {path: '/location/:slug', name: 'location',    component: () => import('../views/Location'),            meta: { title : 'Location' }},
     {path: '*', name: 'error404',   component: () => import('../views/Errors/Error404'),    meta: { title : '404' }},
 ];
 

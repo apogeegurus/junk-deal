@@ -31,7 +31,12 @@
                 type: Boolean,
                 default: false
             },
-            images: Array
+            images: {
+                type: Array,
+                default: function () {
+                    return []
+                }
+            }
         },
         components: { QuoteForm },
         data() {

@@ -11,9 +11,9 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto flex-column">
                     <b-nav-text class="color-default align-self-md-start align-self-lg-end">
-                        <a :href="`tel:${ phone.value }`" class="jd-font-medium jd-text-20">
+                        <a :href="`tel:${ SITE_DETAILS.phone }`" class="jd-font-medium jd-text-20">
                             <i class="fas fa-phone-square"></i>
-                            {{ phone.label }}
+                            {{ SITE_DETAILS.phone }}
                         </a>
                     </b-nav-text>
 
@@ -27,9 +27,7 @@
                             <b-dropdown-item href="#">Tesimonials</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown text="Services" right no-caret class="menu-item">
-                            <b-dropdown-item :to="{name: 'services'}">Residential Junk Removal</b-dropdown-item>
-                            <b-dropdown-item :to="{name: 'services'}">Commercial Junk Removal</b-dropdown-item>
-                            <b-dropdown-item :to="{name: 'services'}">Office Furniture Liquidators</b-dropdown-item>
+                            <b-dropdown-item :to="{name: 'services', params: { slug: item.slug }}" v-for="(item, key) in SERVICES" :key="key">{{ item.title }}</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item :to="{ name: 'contact' }" class="menu-item">Contact Us</b-nav-item>
                     </section>
@@ -39,7 +37,7 @@
 
         <section id="get-quote-now" v-if="isFixed" @click="scrollToTop" class="d-none d-lg-block">GET QUOTE NOW!</section>
         <section class="d-flex d-lg-none mobile-bottom-btn">
-            <a :href="`tel:${ phone.value }`" >
+            <a :href="`tel:${ SITE_DETAILS.phone }`" >
                 <i class="fas fa-phone mr-2"></i>
                 MAKE A CALL
             </a>
@@ -53,14 +51,18 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         data() {
             return {
                 isFixed : true,
                 scrollY: null,
-                phone: { label: "650 995 7500", value: "6509957500" },
                 showCollapse: false
             }
+        },
+        beforeCreate() {
+          this.$store.dispatch("GET_SERVICES_NAMES");
         },
         mounted() {
             window.addEventListener('scroll', (event) => {
@@ -88,6 +90,9 @@
             scrollY(newValue) {
                 this.isFixed = newValue > 0;
             }
+        },
+        computed: {
+            ...mapGetters(['SITE_DETAILS', 'SERVICES'])
         }
     }
 </script>

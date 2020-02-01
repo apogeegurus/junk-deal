@@ -1,6 +1,6 @@
 <template>
     <section>
-        <gallery :images="images" :index="index" @close="index = null">
+        <gallery :images="imagesPath" :index="index" @close="index = null">
             <template v-slot:next>
                 <b-img src="/img/icons/arrow_right.svg"></b-img>
             </template>
@@ -11,7 +11,7 @@
         </gallery>
         <b-row class="d-flex no-gutters flex-wrap">
             <b-col lg="2" md="3" sm="4" cols="6"
-                   v-for="(image, imageIndex) in images"
+                   v-for="(image, imageIndex) in imagesPath"
                    :key="imageIndex"
                    @click="index = imageIndex"
             >
@@ -26,7 +26,12 @@
 
     export default {
         props: {
-          images: Array
+          images: {
+              type: Array,
+              default: function () {
+                  return [];
+              }
+          }
         },
         data() {
             return {
@@ -36,6 +41,11 @@
         components: {
             'gallery': VueGallery
         },
+        computed: {
+            imagesPath: function() {
+                return this.images.map(item => item.path)
+            }
+        }
     }
 </script>
 

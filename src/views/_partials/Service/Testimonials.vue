@@ -9,15 +9,15 @@
             </b-container>
         </section>
 
-        <carousel loop  :dots="false" :nav="false" :items="4" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000" :responsive="{0: { items:1 }, 992: { items: 3 }, 1200: { items: 4 }}">
-            <div :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in testimonials" :key="`testimonials-${key}`">
+        <carousel loop  :dots="false" :nav="false" :items="4" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000" :responsive="{0: { items:1 }, 992: { items: 3 }, 1200: { items: 4 }}" v-if="TESTIMONIALS.length">
+            <div :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in TESTIMONIALS" :key="`testimonials-${key}`">
                 <section :class="`bg-${key + 1} h-100 testimonials`">
                     <section class="headline d-flex flex-column px-4 py-3">
                         <h2 class="text-white jd-text-22 position-relative z-1">{{ testimonial.name }}</h2>
                         <b-img src="/img/home/5_star_white.svg" width="124px" class="w-124"></b-img>
                     </section>
                     <p class="jd-text-dark jd-text-18 text-justify px-4 mb-0 py-4">
-                        {{ testimonial.message }}
+                        {{ testimonial.description }}
                     </p>
                 </section>
             </div>
@@ -27,19 +27,15 @@
 
 <script>
     import carousel from 'vue-owl-carousel'
+    import { mapGetters } from "vuex";
     export default {
         components: { carousel },
         name: 'ServiceTestimonials',
-        data() {
-            return {
-                testimonials: [
-                    { name: "Anjeanette M.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 5},
-                    { name: "John Doe", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 3},
-                    { name: "Emma Doe.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 4},
-                    { name: "Layla G.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 1},
-                    { name: "Jack B.", message: "This company is amazing! I called them at 10am and they were here at 1pm .. I’m moving to another state I needed to throw some mattresses away.. and they were quick to come to help… This company is amazing! I called them at 10am and they were here at 1pm..", feedback: 5}
-                ]
-            }
+        beforeCreate() {
+            this.$store.dispatch("GET_TESTIMONIALS");
+        },
+        computed: {
+            ...mapGetters(['TESTIMONIALS']),
         }
     }
 </script>

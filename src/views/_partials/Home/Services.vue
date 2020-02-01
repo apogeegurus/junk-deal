@@ -3,12 +3,16 @@
         <b-container>
             <b-row>
                 <b-col class="text-center mt-3 mt-lg-0 p-0__mobile" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
-                    <b-img :src="`/img/home/services/${service.img}`" class="services--img_rounded"></b-img>
+                    <router-link :to="{ name: 'services', params: { slug : service.slug } }">
+                        <b-img :src="service.main_image_path" class="services--img_rounded"></b-img>
+                    </router-link>
 
                     <section class="text-left px-3 px-lg-0">
-                        <h3 class="jd-text-22 jd-text-light jd-font-medium bottom-line-def-color mt-3 mt-lg-5">{{ service.title }}</h3>
+                        <router-link :to="{ name: 'services', params: { slug : service.slug } }">
+                            <h3 class="jd-text-22 jd-text-light jd-font-medium bottom-line-def-color mt-3 mt-lg-5">{{ service.title }}</h3>
+                        </router-link>
                         <p class="jd-text-18 jd-text-dark">
-                            {{ service.description }}
+                            {{ service.short_description }}
                         </p>
                     </section>
                 </b-col>
@@ -18,6 +22,7 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default {
         props: {
             services: Array
