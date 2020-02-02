@@ -11,6 +11,7 @@ import NoLayout from './layouts/NoLayout';
 import './scss/main.scss';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Snotify, { SnotifyPosition } from 'vue-snotify'
 
 Vue.component('default-layout', DefaultLayout);
 Vue.component('admin-layout', AdminLayout);
@@ -21,6 +22,14 @@ Vue.use(VeeValidate, {
   fieldsBagName: 'veeFields',
   errorBagName: 'veeErrors'
 });
+
+const options = {
+  toast: {
+    position: SnotifyPosition.rightTop
+  }
+}
+
+Vue.use(Snotify, options);
 
 Vue.config.productionTip = process.env.VUE_APP_PROD;
 

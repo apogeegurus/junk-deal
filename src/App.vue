@@ -3,6 +3,7 @@
     <component :is="layout">
       <router-view :key="$route.fullPath"></router-view>
     </component>
+    <vue-snotify></vue-snotify>
   </section>
 </template>
 
