@@ -126,7 +126,8 @@
                                 };
                                 this.$validator.reset();
                                 this.veeErrors.clear();
-                                this.$snotify.success("Your Quote has been submitted, We will contact you soon.")
+                                this.$snotify.success("Your Quote has been submitted, We will contact you soon.");
+                                this.$router.push({ name: 'thankyou' });
                             }).catch((err) => {
                             if (err.response.status === 400) {
                                 this.$snotify.error(err.response.data.message);
