@@ -46,11 +46,24 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Avenir Next Ultra Light';
+  src: url('../fonts/AvenirNextCyr-UltraLight.eot');
+  src: local('Avenir Next Cyr Ultra Light'), local('AvenirNextCyr-Ultra-Light'),
+  url('../fonts/AvenirNextCyr-UltraLight.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirNextCyr-UltraLight.woff2') format('woff2'),
+  url('../fonts/AvenirNextCyr-UltraLight.woff') format('woff'),
+  url('../fonts/AvenirNextCyr-UltraLight.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
 
 .jd-font-regular {font-family: $defaultFont;}
 .jd-font-medium {font-family: $mediumFont;}
 .jd-font-bold {font-family: $boldFont;}
 .jd-font-light {font-family: $lightFont;}
+.jd-font-ultra-light {font-family: $ultraLightFont;}
 
 @for $j from 8 to 38 {
   .jd-text-#{$j} { font-size: #{$j}px; }

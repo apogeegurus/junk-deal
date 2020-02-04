@@ -8,7 +8,7 @@
                     650 995 7500
                 </a>
             </div>
-            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-16 text-center jd-text-20__mobile get--quote-free-text">
+            <h3 class="jd-text-light jd-font-medium mb-3 jd-text-16 text-center jd-text-18__mobile get--quote-free-text">
                 GET YOUR FREE QUOTE</h3>
             <b-form-group class="mb-4">
                 <b-input type="text" placeholder="Enter Name" class="jd-input" v-validate="'required|max:80'"

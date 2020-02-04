@@ -33,7 +33,7 @@
 
             <gallery class="mt-5 order-lg-0 order-1" :images="location.gallery"></gallery>
 
-            <weather-section class="order-lg-0 order-4 d-block d-lg-none px-4 mt-0"></weather-section>
+            <weather-section class="order-lg-0 order-4 d-block d-lg-none px-4 mt-0" :location="location"></weather-section>
             <testimonials class="mt-5 order-lg-0 order-5"></testimonials>
 
             <banner-right :only-image="true" :image="location.banner_first_path" class="order-lg-0 order-3 overflow-hidden"></banner-right>

@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div >
         <h2 class="jd-text-22 jd-font-medium bottom-line-def-color jd-text-light">Weather in <br> {{ location.city }}</h2>
         <h3 class="jd-font-light d-flex justify-content-lg-between justify-content-start">
-            <span style="font-size: 93px">{{ location.weather }}<sup>&#9675;</sup></span>
-            <b-img :src="`http://openweathermap.org/img/wn/${location.weather_icon}@2x.png`" class="contain-img"></b-img>
+            <span style="font-size: 93px" class="jd-font-ultra-light weather-text-style">{{ location.weather }}<sup>&#9675;</sup></span>
+            <b-img :src="`http://openweathermap.org/img/wn/${location.weather_icon}@2x.png`" class="contain-img" v-if="location.weather_icon"></b-img>
         </h3>
 
         <h2 class="jd-text-22 jd-font-medium bottom-line-def-color jd-text-light">Resources:</h2>
@@ -83,5 +83,12 @@
             margin-left: 0;
             border-radius:150px;
         }
+    }
+    .weather-text-style {
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4a4a4a;
     }
 </style>
