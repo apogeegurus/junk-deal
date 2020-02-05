@@ -64,6 +64,12 @@
         bottom: 0;
         left: 0;
         backdrop-filter: blur(27px);
+        filter: blur(27px);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
+        @-moz-document url-prefix() {
+            filter: blur(27px);
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#67686c), to(rgba(255, 255, 255, 0.5)));
+        }
     }
 }
 
