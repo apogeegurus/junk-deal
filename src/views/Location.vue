@@ -126,4 +126,16 @@
 .b-l-1{
     border-left: 2px solid #959595;
 }
+.map-container {
+    width: 100%;
+}
+.map-container iframe{
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    position: relative; /* IE needs a position other than static */
+}
+.map-container.clicked iframe{
+    pointer-events: auto;
+}
 </style>

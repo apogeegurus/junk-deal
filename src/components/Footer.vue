@@ -148,7 +148,7 @@
                         <b-row>
                             <b-col class="pr-5">
                                 <h2 class="jd-title jd-text-22">Services</h2>
-                                <router-link :to="{name: 'services', params: { slug: SERVICE.slug }}" class="jd-text-18 mb-0 d-block text-white" v-for="SERVICE in SERVICES">{{ SERVICE.title }}</router-link>
+                                <router-link :to="{name: 'services', params: { slug: SERVICE.slug }}" class="jd-text-18 mb-0 d-block text-white" v-for="(SERVICE, key) in SERVICES" :key="key">{{ SERVICE.title }}</router-link>
 
                                 <h2 class="jd-title mt-3 jd-text-22">Hours Of Operation</h2>
                                 <p class="jd-text-18 mt-3">
