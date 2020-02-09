@@ -13,6 +13,12 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Snotify, { SnotifyPosition } from 'vue-snotify'
 
+Vue.mixin({
+  updated() {
+    console.log(123)
+    setTimeout(function() { AOS.refresh(); }, 500);
+  },
+});
 Vue.component('default-layout', DefaultLayout);
 Vue.component('admin-layout', AdminLayout);
 Vue.component('no-layout', NoLayout);
@@ -35,7 +41,7 @@ Vue.config.productionTip = process.env.VUE_APP_PROD;
 
 new Vue({
   created () {
-    AOS.init()
+    AOS.init();
   },
   router,
   store,
