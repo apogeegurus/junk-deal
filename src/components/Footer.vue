@@ -20,16 +20,16 @@
                         </p>
 
                         <div class="social-icons d-flex justify-content-start pr-0 pr-lg-5 d-block d-lg-none">
-                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white mr-4" v-if="SITE_DETAILS.facebook" :href="SITE_DETAILS.facebook">
+                            <a v-b-tooltip.hover title="Facebook" href="" class="text-white mr-4" v-if="SITE_DETAILS.facebook" :href="SITE_DETAILS.facebook" target="_blank">
                                 <b-img src="/img/social/fb.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white mr-4" v-if="SITE_DETAILS.youtube" :href="SITE_DETAILS.youtube">
+                            <a v-b-tooltip.hover title="Youtube" href="" class="text-white mr-4" v-if="SITE_DETAILS.youtube" :href="SITE_DETAILS.youtube" target="_blank">
                                 <b-img src="/img/social/youtube.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white mr-4" v-if="SITE_DETAILS.yelp" :href="SITE_DETAILS.yelp">
+                            <a v-b-tooltip.hover title="Yelp" href="" class="text-white mr-4" v-if="SITE_DETAILS.yelp" :href="SITE_DETAILS.yelp" target="_blank">
                                 <b-img src="/img/social/yelp.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="BBB" href="" class="text-white mr-4" v-if="SITE_DETAILS.bbb" :href="SITE_DETAILS.bbb">
+                            <a v-b-tooltip.hover title="BBB" href="" class="text-white mr-4" v-if="SITE_DETAILS.bbb" :href="SITE_DETAILS.bbb" target="_blank">
                                 <b-img src="/img/social/bbb.svg" width="60px"></b-img>
                             </a>
                         </div>
@@ -109,16 +109,16 @@
                         </b-row>
 
                         <div class="social-icons d-flex justify-content-start pr-0 pr-lg-5">
-                            <a v-b-tooltip.hover title="Facebook" class="text-white mr-4" v-if="SITE_DETAILS.facebook" :href="SITE_DETAILS.facebook">
+                            <a v-b-tooltip.hover title="Facebook" class="text-white mr-4" v-if="SITE_DETAILS.facebook" :href="SITE_DETAILS.facebook" target="_blank">
                                 <b-img src="/img/social/fb.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="Youtube" class="text-white mr-4" v-if="SITE_DETAILS.youtube" :href="SITE_DETAILS.youtube">
+                            <a v-b-tooltip.hover title="Youtube" class="text-white mr-4" v-if="SITE_DETAILS.youtube" :href="SITE_DETAILS.youtube" target="_blank">
                                 <b-img src="/img/social/youtube.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="Yelp" class="text-white mr-4" v-if="SITE_DETAILS.yelp" :href="SITE_DETAILS.yelp">
+                            <a v-b-tooltip.hover title="Yelp" class="text-white mr-4" v-if="SITE_DETAILS.yelp" :href="SITE_DETAILS.yelp" target="_blank">
                                 <b-img src="/img/social/yelp.svg" width="60px"></b-img>
                             </a>
-                            <a v-b-tooltip.hover title="BBB" class="text-white mr-4" v-if="SITE_DETAILS.bbb" :href="SITE_DETAILS.bbb">
+                            <a v-b-tooltip.hover title="BBB" class="text-white mr-4" v-if="SITE_DETAILS.bbb" :href="SITE_DETAILS.bbb" target="_blank">
                                 <b-img src="/img/social/bbb.svg" width="60px"></b-img>
                             </a>
                         </div>
@@ -148,11 +148,7 @@
                         <b-row>
                             <b-col class="pr-5">
                                 <h2 class="jd-title jd-text-22">Services</h2>
-                                <p class="jd-text-18 mt-3">
-                                    Residential Junk Removal
-                                    Commercial Junk Removal
-                                    Office Furniture Liquidation
-                                </p>
+                                <router-link :to="{name: 'services', params: { slug: SERVICE.slug }}" class="jd-text-18 mb-0 d-block text-white" v-for="SERVICE in SERVICES">{{ SERVICE.title }}</router-link>
 
                                 <h2 class="jd-title mt-3 jd-text-22">Hours Of Operation</h2>
                                 <p class="jd-text-18 mt-3">
@@ -193,9 +189,10 @@
         components: { ContactForm },
         beforeCreate() {
             this.$store.dispatch("GET_LOCATION_NAMES");
+            this.$store.dispatch("GET_SERVICES_NAMES");
         },
         computed: {
-            ...mapGetters(['SITE_DETAILS', 'LOCATIONS'])
+            ...mapGetters(['SITE_DETAILS', 'LOCATIONS', 'SERVICES'])
         }
     }
 </script>

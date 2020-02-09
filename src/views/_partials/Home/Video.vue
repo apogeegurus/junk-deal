@@ -5,9 +5,9 @@
             <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold">VIDEO</h2>
 
             <b-row class="mt-4">
-                <b-col v-for="(video, key) in videos" :key="`video-${key}`">
-                    <a href="#" class="text-decoration-none">
-                        <b-img :src="`/img/home/videos/${video.img}`" class="w-100"></b-img>
+                <b-col v-for="(video, key) in VIDEOS" :key="`video-${key}`">
+                    <a :href="video.video_url" class="text-decoration-none" target="_blank">
+                        <b-img :src="`http://img.youtube.com/vi/${video.video_id}/0.jpg`" class="w-100"></b-img>
                         <h5 class="jd-text-18 jd-text-dark jd-font-medium text-uppercase mt-3">{{ video.title }}</h5>
                         <p class="jd-text-18 jd-text-dark">
                             {{ video.description }}
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+    import { mapGetters } from "vuex";
     export default {
         props: {
             hideTriangle: {
@@ -27,14 +28,11 @@
                 default: false
             }
         },
-        data() {
-            return {
-                videos : [
-                    { title: "how to separate garbage", img: "video-thumb-1.jpg", description: "Sed modigen torunte lacesti umquiaeped elenit faceperati omnis maximinvenes et et quae" },
-                    { title: "best practices", img: "video-thumb-2.jpg", description: "Maximinvenes et et quae nitionseque quis nati tem ius, tecte vollorepra qui core seque laut aturior epudandi quatempel excerias et fugia" },
-                    { title: "how we save the world one garbage bag at the time", img: "video-thumb-3.jpg", description: "Sed modigen torunte lacesti umquiaeped elenit faceperati omnis" },
-                ]
-            }
+        beforeCreate() {
+            this.$store.dispatch("GET_VIDEOS");
+        },
+        computed: {
+            ...mapGetters(['VIDEOS']),
         }
     }
 </script>

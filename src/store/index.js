@@ -5,6 +5,7 @@ import Location from './modules/locations';
 import Service from './modules/services';
 import Testimonials from './modules/testimonials';
 import Sliders from './modules/sliders';
+import Videos from './modules/videos';
 
 Vue.use(Vuex)
 
@@ -14,6 +15,7 @@ export default new Vuex.Store({
     Service,
     Location,
     Testimonials,
-    Sliders
+    Sliders,
+    Videos
   }
 })
