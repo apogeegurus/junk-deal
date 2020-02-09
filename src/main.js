@@ -37,12 +37,7 @@ new Vue({
   created () {
     AOS.init()
   },
-  updated() {
-    AOS.refresh()
-  },
   router,
   store,
   render: h => h(App)
 }).$mount('#app');
-
-window.addEventListener('load', AOS.refresh);
