@@ -1,5 +1,5 @@
 <template>
-    <div class="p-0 p-lg-4 junks" id="services">
+    <div class="p-0 p-lg-4 junks" id="services" data-aos="fade" data-aos-duration="1000">
         <b-container>
             <b-row>
                 <b-col class="text-center mt-3 mt-lg-0 p-0__mobile" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
