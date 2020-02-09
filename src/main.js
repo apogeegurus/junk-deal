@@ -14,9 +14,14 @@ import 'aos/dist/aos.css'
 import Snotify, { SnotifyPosition } from 'vue-snotify'
 
 Vue.mixin({
+  data() {
+    return {
+      refreshTimeout: false
+    }
+  },
   updated() {
-    console.log(123)
-    setTimeout(function() { AOS.refresh(); }, 500);
+    clearTimeout(this.refreshTimeout);
+    this.refreshTimeout = setTimeout(function() { AOS.refresh(); }, 300);
   },
 });
 Vue.component('default-layout', DefaultLayout);
