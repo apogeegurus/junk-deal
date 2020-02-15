@@ -9,4 +9,5 @@ export default {
     submitForm(payload) {return Repository.post(`/get/quote`, payload);},
     contact(payload) {return Repository.post(`/contact`, payload);},
     getVideos() {return Repository.get(`${resource}/videos`);},
+    getAbout() {return Repository.get(`${resource}/about`);},
 }

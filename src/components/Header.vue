@@ -22,7 +22,7 @@
                         <b-nav-item-dropdown text="About Us" right no-caret class="menu-item">
                             <b-dropdown-item :to="{ name: 'blogs' }">Our Blogs</b-dropdown-item>
                             <b-dropdown-item href="#">Our Message</b-dropdown-item>
-                            <b-dropdown-item href="#">About Junk Deal</b-dropdown-item>
+                            <b-dropdown-item :to="{ name: 'about' }">About Junk Deal</b-dropdown-item>
                             <b-dropdown-item href="#">Who is who in Junk deal</b-dropdown-item>
                             <b-dropdown-item href="#">Planing for the future</b-dropdown-item>
                             <b-dropdown-item href="#">Tesimonials</b-dropdown-item>
