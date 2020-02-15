@@ -9,6 +9,8 @@ Vue.use(Router);
 const MAIN_ROUTES = [
     {path: '/', name: 'home',       component: () => import('../views/Home'),               meta: { title : 'Home' }},
     {path: '/contact', name: 'contact',    component: () => import('../views/Contact'),            meta: { title : 'Contact' }},
+    {path: '/blogs', name: 'blogs',    component: () => import('../views/Blog/Index'),            meta: { title : 'Blogs' }},
+    {path: '/blogs/:slug', name: 'blogShow',    component: () => import('../views/Blog/Show'),            meta: { title : 'Blog' }},
     {path: '/service/:slug', name: 'services',    component: () => import('../views/Service'),            meta: { title : 'Service' }},
     {path: '/thank-you', name: 'thankyou',    component: () => import('../views/ThankYou'),            meta: { title : 'Thank You' }},
     {path: '/location/:slug', name: 'location',    component: () => import('../views/Location'),            meta: { title : 'Location' }},

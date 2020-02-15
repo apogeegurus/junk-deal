@@ -20,6 +20,7 @@
                     <section class="d-md-flex justify-content-between text-uppercase mt-2 flex-lg-row flex-md-column">
                         <b-nav-item :to="{ name: 'home'}" class="menu-item">Home</b-nav-item>
                         <b-nav-item-dropdown text="About Us" right no-caret class="menu-item">
+                            <b-dropdown-item :to="{ name: 'blogs' }">Our Blogs</b-dropdown-item>
                             <b-dropdown-item href="#">Our Message</b-dropdown-item>
                             <b-dropdown-item href="#">About Junk Deal</b-dropdown-item>
                             <b-dropdown-item href="#">Who is who in Junk deal</b-dropdown-item>
