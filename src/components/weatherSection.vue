@@ -3,7 +3,7 @@
         <h2 class="jd-text-22 jd-font-medium bottom-line-def-color jd-text-light">Weather in <br> {{ location.city }}</h2>
         <h3 class="jd-font-light d-flex justify-content-lg-between justify-content-start">
             <span style="font-size: 93px" class="jd-font-ultra-light weather-text-style">{{ location.weather }}<sup>&#9675;</sup></span>
-            <b-img :src="`http://openweathermap.org/img/wn/${location.weather_icon}@2x.png`" class="contain-img" v-if="location.weather_icon"></b-img>
+            <b-img :src="`/img/weather/${location.weather_icon}.svg`" class="contain-img style-weather" v-if="location.weather_icon"></b-img>
         </h3>
 
         <h2 class="jd-text-22 jd-font-medium bottom-line-def-color jd-text-light">Resources:</h2>
@@ -65,7 +65,10 @@
 </script>
 
 <style scoped lang="scss">
-
+    .style-weather{
+        height: 90px;
+        margin-left: 15px
+    }
     .contain-img{
         object-fit: contain;
     }
