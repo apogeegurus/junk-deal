@@ -2,7 +2,7 @@
     <div>
         <slider :withoutHero="true" :images="sliderImages" v-if="sliderImages.length"></slider>
 
-        <b-container class="p-0__mobile z-index-1000 position-relative">
+        <b-container class="p-0__mobile z-index-1000 position-relative mt-50px">
             <b-row>
                 <b-col cols="12" lg="9" class="text-center text-lg-left">
                     <h1 class="jd-text-36 jd-text-dark jd-text-23__mobile text-left px-4 p-lg-0">{{ location.title }}</h1>
@@ -137,5 +137,8 @@
 }
 .map-container.clicked iframe{
     pointer-events: auto;
+}
+.mt-50px{
+    margin-top: 50px;
 }
 </style>
