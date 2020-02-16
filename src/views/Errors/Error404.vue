@@ -14,7 +14,9 @@
 
 <script>
     export default {
-
+        mounted() {
+            this.$root.$emit('hideLoader');
+        }
     }
 </script>
 
