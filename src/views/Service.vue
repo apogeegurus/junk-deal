@@ -90,6 +90,7 @@
         created() {
             RepositoryFactory.get('service').show(this.slug).then(( {data: { service }}) => {
                 this.service = service;
+                this.$root.$emit('hideLoader');
             });
         },
         computed: {

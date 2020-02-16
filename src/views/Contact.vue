@@ -62,6 +62,9 @@
         },
         computed: {
             ...mapGetters(['SITE_DETAILS'])
+        },
+        mounted() {
+            this.$root.$emit('hideLoader');
         }
     }
 </script>

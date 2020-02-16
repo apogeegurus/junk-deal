@@ -103,6 +103,7 @@
         created() {
             RepositoryFactory.get('location').show(this.slug).then(( {data: { location }}) => {
                 this.location = location;
+                this.$root.$emit('hideLoader');
             });
         },
         computed: {

@@ -42,6 +42,7 @@
                     .then(({ data }) => {
                         this.blog = data.blog;
                         this.similars = data.similars;
+                        this.$root.$emit('hideLoader');
                     });
             }
         }

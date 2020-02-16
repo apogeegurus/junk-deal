@@ -69,6 +69,7 @@
                 RepositoryFactory.get('site').getAbout().then(({ data }) => {
                     this.about = data.about;
                     this.members = data.members;
+                    this.$root.$emit('hideLoader');
                 })
             }
         }

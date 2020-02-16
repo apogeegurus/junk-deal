@@ -81,11 +81,26 @@
                 ]
             }
         },
+        methods: {
+            hideLoader() {
+                if(this.SERVICES.length && this.SLIDERS.length) {
+                    this.$root.$emit('hideLoader');
+                }
+            }
+        },
         computed: {
             ...mapGetters(['SERVICES', "SLIDERS"]),
             images: function () {
                 return this.SLIDERS.map(item => item.path);
             }
+        },
+        watch: {
+            'SERVICES': function() {
+                this.hideLoader()
+            },
+            'SLIDERS': function() {
+                this.hideLoader()
+            },
         }
     }
 </script>

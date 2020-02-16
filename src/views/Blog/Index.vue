@@ -49,6 +49,9 @@
                     }
                 });
             }
+        },
+        mounted() {
+            this.$root.$emit('hideLoader');
         }
     }
 </script>

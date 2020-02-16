@@ -8,6 +8,7 @@ import VeeValidate from 'vee-validate'
 import DefaultLayout from './layouts/Default';
 import AdminLayout from './layouts/Admin';
 import NoLayout from './layouts/NoLayout';
+import Loader from './components/Loader';
 import './scss/main.scss';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -27,6 +28,7 @@ Vue.mixin({
 Vue.component('default-layout', DefaultLayout);
 Vue.component('admin-layout', AdminLayout);
 Vue.component('no-layout', NoLayout);
+Vue.component('loader', Loader);
 Vue.use(BootstrapVue);
 Vue.use(VeeValidate, {
   inject: true,
