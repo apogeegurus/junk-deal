@@ -5,7 +5,7 @@
             <b-img src="/img/home/quote_silver.svg" width="75px" class="quote" v-else></b-img>
         </b-container>
         <carousel loop  :dots="false" :nav="false" :items="1" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000" v-if="TESTIMONIALS.length">
-           <div  :class="`position-relative p-4 bg-${key + 1}`" v-for="(testimonial, key) in TESTIMONIALS" :key="`testimonials-${key}`">
+           <div :class="{[`bg-${bgIndex()}`] : true}" v-for="(testimonial, key) in TESTIMONIALS" :key="`testimonials-${key}`" class="position-relative p-4">
                <b-container>
                    <div class="justify-content-between d-flex align-items-center mt-4 mt-sm-0 text-nowrap">
                        <h2 class="ml-0 ml-sm-5 text-white jd-text-22 pl-0 pl-sm-5">{{ testimonial.name }}</h2>
@@ -27,9 +27,24 @@
         props: {
             silverQuote: Boolean
         },
+        data() {
+            return {
+
+            }
+        },
         components: { carousel },
         beforeCreate() {
             this.$store.dispatch("GET_TESTIMONIALS");
+        },
+        methods: {
+            bgIndex: function () {
+                if(!this.bgIndexKey) this.bgIndexKey = 0;
+                if(this.bgIndexKey <= 5) {
+                    this.bgIndexKey++;
+                }
+                if(this.bgIndexKey > 5) this.bgIndexKey = 1;
+                return this.bgIndexKey;
+            }
         },
         computed: {
             ...mapGetters(['TESTIMONIALS']),

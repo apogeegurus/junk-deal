@@ -14,7 +14,10 @@
                 <p class="jd-text-dark sub-headline jd-font-regular">{{ blog.sub_headline }}</p>
             </b-col>
         </b-row>
-        <infinite-loading @infinite="getData"></infinite-loading>
+        <infinite-loading @infinite="getData">
+            <div slot="no-more"><span  v-if="total > 20">No more items</span></div>
+            <div slot="no-results">No items created</div>
+        </infinite-loading>
     </b-container>
 </template>
 
@@ -28,6 +31,7 @@
         },
         data() {
             return {
+                total: 0,
                 page: 1,
                 blogs: [],
             }
@@ -39,6 +43,7 @@
                         page: this.page,
                     },
                 }).then(({ data }) => {
+                    this.total = data.blogs.total;
                     data = data.blogs.data;
                     if (data.length) {
                         this.page += 1;
