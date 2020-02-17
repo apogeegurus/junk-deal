@@ -55,15 +55,15 @@
 </template>
 
 <script>
-    import Services from "./_partials/Home/Services";
-    import Gallery from "../components/Gallery";
-    import Testimonials from "./_partials/Home/Testimonials";
-    import BannerRight from "./_partials/Home/BannerRight";
-    import BannerLeft from "./_partials/Home/BannerLeft";
-    import Slider from "./_partials/Home/Slider";
-    import Specialize from "./_partials/Home/Specialize";
-    import WeatherSection from "../components/weatherSection";
-    import { RepositoryFactory } from "../api/RepositoryFactory"
+    import Services from "./../_partials/Home/Services";
+    import Gallery from "./../../components/Gallery";
+    import Testimonials from "./../_partials/Home/Testimonials";
+    import BannerRight from "./../_partials/Home/BannerRight";
+    import BannerLeft from "./../_partials/Home/BannerLeft";
+    import Slider from "./../_partials/Home/Slider";
+    import Specialize from "./../_partials/Home/Specialize";
+    import WeatherSection from "./../../components/weatherSection";
+    import { RepositoryFactory } from "./../../api/RepositoryFactory"
     import { mapGetters } from "vuex";
 
     export default {
@@ -119,27 +119,27 @@
 </script>
 
 <style scoped lang="scss">
-@media screen and (max-width: 992px) {
-    .p-0__mobile{
-        padding: 0;
+    @media screen and (max-width: 992px) {
+        .p-0__mobile{
+            padding: 0;
+        }
     }
-}
-.b-l-1{
-    border-left: 2px solid #959595;
-}
-.map-container {
-    width: 100%;
-}
-.map-container iframe{
-    width: 100%;
-    display: block;
-    pointer-events: none;
-    position: relative; /* IE needs a position other than static */
-}
-.map-container.clicked iframe{
-    pointer-events: auto;
-}
-.mt-50px{
-    margin-top: 50px;
-}
+    .b-l-1{
+        border-left: 2px solid #959595;
+    }
+    .map-container {
+        width: 100%;
+    }
+    .map-container iframe{
+        width: 100%;
+        display: block;
+        pointer-events: none;
+        position: relative; /* IE needs a position other than static */
+    }
+    .map-container.clicked iframe{
+        pointer-events: auto;
+    }
+    .mt-50px{
+        margin-top: 50px;
+    }
 </style>

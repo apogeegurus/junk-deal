@@ -21,8 +21,9 @@
                         <b-nav-item :to="{ name: 'home'}" class="menu-item">Home</b-nav-item>
                         <b-nav-item-dropdown text="About Us" right no-caret class="menu-item">
                             <b-dropdown-item :to="{ name: 'blogs' }">Our Blogs</b-dropdown-item>
-                            <b-dropdown-item href="#">Our Message</b-dropdown-item>
+                            <b-dropdown-item :to="{ name: 'locations' }">Locations</b-dropdown-item>
                             <b-dropdown-item :to="{ name: 'about' }">About Junk Deal</b-dropdown-item>
+                            <b-dropdown-item href="#">Our Message</b-dropdown-item>
                             <b-dropdown-item href="#">Who is who in Junk deal</b-dropdown-item>
                             <b-dropdown-item href="#">Planing for the future</b-dropdown-item>
                             <b-dropdown-item href="#">Tesimonials</b-dropdown-item>
@@ -149,6 +150,12 @@
 
     p {
         border-radius: 20px 0 0 0;
+    }
+}
+/deep/.navbar-toggler[aria-expanded="true"]{
+    .navbar-toggler-icon{
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAQAAAD41aSMAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAALEwAACxMBAJqcGAAABKpJREFUeNrt3c1OU1EYheGFRidivRw1oTowhlLGeidOmHE7OhYscYJ/vaDC3MFJJJX+nH3O/r69FllrRsLAvA8JtD17e/AJXssdGMAABvAMYADPAAbwDGAAzwAG8AxgAM8ABvAMYADPAAbwDGAAzwAG8AxgAM8ABvAMYADPAAbwDGAAzwAG8AxgAM8ABvBYAaY4wwfcCHWZ4DPOsXwYAFNc4BC/cCJDMME3vMYKx/EE8QBdfgAyBF1+AFhhhj/aAFNc4tm/rxQI7vKnEMQCrOdXIFjPn0AQCfAGF//lZye4n78jOMFvPYDN+ZkJNucPJogC2J6flWB7/lCCGIC3+LojPyPB7vwAcINZBEEEwP78bAT784cR1Afol5+JoF/+IIL6AFd43/t7GQgmWOBV7+++xJwd4DkWPX+eGAjK8v/EvPa/NuJ3gA5B8/xRfwVpEBDkj3sdwE9AkT/ylTA3AUn+2PeCeAlo8ke/G8pJQJQ//vMAPgKq/BmfiHERkOXP+UyYh4Auf9ZTERwEhPnzngtqTzDBFV4W5D/BbUaYvAez2hKQ5s99Mq4dAW3+7EcT2xAQ589/NjSfgDp/i4dzcwnI87d5OjqPgD5/q8fTcwgE8rc7HxBPIJG/5QGNWAKR/G1PyMQRvMCiIP8PzFvlb31EKYZAKH/7M2L1CaTyMxzSq0sglp/jlGQ9Arn8LMdU6xAI5uc5JzyeQDI/00HtcQSi+blOyg8nkM3PdlXBMALh/Hx3RZQTPFbOz3hZRynBk4L81zjlys95W0oZAZTzs15XE0FAmZ/3vqDaBKT5mS9sqklAm5/7xqxaBMT52a8sq0FAnZ//zrixBOT5FS7tG0NAn1/j1sShBAL5Va6tHEIgkV/n3tBSApH8OgD9bzTptsQxVgZolV+IQAFgSH4ZAn6AoflFCNgBxuSXIOAGGJtfgIAZoEZ+egJegFr5yQlYAWrmpybgBKidn5iAESAiPy0BH0DZlRrXeFqARUjABlCa/xSPit6moyPgAijPf4vSd0rJCJgAhuWHNgEPwPD80gQsAOPyCxNwAIzPL0vAAFAnvyhBe4B6+SUJWgPUzS9I0Bagfn45gpYAZflLDhcJEbQDKLtQpvRslwxBK4DY/EIEbQDi88sQtADIyS9CkA+Ql1+CIBsgN78AQS5Afn56gkyANvnJCfIA2uWnJsgCaJufmCAHgONCGUqCDICy/JG32BISxAPw5KckiAbgyk9IEAvAl5+OIBKAMz8ZQRwAb34qgigA7vxEBDEA/PlpCCIANPKTENQH0MlPQVAf4DveyeQvJ1hgxg5whEsc9sw/T/tf5OsQrHCMJf/vgH4ELPn7EwTkj/oraD8BU/5+BCH5414H7CZgy7+fICh/5Cvh7QSM+XcThOWPfS9oMwFr/u0Egfmj3w29T8CcfzNBaP74zwPWCdjz3ycIzp/xidgdgUL+dYLw/DmfCXcEKvnvCBLyZz0VcYQzfJTJ3xF8wXl8fp17Qx/sDGAAA3gGMIBnAAN4BjCAZwADeAYwgGcAA3gGMIBnAAN4BjCAZwADeAYwgGcAA3gGMIBnAAN4BjCAZwADeAYwgGcAA3gD9hekz6qfhZ0bzQAAAABJRU5ErkJggg==');
+        background-size: contain;
     }
 }
 </style>

@@ -13,7 +13,8 @@ const MAIN_ROUTES = [
     {path: '/blogs/:slug', name: 'blogShow',    component: () => import('../views/Blog/Show'),            meta: { title : 'Blog' }},
     {path: '/service/:slug', name: 'services',    component: () => import('../views/Service'),            meta: { title : 'Service' }},
     {path: '/thank-you', name: 'thankyou',    component: () => import('../views/ThankYou'),            meta: { title : 'Thank You' }},
-    {path: '/location/:slug', name: 'location',    component: () => import('../views/Location'),            meta: { title : 'Location' }},
+    {path: '/locations', name: 'locations',    component: () => import('../views/Location/Index'),            meta: { title : 'Locations' }},
+    {path: '/location/:slug', name: 'location',    component: () => import('../views/Location/Show'),            meta: { title : 'Location' }},
     {path: '/about-us', name: 'about',    component: () => import('../views/About'),            meta: { title : 'About' }},
     {path: '*', name: 'error404',   component: () => import('../views/Errors/Error404'),    meta: { title : '404' }},
 ];
