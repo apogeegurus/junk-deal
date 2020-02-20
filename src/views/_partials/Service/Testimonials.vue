@@ -11,10 +11,10 @@
 
         <carousel loop  :dots="false" :nav="false" :items="4" autoplay autoplayHoverPause :smartSpeed="1500" :autoplayTimeout="5000" :responsive="{0: { items:1 }, 992: { items: 3 }, 1200: { items: 4 }}" v-if="TESTIMONIALS.length">
             <div :class="`pr-0 pr-lg-2 bg-white`" v-for="(testimonial, key) in TESTIMONIALS" :key="`testimonials-${key}`">
-                <section :class="{[`bg-${bgIndex()}`] : true}" class="h-100 testimonials`">
+                <section :class="{[`bg-${bgIndex()}`] : true}" class="h-100 testimonials">
                     <section class="headline d-flex flex-column px-4 py-3">
                         <h2 class="text-white jd-text-22 position-relative z-1">{{ testimonial.name }}</h2>
-                        <b-img src="/img/home/5_star_white.svg" width="124px" class="w-124"></b-img>
+                        <b-img :src="`/img/home/${testimonial.rating}.svg`" width="124px" class="w-124"></b-img>
                     </section>
                     <p class="jd-text-dark jd-text-18 text-justify px-4 mb-0 py-4">
                         {{ testimonial.description }}

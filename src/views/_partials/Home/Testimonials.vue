@@ -9,7 +9,7 @@
                <b-container>
                    <div class="justify-content-between d-flex align-items-center mt-4 mt-sm-0 text-nowrap">
                        <h2 class="ml-0 ml-sm-5 text-white jd-text-22 pl-0 pl-sm-5">{{ testimonial.name }}</h2>
-                       <b-img src="/img/home/5_star.svg" width="124px" class="w-124"></b-img>
+                       <b-img :src="`/img/home/${testimonial.rating}.svg`" width="124px" class="w-124"></b-img>
                    </div>
                    <p class="jd-text-dark jd-text-18 text-justify mt-4">
                        {{ testimonial.description }}

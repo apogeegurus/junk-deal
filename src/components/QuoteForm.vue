@@ -145,6 +145,11 @@
                     }
                 })
             }
+        },
+        created() {
+            window.onresize = () => {
+                this.$emit('update:shown', false);
+            }
         }
     }
 </script>

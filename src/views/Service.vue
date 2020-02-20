@@ -27,11 +27,11 @@
             <b-img src="/img/home/triangle-right.svg" class="triangle d-none d-lg-block" data-aos="left-right" data-aos-offset="100"></b-img>
             <section class="position-relative z-index-1">
                 <b-container>
-                    <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Our Additional Services Include but are Not Limited To:</h2>
+                    <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Our Additional Services Include but are <br> Not Limited To:</h2>
                 </b-container>
                 <services :services="FILTERED_SERVICES" class="mt-4"></services>
             </section>
-            <b-img src="/img/home/triangle-left.svg" class="triangle--full__width d-none d-lg-block" data-aos="right-left" data-aos-offset="300"></b-img>
+            <b-img src="/img/home/triangle-left.svg" class="triangle--full__width d-none d-lg-block" data-aos="right-left" data-aos-offset="100"></b-img>
         </section>
         <!--Services Section End-->
 
