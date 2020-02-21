@@ -174,11 +174,11 @@
         right: 0;
         border: none;
         background: rgba(255, 255, 255, 0.8);
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 991px) {
             width: 100%;
             bottom: 45px;
         }
-        @media screen and (min-width: 992px) {
+        @media screen and (min-width: 991px) {
             width: 230px;
         }
 
@@ -336,12 +336,12 @@
                 filter: blur(27px);
                 background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
             }
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: 991px) {
                 position: fixed;
             }
         }
 
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 991px) {
             position: fixed;
             top: 95px;
             bottom: 0;
@@ -354,14 +354,14 @@
         }
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
         .submit-btn-qoute {
             background: #fff;
             color: #EF4E23;
         }
     }
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 991px) {
         .d-lg-none-important {
             display: none !important;
         }
