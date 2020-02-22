@@ -5,16 +5,16 @@
                 <div class="arrow"></div>
                 <div class="arrow"></div>
             </div>
-            <template v-if="!onlyImage">
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-            </template>
+<!--            <template v-if="!onlyImage">-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--            </template>-->
         </div>
         <template v-if="!onlyImage">
             <b-container class="fade--text__rotate text-center z-index-2 position-relative">

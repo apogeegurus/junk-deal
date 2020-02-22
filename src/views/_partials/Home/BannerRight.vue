@@ -14,16 +14,16 @@
                 <div class="arrow"></div>
                 <div class="arrow"></div>
             </div>
-            <template v-if="!onlyImage">
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-            </template>
+<!--            <template v-if="!onlyImage">-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--                <span class="bubble"></span>-->
+<!--            </template>-->
         </div>
     </div>
 </template>
