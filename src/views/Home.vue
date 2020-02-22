@@ -13,7 +13,7 @@
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
-        <banner-right class="d-none d-lg-block" image="/img/home/banners/banner-1.jpg"></banner-right>
+<!--        <banner-right class="d-none d-lg-block" image="/img/home/banners/banner-1.jpg"></banner-right>-->
         <!--Banner Section End-->
 
         <!--Services Section Start-->
@@ -21,19 +21,19 @@
         <!--Services Section End-->
 
         <!--Banner Section Start-->
-        <banner-left class="d-none d-lg-block" image="/img/home/banners/banner-2.jpg"></banner-left>
+<!--        <banner-left class="d-none d-lg-block" image="/img/home/banners/banner-2.jpg"></banner-left>-->
         <!--Banner Section End-->
 
         <!--Works Section Start-->
-        <works></works>
+<!--        <works></works>-->
         <!--Works Section End-->
 
         <!--Testimonials Section Start-->
-        <testimonials></testimonials>
+<!--        <testimonials></testimonials>-->
         <!--Testimonials Section End-->
 
         <!--Video Section Start-->
-        <jd-video></jd-video>
+<!--        <jd-video></jd-video>-->
         <!--Video Section End-->
     </div>
 </template>
