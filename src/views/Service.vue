@@ -31,7 +31,7 @@
                 </b-container>
                 <services :services="FILTERED_SERVICES" class="mt-4"></services>
             </section>
-            <b-img src="/img/home/triangle-left.svg" class="triangle--full__width d-none d-lg-block" data-aos="right-left" data-aos-offset="100"></b-img>
+            <b-img src="/img/home/triangle-left.svg" class="triangle--full__width traingle-bottom d-none d-lg-block" data-aos="right-left" data-aos-offset="100"></b-img>
         </section>
         <!--Services Section End-->
 
@@ -123,6 +123,21 @@
 .z-index-1{
     z-index: 1;
 }
+
+@media screen and (max-width: 1600px){
+    .traingle-bottom{
+        top: 250px;
+        bottom: unset;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    .traingle-bottom{
+        top: unset;
+        bottom: 0;
+    }
+}
+
 @media screen and (min-width: 992px){
     .px-lg-100{
         padding-top: 130px !important;
