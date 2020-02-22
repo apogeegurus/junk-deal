@@ -19,10 +19,6 @@
                 <span class="bubble"></span>
                 <span class="bubble"></span>
                 <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
             </template>
         </div>
     </div>

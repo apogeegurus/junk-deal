@@ -10,10 +10,6 @@
                 <span class="bubble"></span>
                 <span class="bubble"></span>
                 <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
             </template>
         </div>
         <template v-if="!onlyImage">
@@ -46,7 +42,7 @@
         background: rgba(192,192,192,0.6);
         border-radius: 1000px;
         opacity: 0;
-        
+
         @for $i from 2 through 10 {
             &:nth-child(#{$i}) {
                 width: #{20 * (11 - $i)}px;
