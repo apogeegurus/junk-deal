@@ -25,15 +25,15 @@
         <!--Banner Section End-->
 
         <!--Works Section Start-->
-<!--        <works></works>-->
+        <works></works>
         <!--Works Section End-->
 
         <!--Testimonials Section Start-->
-<!--        <testimonials></testimonials>-->
+        <testimonials></testimonials>
         <!--Testimonials Section End-->
 
         <!--Video Section Start-->
-<!--        <jd-video></jd-video>-->
+        <jd-video></jd-video>
         <!--Video Section End-->
     </div>
 </template>
