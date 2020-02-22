@@ -19,6 +19,10 @@
                 <span class="bubble"></span>
                 <span class="bubble"></span>
                 <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
             </template>
         </div>
     </div>
@@ -41,6 +45,7 @@
     position: absolute;
     background: rgba(192,192,192,0.6);
     border-radius: 1000px;
+    opacity: 0;
 
     @for $i from 2 through 10 {
         &:nth-child(#{$i}) {

@@ -10,6 +10,10 @@
                 <span class="bubble"></span>
                 <span class="bubble"></span>
                 <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
             </template>
         </div>
         <template v-if="!onlyImage">
@@ -41,7 +45,8 @@
         position: absolute;
         background: rgba(192,192,192,0.6);
         border-radius: 1000px;
-
+        opacity: 0;
+        
         @for $i from 2 through 10 {
             &:nth-child(#{$i}) {
                 width: #{20 * (11 - $i)}px;
@@ -68,7 +73,6 @@
             left: 0;
             backdrop-filter: blur(27px);
             border-radius: 1000px;
-
             @-moz-document url-prefix() {
                 filter: blur(27px);
                 background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
@@ -84,17 +88,9 @@
             opacity: 0;
             transform: scale(1);
         }
-        25%{
-            opacity: 0.5;
-            transform: scale(1.1);
-        }
         50%{
             opacity: 1;
             transform: scale(1.2);
-        }
-        75%{
-            opacity: 0.5;
-            transform: scale(1.3);
         }
         100%{
             opacity: 0;
