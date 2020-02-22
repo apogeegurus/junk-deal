@@ -14,16 +14,12 @@
                 <div class="arrow"></div>
                 <div class="arrow"></div>
             </div>
-<!--            <template v-if="!onlyImage">-->
-<!--                <span class="bubble"></span>-->
-<!--                <span class="bubble"></span>-->
-<!--                <span class="bubble"></span>-->
-<!--                <span class="bubble"></span>-->
-<!--                <span class="bubble"></span>-->
-<!--                <span class="bubble"></span>-->
-<!--                <span class="bubble"></span>-->
-<!--                <span class="bubble"></span>-->
-<!--            </template>-->
+            <template v-if="!onlyImage">
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+            </template>
         </div>
     </div>
 </template>
@@ -90,17 +86,9 @@
         opacity: 0;
         transform: scale(1);
     }
-    25%{
-        opacity: 0.5;
-        transform: scale(1.1);
-    }
     50%{
         opacity: 0.9;
         transform: scale(1.2);
-    }
-    75%{
-        opacity: 0.5;
-        transform: scale(1.3);
     }
     100%{
         opacity: 0;
