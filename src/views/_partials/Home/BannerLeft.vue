@@ -68,9 +68,7 @@
             left: 0;
             backdrop-filter: blur(27px);
             border-radius: 1000px;
-            animation: 4s bubbleEffect forwards;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
+
             @-moz-document url-prefix() {
                 filter: blur(27px);
                 background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
