@@ -48,7 +48,7 @@
                 <b-col cols="12" md="6" class="pl-md-2">
                     <b-form-group class="mb-4 position-relative">
                         <i class="fas fa-calendar-alt position-absolute calendar-icon"></i>
-                        <datepicker v-validate="'required'" data-vv-name="date" placeholder="Date"
+                        <datepicker v-validate="'required'" data-vv-name="date" placeholder="Date" format="MMM dd yyyy"
                                     v-model="quote.date" input-class="jd-input w-100 pl-25__input"></datepicker>
                         <span v-if="veeErrors.has('date')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('date') }}

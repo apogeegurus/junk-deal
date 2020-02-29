@@ -16,7 +16,7 @@
                         <h2 class="text-white jd-text-22 position-relative z-1">{{ testimonial.name }}</h2>
                         <b-img :src="`/img/home/${testimonial.rating}.svg`" width="124px" class="w-124"></b-img>
                     </section>
-                    <p class="jd-text-dark jd-text-18 text-justify px-4 mb-0 py-4">
+                    <p class="jd-text-dark jd-text-18 text-left px-4 mb-0 py-4">
                         {{ testimonial.description }}
                     </p>
                 </section>

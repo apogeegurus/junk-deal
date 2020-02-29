@@ -66,6 +66,14 @@ header#site-header{
         filter: blur(27px);
         background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
       }
+
+      @media screen and (max-width: 991px) {
+        backdrop-filter: unset;
+        @-moz-document url-prefix() {
+          filter: unset;
+          background-image: unset;
+        }
+      }
     }
     &:before{
       content: '';
@@ -76,6 +84,9 @@ header#site-header{
       left: 0;
       background: rgba(255,255,255,0.6);
       z-index: 1;
+      @media screen and (max-width: 991px) {
+        background: transparent;
+      }
     }
     @include media-breakpoint-down(md) {
       box-shadow: none;

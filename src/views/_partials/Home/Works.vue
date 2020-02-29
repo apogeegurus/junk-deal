@@ -23,7 +23,7 @@
                 </b-row>
 
                 <b-row class="d-flex flex-column flex-lg-row step--content__mobile flex-column flex-lg-row">
-                    <b-col v-for="(step, key) in steps.filter(item => !item.isArrow)" :key="`step-${key}`">
+                    <b-col v-for="(step, key) in steps" :key="`step-${key}`" :class="{ 'd-block d-lg-none' : step.isArrow }">
                         <h3 class="text-uppercase jd-text-22 jd-text-light jd-font-medium bottom-line-def-color d-none d-lg-block">{{ step.title }}</h3>
                         <p class="jd-text-18 jd-text-dark">
                             {{ step.description }}
@@ -84,6 +84,7 @@
 
     .step--image__mobile{
         width: 100px;
+        height: 100px;
         &+.icons--chevron__rotate .jd-text-50{
             font-size: 35px;
         }
@@ -92,6 +93,8 @@
     .step--content__mobile{
         margin-left: 20px;
         font-size: 18px;
+        > div:nth-child(3){margin-top: 50px}
+        > div:nth-child(5){margin-top: 50px}
     }
 }
 </style>
