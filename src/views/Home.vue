@@ -3,13 +3,14 @@
         <slider :images="images" v-if="images.length"></slider>
 
         <b-container class="text-center mt-0 mt-lg-5">
-            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">Junk Removal & Hauling Company</h1>
-            <p class="jd-text-22 mt-3 jd-font-medium jd-text-18__mobile">Junk Deal is more than an average junk removal & hauling company. We can help you with organizing,
-                sorting, donations, packing, moving, storage, light demo and hauling services. </p>
+            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>
+            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase" style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
         </b-container>
 
+        <animation></animation>
+
         <!--Specialize Section Start-->
-        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'"></specialize>
+        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :align-left="true"></specialize>
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
@@ -47,12 +48,14 @@
     import Services from "./_partials/Home/Services";
     import Specialize from "./_partials/Home/Specialize";
     import Slider from "./_partials/Home/Slider";
+    import Animation from "./_partials/Home/Animation";
     import { mapGetters } from 'vuex';
 
     export default {
-        components: { Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services },
+        components: { Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services, Animation },
         beforeCreate() {
           this.$store.dispatch("GET_SERVICES_NAMES");
+          this.$store.dispatch("GET_HOME_PAGE_INFO");
         },
         data() {
             return {
@@ -83,13 +86,13 @@
         },
         methods: {
             hideLoader() {
-                if(this.SERVICES.length && this.SLIDERS.length) {
+                if(this.SERVICES.length && this.SLIDERS.length && Object.keys(this.HOME_PAGE).length) {
                     this.$root.$emit('hideLoader');
                 }
             }
         },
         computed: {
-            ...mapGetters(['SERVICES', "SLIDERS"]),
+            ...mapGetters(['SERVICES', "SLIDERS", "HOME_PAGE"]),
             images: function () {
                 return this.SLIDERS.map(item => item.path);
             }
@@ -101,6 +104,9 @@
             'SLIDERS': function() {
                 this.hideLoader()
             },
+            'HOME_PAGE': function () {
+                this.hideLoader()
+            }
         }
     }
 </script>

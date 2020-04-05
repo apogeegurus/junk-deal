@@ -2,12 +2,8 @@
     <div class="p-4 mt-4 position-relative" id="how-it-works">
         <b-img src="/img/home/triangle-right.svg" class="triangle" data-aos="left-right" data-aos-duration="1000"></b-img>
         <b-container class="position-relative">
-            <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold jd-text-25__mobile mb-5 mb-lg-3">How It Works</h2>
-            <p class="text-center jd-text-22 jd-text-dark jd-text-18__mobile mb-5">Our process is very simple, you schedule your junk removal, we call to let you know we are heading your
-                way and when we get to your place, we go to work almost immediately. We get the job done quickly. Our
-                residential junk removal services gives you an easy solution for decluttering your home or clearing your
-                yard from unwanted junk.
-            </p>
+            <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold jd-text-25__mobile mb-5 mb-lg-3">{{ HOME_PAGE.how_it_works_title }}</h2>
+            <p class="text-center jd-text-22 jd-text-dark jd-text-18__mobile mb-5">{{ HOME_PAGE.how_it_works_sub_title }}</p>
 
 
             <section class="d-flex flex-row flex-lg-column">
@@ -26,7 +22,7 @@
                     <b-col v-for="(step, key) in steps" :key="`step-${key}`" :class="{ 'd-block d-lg-none' : step.isArrow }">
                         <h3 class="text-uppercase jd-text-22 jd-text-light jd-font-medium bottom-line-def-color d-none d-lg-block">{{ step.title }}</h3>
                         <p class="jd-text-18 jd-text-dark">
-                            {{ step.description }}
+                            {{ HOME_PAGE[step.description] }}
                         </p>
                     </b-col>
                 </b-row>
@@ -36,18 +32,23 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         data() {
             return {
                 steps: [
-                    { title: "Step 1", description: "Call for an estimate or send us contact form requesting a quote. We provide you with a free estimate.", img: "how-it-works-step-1.png"},
+                    { title: "Step 1", description: "step_1_text", img: "how-it-works-step-1.png"},
                     { isArrow: true},
-                    { title: "Step 2", description: "We arrive on time to your site, our professional junk removal staff will load, cleanup and remove the junk from your property or business.", img: "how-it-works-step-2.png"},
+                    { title: "Step 2", description: "step_2_text", img: "how-it-works-step-2.png"},
                     { isArrow: true},
-                    { title: "Step 3", description: "Once the your property is junk free and you are fully satisfied, then we collect payment.", img: "how-it-works-step-3.png"},
+                    { title: "Step 3", description: "step_3_text", img: "how-it-works-step-3.png"},
                 ]
             }
-        }
+        },
+        computed: {
+            ...mapGetters(["HOME_PAGE"])
+        },
     }
 </script>
 

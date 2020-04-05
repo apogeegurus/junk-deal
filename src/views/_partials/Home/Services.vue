@@ -4,7 +4,7 @@
             <b-row>
                 <b-col class="text-center mt-3 mt-lg-0 p-0__mobile" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
                     <router-link :to="{ name: 'services', params: { slug : service.slug } }">
-                        <b-img :src="service.main_image_path" class="services--img_rounded"></b-img>
+                        <b-img :src="service.main_image_path" class="services--img"></b-img>
                     </router-link>
 
                     <section class="text-left px-3 px-lg-0">
@@ -32,10 +32,10 @@
 
 
 <style scoped lang="scss">
-/deep/.services--img_rounded{
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
+/deep/.services--img{
+    border-radius: 0;
+    width: 100%;
+    height: 230px;
     object-fit: cover;
 }
 

@@ -2,7 +2,7 @@
     <div class="p-4 mb-4 position-relative d-none d-lg-block overflow-hidden" >
         <b-img src="/img/home/triangle-left.svg" class="triangle--full__width" data-aos="right-left" v-if="!hideTriangle" data-aos-offset="300" data-aos-duration="1000"></b-img>
         <b-container>
-            <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold">VIDEO</h2>
+            <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold">{{ HOME_PAGE.video_title }}</h2>
 
             <b-row class="mt-4">
                 <b-col v-for="(video, key) in VIDEOS" :key="`video-${key}`">
@@ -32,7 +32,7 @@
             this.$store.dispatch("GET_VIDEOS");
         },
         computed: {
-            ...mapGetters(['VIDEOS']),
+            ...mapGetters(['VIDEOS', 'HOME_PAGE']),
         }
     }
 </script>

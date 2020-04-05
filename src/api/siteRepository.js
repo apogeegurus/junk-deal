@@ -10,4 +10,5 @@ export default {
     contact(payload) {return Repository.post(`/contact`, payload);},
     getVideos() {return Repository.get(`${resource}/videos`);},
     getAbout() {return Repository.get(`${resource}/about`);},
+    getHome() {return Repository.get(`${resource}/home/page`);},
 }

@@ -1,9 +1,9 @@
 <template>
     <div id="specialize">
-        <section class="headline jd-text-dark">
+        <section class="headline jd-text-dark py-2">
             <b-container>
-                <p class="jd-text-29 m-0 text-uppercase jd-text-20__mobile" :class="{ 'text-center text-lg-left' : alignLeft, 'text-center': !alignLeft}">
-                    We specialize in the following <br> residential & commercial hauling services:
+                <p :class="{ 'jd-text-22 m-0 jd-text-20__mobile jd-font-medium text-center' : alignLeft, 'jd-text-29 m-0 text-uppercase jd-text-20__mobile text-center': !alignLeft}" style="white-space: pre-wrap;">
+                    {{ alignLeft ? HOME_PAGE.sub_title :  HOME_PAGE.specialize_title}}
                 </p>
             </b-container>
         </section>
@@ -11,7 +11,7 @@
         <b-container class="mt-3" data-aos="fade-up"  data-aos-duration="1000" :class="{ [classes] : classes}">
             <section class="d-flex text--service__rotate">
                 <h3 class="text--service__mobile d-block d-lg-none text-uppercase jd-font-bold">
-                    Full Service Junk Removal San Francisco Bay Area
+                    {{ HOME_PAGE.banner_one_text }}
                 </h3>
 
                 <b-row class="flex-lg-grow-1 flex-grow-0 d-flex flex-column flex-lg-row border--left__mobile">
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         props: {
             alignLeft: Boolean,
@@ -42,7 +44,10 @@
             return {
 
             }
-        }
+        },
+        computed: {
+            ...mapGetters(["HOME_PAGE"])
+        },
     }
 </script>
 

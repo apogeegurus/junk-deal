@@ -15,7 +15,7 @@
         <template v-if="!onlyImage">
             <b-container class="fade--text__rotate text-center z-index-2 position-relative">
                 <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="200" data-aos-duration="1500">
-                    Stress free, On time, On budget
+                    {{ HOME_PAGE.banner_two_text }}
                 </h2>
             </b-container>
             <b-img src="/img/home/banner-triangle-left.svg" class="triangle small"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         props: {
             image: String,
@@ -32,7 +34,10 @@
                 type: Boolean,
                 default: false
             }
-        }
+        },
+        computed: {
+            ...mapGetters(["HOME_PAGE"])
+        },
     }
 </script>
 
