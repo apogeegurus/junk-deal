@@ -2,7 +2,7 @@
     <div class="position-relative" style="z-index: 980">
         <h2 class="jd-text-22 jd-font-medium bottom-line-def-color jd-text-light">Weather in <br> {{ location.city }}</h2>
         <h3 class="jd-font-light d-flex justify-content-lg-between justify-content-start">
-            <span style="font-size: 93px" class="jd-font-ultra-light weather-text-style">{{ location.weather }}<sup>&#9675;</sup></span>
+            <span style="font-size: 93px" class="jd-font-ultra-light weather-text-style">{{ location.weather }}°</span>
             <b-img :src="`/img/weather/${location.weather_icon}.svg`" class="contain-img style-weather" v-if="location.weather_icon"></b-img>
         </h3>
 

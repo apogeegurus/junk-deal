@@ -35,8 +35,8 @@
 /deep/.services--img{
     border-radius: 0;
     width: 100%;
-    height: 230px;
-    object-fit: cover;
+    height: 221px;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 992px) {

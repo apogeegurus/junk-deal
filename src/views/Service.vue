@@ -58,34 +58,14 @@
             return {
                 slug: this.$route.params.slug,
                 service: {},
-                specialize: [
-                    [
-                        { label: 'Furniture Removal' },
-                        { label: 'Office Clean Outs' },
-                        { label: 'Appliance Removal' },
-                        { label: 'House Clean Outs' },
-                        { label: 'Construction Debris' },
-                    ],
-                    [
-                        { label: 'Foreclosure Clean Outs' },
-                        { label: 'Estate Clean Outs' },
-                        { label: 'Property Clean Outs' },
-                        { label: 'Water Heater Removal' },
-                        { label: 'Junk Hauling Services' },
-                    ],
-                    [
-                        { label: 'Garbage Removal' },
-                        { label: 'E-Waste Removal' },
-                        { label: 'TV Disposal & Recycle' },
-                        { label: 'Trash Removal' },
-                        { label: 'Refrigerator Disposal' },
-                    ]
-                ]
+                specialize: []
             }
         },
         beforeCreate() {
             this.$store.dispatch("GET_SERVICES_NAMES");
             this.$store.dispatch("GET_SLIDERS");
+            this.$store.dispatch("GET_SPECIALIZE_DETAILS");
+            this.$store.dispatch("GET_HOME_PAGE_INFO");
         },
         created() {
             RepositoryFactory.get('service').show(this.slug).then(( {data: { service }}) => {
@@ -94,7 +74,7 @@
             });
         },
         computed: {
-            ...mapGetters(['SERVICES', 'SLIDERS']),
+            ...mapGetters(['SERVICES', 'SLIDERS', 'SPECIALIZES']),
             FILTERED_SERVICES: function () {
                 return this.SERVICES.filter(item => item.slug !== this.slug);
             },
@@ -102,6 +82,11 @@
                 return this.SLIDERS.map(item => item.path);
             }
         },
+        watch: {
+            'SPECIALIZES': function (newVal) {
+                this.specialize = this.chunk(newVal, Math.ceil(newVal.length / 3));
+            }
+        }
     }
 </script>
 
@@ -109,33 +94,21 @@
 .triangle{
     position: absolute;
     left: 0;
-    top:0;
+    top:100px;
     z-index: 0;
     width: 100%;
+    height: 400px;
 }
-.triangle--full__width{
+.triangle--full__width {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 100px;
     z-index: 0;
     width: 100%;
+    height: 400px;
 }
 .z-index-1{
     z-index: 1;
-}
-
-@media screen and (max-width: 1600px){
-    .traingle-bottom{
-        top: 250px;
-        bottom: unset;
-    }
-}
-
-@media screen and (min-width: 1600px){
-    .traingle-bottom{
-        top: unset;
-        bottom: 0;
-    }
 }
 
 @media screen and (min-width: 992px){

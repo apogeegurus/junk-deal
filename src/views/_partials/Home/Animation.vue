@@ -1,10 +1,10 @@
 <template>
     <div>
-        <section id="animation">
-            <div id="trees"></div>
-            <div id="homes"></div>
-            <div id="truck"></div>
-        </section>
+<!--        <section id="animation">-->
+<!--            <div id="trees"></div>-->
+<!--            <div id="homes"></div>-->
+<!--            <div id="truck"></div>-->
+<!--        </section>-->
     </div>
 </template>
 

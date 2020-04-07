@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="text-center">
-            <b-img src="/img/contact/banner.jpg" class="img-mobile"></b-img>
+            <b-img src="/img/contact/banner.png" class="img-mobile"></b-img>
         </section>
 
         <section class="position-relative">
@@ -70,6 +70,10 @@
 </script>
 
 <style scoped lang="scss">
+    .img-mobile {
+        width: 626px;
+        object-fit: contain;
+    }
     .triangle {
         position: absolute;
         left: 0;

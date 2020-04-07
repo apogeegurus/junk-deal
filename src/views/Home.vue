@@ -4,17 +4,18 @@
 
         <b-container class="text-center mt-0 mt-lg-5">
             <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>
-            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase" style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
+            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase jd-specialize-title"
+               style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
         </b-container>
 
         <animation></animation>
 
         <!--Specialize Section Start-->
-        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :align-left="true"></specialize>
+        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
-        <banner-right class="d-none d-lg-block" image="/img/home/banners/banner-1.jpg"></banner-right>
+        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
         <!--Banner Section End-->
 
         <!--Services Section Start-->
@@ -22,7 +23,7 @@
         <!--Services Section End-->
 
         <!--Banner Section Start-->
-        <banner-left class="d-none d-lg-block" image="/img/home/banners/banner-2.jpg"></banner-left>
+        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
         <!--Banner Section End-->
 
         <!--Works Section Start-->
@@ -49,64 +50,60 @@
     import Specialize from "./_partials/Home/Specialize";
     import Slider from "./_partials/Home/Slider";
     import Animation from "./_partials/Home/Animation";
-    import { mapGetters } from 'vuex';
+    import {mapGetters} from 'vuex';
 
     export default {
-        components: { Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services, Animation },
+        components: {Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services, Animation},
         beforeCreate() {
-          this.$store.dispatch("GET_SERVICES_NAMES");
-          this.$store.dispatch("GET_HOME_PAGE_INFO");
+            this.$store.dispatch("GET_SERVICES_NAMES");
+            this.$store.dispatch("GET_HOME_PAGE_INFO");
+            this.$store.dispatch("GET_SPECIALIZE_DETAILS");
         },
         data() {
             return {
-                specialize: [
-                    [
-                        { label: 'Furniture Removal' },
-                        { label: 'Office Clean Outs' },
-                        { label: 'Appliance Removal' },
-                        { label: 'House Clean Outs' },
-                        { label: 'Construction Debris' },
-                    ],
-                    [
-                        { label: 'Foreclosure Clean Outs' },
-                        { label: 'Estate Clean Outs' },
-                        { label: 'Property Clean Outs' },
-                        { label: 'Water Heater Removal' },
-                        { label: 'Junk Hauling Services' },
-                    ],
-                    [
-                        { label: 'Garbage Removal' },
-                        { label: 'E-Waste Removal' },
-                        { label: 'TV Disposal & Recycle' },
-                        { label: 'Trash Removal' },
-                        { label: 'Refrigerator Disposal' },
-                    ]
-                ]
+                specialize: []
             }
         },
         methods: {
             hideLoader() {
-                if(this.SERVICES.length && this.SLIDERS.length && Object.keys(this.HOME_PAGE).length) {
+                if (this.SERVICES.length && this.SLIDERS.length && Object.keys(this.HOME_PAGE).length && this.SPECIALIZES.length) {
                     this.$root.$emit('hideLoader');
                 }
             }
         },
         computed: {
-            ...mapGetters(['SERVICES', "SLIDERS", "HOME_PAGE"]),
+            ...mapGetters(['SERVICES', "SLIDERS", "HOME_PAGE", "SPECIALIZES"]),
             images: function () {
                 return this.SLIDERS.map(item => item.path);
             }
         },
         watch: {
-            'SERVICES': function() {
+            'SERVICES': function () {
                 this.hideLoader()
             },
-            'SLIDERS': function() {
+            'SLIDERS': function () {
                 this.hideLoader()
             },
             'HOME_PAGE': function () {
+                this.hideLoader()
+            },
+            'SPECIALIZES': function (newVal) {
+                this.specialize = this.chunk(newVal, Math.ceil(newVal.length / 3));
                 this.hideLoader()
             }
         }
     }
 </script>
+
+<style scoped lang="scss">
+    .jd-specialize-title {
+        font-size: 29px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.03;
+        letter-spacing: 1.74px;
+        text-align: center;
+        color: #959595;
+    }
+</style>

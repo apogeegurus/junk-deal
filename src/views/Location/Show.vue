@@ -72,33 +72,14 @@
             return {
                 slug: this.$route.params.slug,
                 location: {},
-                specialize: [
-                    [
-                        { label: 'Furniture Removal' },
-                        { label: 'Office Clean Outs' },
-                        { label: 'Appliance Removal' },
-                        { label: 'House Clean Outs' },
-                        { label: 'Construction Debris' },
-                        { label: 'Foreclosure Clean Outs' },
-                        { label: 'Estate Clean Outs' },
-                        { label: 'Property Clean Outs' },
-                    ],
-                    [
-                        { label: 'Garbage Removal' },
-                        { label: 'E-Waste Removal' },
-                        { label: 'TV Disposal & Recycle' },
-                        { label: 'Trash Removal' },
-                        { label: 'Refrigerator Disposal' },
-                        { label: 'Water Heater Removal' },
-                        { label: 'Junk Hauling Services' },
-                        { label: 'Junk Hauling Services' },
-                    ]
-                ],
+                specialize: [],
                 clickedMap: false
             }
         },
         beforeCreate() {
             this.$store.dispatch("GET_SERVICES_NAMES");
+            this.$store.dispatch("GET_SPECIALIZE_DETAILS");
+            this.$store.dispatch("GET_HOME_PAGE_INFO");
         },
         created() {
             RepositoryFactory.get('location').show(this.slug).then(( {data: { location }}) => {
@@ -107,7 +88,7 @@
             });
         },
         computed: {
-            ...mapGetters(['SERVICES']),
+            ...mapGetters(['SERVICES', "SPECIALIZES"]),
             sliderImages: function () {
                 if(!this.location.slider || !this.location.slider.length)
                     return [];
@@ -115,6 +96,11 @@
                 return this.location.slider.map(item => item.path);
             }
         },
+        watch: {
+            'SPECIALIZES': function (newVal) {
+                this.specialize = this.chunk(newVal, Math.ceil(newVal.length / 2));
+            }
+        }
     }
 </script>
 

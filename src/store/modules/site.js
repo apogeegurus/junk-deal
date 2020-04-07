@@ -3,7 +3,8 @@ import { RepositoryFactory } from "../../api/RepositoryFactory";
 export default {
     state: {
         site_details: {},
-        home_page: {}
+        home_page: {},
+        specializes: []
     },
     mutations: {
         SET_SITE_DETAILS: (state, payload) => {
@@ -11,6 +12,9 @@ export default {
         },
         SET_HOME_DETAILS: (state, payload) => {
             state.home_page = payload;
+        },
+        SET_SPECIALIZE_DETAILS: (state, payload) => {
+            state.specializes = payload;
         },
     },
     actions: {
@@ -24,6 +28,11 @@ export default {
                 context.commit('SET_HOME_DETAILS', home);
             })
         },
+        GET_SPECIALIZE_DETAILS: async (context, payload) => {
+            RepositoryFactory.get('site').getSpecialize().then(({ data: { specializes } }) => {
+                context.commit('SET_SPECIALIZE_DETAILS', specializes);
+            })
+        },
     },
     getters: {
         SITE_DETAILS: state => {
@@ -31,6 +40,9 @@ export default {
         },
         HOME_PAGE: state => {
             return state.home_page;
+        },
+        SPECIALIZES: state => {
+            return state.specializes
         }
     }
 }

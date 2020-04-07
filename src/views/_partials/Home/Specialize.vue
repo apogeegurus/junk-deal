@@ -1,9 +1,9 @@
 <template>
     <div id="specialize">
-        <section class="headline jd-text-dark py-2">
+        <section class="headline jd-text-dark py-2" :class="{'jd-home-specialize' : isHome}">
             <b-container>
-                <p :class="{ 'jd-text-22 m-0 jd-text-20__mobile jd-font-medium text-center' : alignLeft, 'jd-text-29 m-0 text-uppercase jd-text-20__mobile text-center': !alignLeft}" style="white-space: pre-wrap;">
-                    {{ alignLeft ? HOME_PAGE.sub_title :  HOME_PAGE.specialize_title}}
+                <p :class="{ 'jd-text-22 m-0 jd-text-20__mobile jd-font-regular jd-home-text text-wrap-pre' : isHome, 'jd-text-29 m-0 text-uppercase jd-text-20__mobile text-wrap-pre': !isHome, 'text-left text-wrap-none' : alignLeft, 'text-center' : !alignLeft}" >
+                    {{ isHome ? HOME_PAGE.sub_title :  HOME_PAGE.specialize_title}}
                 </p>
             </b-container>
         </section>
@@ -38,7 +38,8 @@
         props: {
             alignLeft: Boolean,
             services: Array,
-            classes:String
+            classes:String,
+            isHome: Boolean
         },
         data() {
             return {
@@ -52,6 +53,12 @@
 </script>
 
 <style scoped lang="scss">
+.text-wrap-pre{
+    white-space: pre-wrap;
+}
+.text-wrap-none{
+    white-space: initial;
+}
 @media screen and (max-width: 992px) {
     .text--service__rotate{
         border-left:100px solid  transparent;
@@ -69,6 +76,19 @@
     }
     .border--left__mobile{
         border-left: 3px solid #EF4E23;
+    }
+}
+
+.jd-home-specialize {
+    padding: 1px 0 !important;
+    .jd-home-text {
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.36 !important;
+        letter-spacing: normal;
+        text-align: center;
+        color: #8e8e8e;
     }
 }
 

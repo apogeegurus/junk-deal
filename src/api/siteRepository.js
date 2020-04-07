@@ -11,4 +11,5 @@ export default {
     getVideos() {return Repository.get(`${resource}/videos`);},
     getAbout() {return Repository.get(`${resource}/about`);},
     getHome() {return Repository.get(`${resource}/home/page`);},
+    getSpecialize() {return Repository.get(`${resource}/specializes`);},
 }
