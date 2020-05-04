@@ -86,18 +86,26 @@
         animation-duration: 5s;
         z-index: 5;
     }
-    height: 300px;
+    height: 261px;
 
     @media screen and (max-width:1400px) {
-        height: 200px;
+        height: 150px;
         #truck {
             bottom: -60px;
             background-size: 500px;
         }
     }
 
+    @media screen and (min-width:2100px) {
+        height: 170px;
+        #truck {
+            bottom: -97px;
+            background-size: 400px;
+        }
+    }
+
     @media screen and (max-width:991px) {
-        height: 200px;
+        height: 170px;
         margin-bottom: 60px;
         #truck {
             bottom: -120px;
