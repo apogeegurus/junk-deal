@@ -41,6 +41,7 @@
 #animation{
     position: relative;
     margin-bottom: 0;
+    height: 230px;
     #trees {
         position: absolute;
         left: 0;
@@ -77,45 +78,64 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -80px;
+        bottom: 0;
         background: url("/img/animation/Line_Truck-01.svg")  no-repeat;
-        background-size: 1000px;
+        background-size: 600px;
         width: 100%;
         height: 100%;
         animation: moveTreesLeft linear infinite alternate-reverse;
         animation-duration: 5s;
         z-index: 5;
+        transform: translateY(50%);
     }
-    height: 261px;
 
-    @media screen and (max-width:1400px) {
+    @media screen and (max-width:1600px) {
         height: 150px;
+        margin-bottom: 40px;
         #truck {
-            bottom: -60px;
-            background-size: 500px;
+            transform: translateY(52%);
         }
     }
 
-    @media screen and (min-width:2100px) {
-        height: 170px;
+    @media screen and (max-width:1300px) {
+        height: 140px;
+        margin-bottom: 40px;
         #truck {
-            bottom: -97px;
+            transform: translateY(50%);
+        }
+    }
+
+    @media screen and (max-width:1200px) {
+        height: 130px;
+        margin-bottom: 0;
+        #truck {
+            transform: translateY(43%);
             background-size: 400px;
         }
     }
 
     @media screen and (max-width:991px) {
-        height: 170px;
-        margin-bottom: 60px;
+        height: 110px;
+        margin-bottom: 0;
         #truck {
-            bottom: -120px;
-            background-size: 600px;
+            transform: translateY(50%);
+            background-size: 300px;
         }
-        #trees ,#homes {
-            background-size: cover;
+        #homes,#tress{
+            background-size:1000px;
         }
     }
 
+
+
+
+
+    @media screen and (min-width:2100px) {
+        margin-bottom: 40px;
+        #truck {
+            transform: translateY(67%);
+        }
+    }
 
 }
 
