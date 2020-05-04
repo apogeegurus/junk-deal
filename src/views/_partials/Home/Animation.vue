@@ -1,16 +1,39 @@
 <template>
     <div>
-<!--        <section id="animation">-->
-<!--            <div id="trees"></div>-->
-<!--            <div id="homes"></div>-->
-<!--            <div id="truck"></div>-->
-<!--        </section>-->
+        <section id="animation">
+            <div id="trees"></div>
+            <div id="homes"></div>
+            <div id="truck"></div>
+        </section>
     </div>
 </template>
 
 <script>
     export default {
+        created() {
+            setInterval(() => {
+                const homes = document.getElementById("homes")
 
+                if(!homes.style.backgroundPositionX) {
+                    homes.style.backgroundPositionX = `5px`;
+                } else {
+                    const current = +homes.style.backgroundPositionX.replace("px", "")
+                    homes.style.backgroundPositionX = `${current + 5}px`;
+                }
+            }, 100)
+
+            setInterval(() => {
+                const homes = document.getElementById("trees")
+
+                if(!homes.style.backgroundPositionX) {
+                    homes.style.backgroundPositionX = `5px`;
+                } else {
+                    const current = +homes.style.backgroundPositionX.replace("px", "")
+                    homes.style.backgroundPositionX = `${current + 5}px`;
+                }
+            }, 50)
+
+        }
     }
 </script>
 
@@ -24,10 +47,13 @@
         right: 0;
         bottom: 0;
         top: 0;
-        background: url("/img/animation/Background_Bushes.svg")  repeat-x 0 / 100% auto;
+        background-image: url("/img/animation/Background_Bushes.svg");
+        background-repeat: repeat-x;
+        background-position: 0 0;
+        background-size: contain;
         width: 100%;
         height: 100%;
-        animation: moveTreesRight 20s linear infinite ;
+        transition: background-position 50ms linear;
         z-index: 3;
     }
 
@@ -37,10 +63,13 @@
         right: 0;
         bottom: 0;
         top: 0;
-        background: url("/img/animation/Line_Houses.svg")  repeat-x 0 / 100% auto;
+        background-image: url("/img/animation/Line_Houses.svg");
+        background-repeat: repeat-x;
+        background-position: 0 0;
+        background-size: contain;
         width: 100%;
         height: 100%;
-        animation: moveTreesRight 40s linear infinite ;
+        transition: background-position 100ms linear;
         z-index: 5;
     }
 
@@ -53,7 +82,8 @@
         background-size: 1000px;
         width: 100%;
         height: 100%;
-        animation: moveTreesLeft 40s linear infinite ;
+        animation: moveTreesLeft linear infinite alternate-reverse;
+        animation-duration: 5s;
         z-index: 5;
     }
     height: 300px;
@@ -82,12 +112,13 @@
 }
 
 @keyframes moveTreesLeft {
-    from {background-position: 100vw 0;}
-    to {background-position: -100% 0;}
+    0% { background-position: 50vw 0;}
+    90%  {background-position: 20vw 0;}
+    100%  {background-position: 20vw 0;}
 }
 
 @keyframes moveTreesRight {
-    0%{background-position: 0 0;}
-    100%{background-position: 100vw 0;}
+    from {background-position: 0 0;}
+    to {background-position: 100vw 0;}
 }
 </style>
