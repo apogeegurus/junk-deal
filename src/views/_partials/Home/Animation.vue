@@ -121,7 +121,7 @@
             transform: translateY(50%);
             background-size: 300px;
         }
-        #homes,#tress{
+        #homes,#trees{
             background-size:1000px;
         }
     }
