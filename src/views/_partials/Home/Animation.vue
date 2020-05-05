@@ -30,7 +30,7 @@
         background-size: contain;
         width: 100%;
         height: 100%;
-        animation: moveTreesRight linear 60s infinite;
+        animation: moveTreesRight linear 20s infinite;
         z-index: 3;
     }
 
@@ -60,7 +60,7 @@
         width: 100%;
         height: 100%;
         animation: moveTreesLeft linear infinite alternate-reverse;
-        animation-duration: 10s;
+        animation-duration: 15s;
         z-index: 5;
         transform: translateY(50%);
     }
