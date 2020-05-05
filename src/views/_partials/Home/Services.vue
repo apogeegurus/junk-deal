@@ -2,7 +2,7 @@
     <div class="p-0 p-lg-4 junks" id="services" data-aos="fade" data-aos-duration="1000">
         <b-container>
             <b-row>
-                <b-col class="text-center mt-3 mt-lg-0 p-0__mobile" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
+                <b-col class="text-center mt-3 mt-lg-0 p-0__mobile service-item" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
                     <router-link :to="{ name: 'services', params: { slug : service.slug } }">
                         <b-img :src="service.main_image_path" class="services--img"></b-img>
                     </router-link>
@@ -56,6 +56,9 @@
 
     .p-0__mobile{
         padding: 0;
+    }
+    .service-item{
+        margin-top: 35.5px !important;
     }
 }
 </style>
