@@ -41,7 +41,7 @@ header#site-header{
     border-right: none;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background: transparent;
-    top: 45px;
+    top: 36px;
     .dropdown-item {
       position: relative;
       z-index: 4;
@@ -101,6 +101,9 @@ header#site-header{
       padding: 7px 20px;
     }
   }
+}
+.dropdown-nav:hover .dropdown-menu {
+  display: block;
 }
 .menu-item{
   border-right:1px solid #959595;
