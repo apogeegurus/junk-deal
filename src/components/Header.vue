@@ -18,16 +18,26 @@
                     </b-nav-text>
 
                     <section class="d-md-flex justify-content-between text-uppercase mt-2 flex-lg-row flex-md-column">
-                        <b-nav-item :to="{ name: 'home'}" class="menu-item pb-2">Home</b-nav-item>
+                        <div class="pb-2">
+                            <b-nav-item :to="{ name: 'home'}" class="menu-item">Home</b-nav-item>
+                        </div>
                         <div class="dropdown-nav pb-2">
                             <b-nav-item-dropdown text="Services" right no-caret class="menu-item">
                                 <b-dropdown-item :to="{name: 'services', params: { slug: item.slug }}" v-for="(item, key) in SERVICES" :key="key">{{ item.title }}</b-dropdown-item>
                             </b-nav-item-dropdown>
                         </div>
-                        <b-nav-item :to="{ name: 'blogs'}" class="menu-item pb-2">Blog</b-nav-item>
-                        <b-nav-item :to="{ name: 'locations'}" class="menu-item pb-2">Locations</b-nav-item>
-                        <b-nav-item :to="{ name: 'about'}" class="menu-item pb-2">About</b-nav-item>
-                        <b-nav-item :to="{ name: 'contact' }" class="menu-item pb-2">Contact</b-nav-item>
+                        <div class="pb-2">
+                            <b-nav-item :to="{ name: 'blogs'}" class="menu-item">Blog</b-nav-item>
+                        </div>
+                        <div class="pb-2">
+                            <b-nav-item :to="{ name: 'locations'}" class="menu-item">Locations</b-nav-item>
+                        </div>
+                        <div class="pb-2">
+                            <b-nav-item :to="{ name: 'about'}" class="menu-item">About</b-nav-item>
+                        </div>
+                        <div class="pb-2">
+                            <b-nav-item :to="{ name: 'contact' }" class="menu-item">Contact</b-nav-item>
+                        </div>
                     </section>
                 </b-navbar-nav>
             </b-collapse>
