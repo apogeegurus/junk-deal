@@ -10,30 +10,6 @@
 
 <script>
     export default {
-        created() {
-            setInterval(() => {
-                const homes = document.getElementById("homes")
-
-                if(!homes.style.backgroundPositionX) {
-                    homes.style.backgroundPositionX = `5px`;
-                } else {
-                    const current = +homes.style.backgroundPositionX.replace("px", "")
-                    homes.style.backgroundPositionX = `${current + 5}px`;
-                }
-            }, 100)
-
-            setInterval(() => {
-                const homes = document.getElementById("trees")
-
-                if(!homes.style.backgroundPositionX) {
-                    homes.style.backgroundPositionX = `5px`;
-                } else {
-                    const current = +homes.style.backgroundPositionX.replace("px", "")
-                    homes.style.backgroundPositionX = `${current + 5}px`;
-                }
-            }, 50)
-
-        }
     }
 </script>
 
@@ -54,7 +30,7 @@
         background-size: contain;
         width: 100%;
         height: 100%;
-        transition: background-position 50ms linear;
+        animation: moveTreesRight linear 60s infinite;
         z-index: 3;
     }
 
@@ -64,13 +40,13 @@
         right: 0;
         bottom: 0;
         top: 0;
-        background-image: url("/img/animation/Line_Houses.svg");
+        background-image: url("/img/animation/Line_Houses.svg"), url("/img/animation/Line_Houses.svg");
         background-repeat: repeat-x;
         background-position: 0 0;
         background-size: contain;
         width: 100%;
         height: 100%;
-        transition: background-position 100ms linear;
+        animation: moveTreesRight linear 40s infinite;
         z-index: 5;
     }
 
@@ -84,7 +60,7 @@
         width: 100%;
         height: 100%;
         animation: moveTreesLeft linear infinite alternate-reverse;
-        animation-duration: 5s;
+        animation-duration: 10s;
         z-index: 5;
         transform: translateY(50%);
     }
@@ -140,7 +116,7 @@
 }
 
 @keyframes moveTreesLeft {
-    0% { background-position: 50vw 0;}
+    0% { background-position: 58vw 0;}
     90%  {background-position: 20vw 0;}
     100%  {background-position: 20vw 0;}
 }
