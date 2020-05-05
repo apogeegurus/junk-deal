@@ -5,6 +5,10 @@
                 <b-img src="/img/icons/arrow_right.svg"></b-img>
             </template>
 
+            <template v-slot:close>
+                <b-img src="/img/icons/GalleryClose.svg"></b-img>
+            </template>
+
             <template v-slot:prev>
                 <b-img src="/img/icons/arrow_left.svg"></b-img>
             </template>
