@@ -24,7 +24,7 @@
         right: 0;
         bottom: 0;
         top: 0;
-        background-image: url("/img/animation/Background_Bushes.svg");
+        background-image: url("/img/animation/Line_Back-01.png");
         background-repeat: repeat-x;
         background-position: 0 0;
         background-size: contain;
@@ -40,7 +40,7 @@
         right: 0;
         bottom: 0;
         top: 0;
-        background-image: url("/img/animation/Line_Houses.svg"), url("/img/animation/Line_Houses.svg");
+        background-image: url("/img/animation/Line_Front-01.png");
         background-repeat: repeat-x;
         background-position: 0 0;
         background-size: contain;
@@ -55,7 +55,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: url("/img/animation/Line_Truck-01.svg")  no-repeat;
+        background: url("/img/animation/Line_Truck.png")  no-repeat;
         background-size: 600px;
         width: 100%;
         height: 100%;
