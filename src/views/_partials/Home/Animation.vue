@@ -14,6 +14,62 @@
         computed: {
             ...mapGetters(["HOME_PAGE"])
         },
+        mounted() {
+            const truck = document.getElementById("truck");
+            let startPosition = document.body.offsetWidth < 768 ? 90 : 60;
+            let endPosition = document.body.offsetWidth < 768 ? 7 : 20;
+            let position = document.body.offsetWidth < 768 ? 90 : 60;
+            let intervalForward = null;
+            let intervalBackward = null;
+
+            window.onresize = () => {
+                startPosition = document.body.offsetWidth < 768 ? 90 : 60;
+                endPosition = document.body.offsetWidth < 768 ? 7 : 20;
+                position = document.body.offsetWidth < 768 ? 90 : 60;
+            }
+
+            function forward() {
+                truck.classList.add("forward-animation");
+                truck.classList.remove("backward-animation");
+                intervalForward = setInterval(() => {
+                    if(position <= endPosition) {
+                        clearInterval(intervalForward);
+                        setTimeout(() => {
+                            backward()
+                        }, 3000)
+                        return;
+                    }
+                    if(document.body.offsetWidth < 768) {
+                        position -= 10;
+                    } else {
+                        position -= 5;
+                    }
+                    truck.style.backgroundPositionX = `${position}vw`;
+                }, 1000)
+            }
+
+            function backward() {
+                truck.classList.remove("forward-animation");
+                truck.classList.add("backward-animation");
+                intervalBackward = setInterval(() => {
+                    if(position >= startPosition) {
+                        clearInterval(intervalBackward);
+                        setTimeout(() => {
+                            forward()
+                        }, 1000)
+                        return;
+                    }
+                    if(document.body.offsetWidth < 768) {
+                        position += 10;
+                    } else {
+                        position += 5;
+                    }
+                    truck.style.backgroundPositionX = `${position}vw`;
+                }, 2000)
+            }
+
+            forward();
+        }
     }
 </script>
 
@@ -33,8 +89,11 @@
         background-size: contain;
         width: 100%;
         height: 100%;
-        animation: moveTreesRight linear 20s infinite;
+        animation: moveTreesRight linear 15s infinite;
         z-index: 3;
+        @media screen and (max-width:768px) {
+            animation: moveTreesRight linear 10s infinite;
+        }
     }
 
     #homes {
@@ -43,14 +102,16 @@
         right: 0;
         bottom: 0;
         top: 0;
-        background-image: url("/img/animation/Line_Front-01.png");
         background-repeat: repeat-x;
         background-position: 0 0;
         background-size: contain;
         width: 100%;
         height: 100%;
-        animation: moveTreesRight linear 40s infinite;
+        animation: moveTreesRight linear 30s infinite;
         z-index: 5;
+        @media screen and (max-width:768px) {
+            animation: moveTreesRight linear 15s infinite;
+        }
     }
 
     #truck {
@@ -58,14 +119,28 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: url("/img/animation/Line_Truck.png")  no-repeat;
+        background-position: 60vw 0;
+        background-repeat: no-repeat;
         background-size: 600px;
         width: 100%;
         height: 100%;
-        animation: truckForward linear infinite alternate-reverse;
-        animation-duration: 15s;
         z-index: 5;
         transform: translateY(50%);
+        @media screen and (max-width:768px) {
+            background-position: 90vw 0;
+        }
+        &.backward-animation{
+            transition:background-position 3s linear;
+            @media screen and (max-width:768px) {
+                transition:background-position 2s linear;
+            }
+        }
+        &.forward-animation{
+            transition:background-position 2s linear;
+            @media screen and (max-width:768px) {
+                transition:background-position 1s linear;
+            }
+        }
     }
 
     @media screen and (max-width:1600px) {
@@ -112,12 +187,6 @@
         }
     }
 
-}
-
-@keyframes truckForward {
-    0% { background-position: 58vw 0;}
-    90%  {background-position: 20vw 0;}
-    100%  {background-position: 20vw 0;}
 }
 
 @keyframes moveTreesRight {
