@@ -1,15 +1,19 @@
 <template>
     <div>
         <section id="animation">
-            <div id="trees"></div>
-            <div id="homes"></div>
-            <div id="truck"></div>
+            <div id="trees" :style="{'background-image' : `url(${HOME_PAGE['animation_back_path']})`}"></div>
+            <div id="homes" :style="{'background-image' : `url(${HOME_PAGE['animation_front_path']})`}"></div>
+            <div id="truck" :style="{'background-image' : `url(${HOME_PAGE['animation_truck_path']})`}"></div>
         </section>
     </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default {
+        computed: {
+            ...mapGetters(["HOME_PAGE"])
+        },
     }
 </script>
 
@@ -24,7 +28,6 @@
         right: 0;
         bottom: 0;
         top: 0;
-        background-image: url("/img/animation/Line_Back-01.png");
         background-repeat: repeat-x;
         background-position: 0 0;
         background-size: contain;
@@ -59,7 +62,7 @@
         background-size: 600px;
         width: 100%;
         height: 100%;
-        animation: moveTreesLeft linear infinite alternate-reverse;
+        animation: truckForward linear infinite alternate-reverse;
         animation-duration: 15s;
         z-index: 5;
         transform: translateY(50%);
@@ -102,10 +105,6 @@
         }
     }
 
-
-
-
-
     @media screen and (min-width:2100px) {
         margin-bottom: 40px;
         #truck {
@@ -115,7 +114,7 @@
 
 }
 
-@keyframes moveTreesLeft {
+@keyframes truckForward {
     0% { background-position: 58vw 0;}
     90%  {background-position: 20vw 0;}
     100%  {background-position: 20vw 0;}

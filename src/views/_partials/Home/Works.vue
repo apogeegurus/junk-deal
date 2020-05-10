@@ -14,7 +14,7 @@
                                 <img src="/img/icons/arrow_right.svg"  alt="" width="50px"/>
                             </div>
                         </template>
-                        <b-img :src="`/img/home/works/${step.img}`" data-aos="flip-left" class="step--image__mobile" data-aos-duration="1000" v-else></b-img>
+                        <b-img :src="HOME_PAGE[step.img]" data-aos="flip-left" class="step--image__mobile" data-aos-duration="1000" v-else></b-img>
                     </b-col>
                 </b-row>
 
@@ -38,11 +38,11 @@
         data() {
             return {
                 steps: [
-                    { title: "Step 1", description: "step_1_text", img: "how-it-works-step-1.svg"},
+                    { title: "Step 1", description: "step_1_text", img: "step_one_path"},
                     { isArrow: true},
-                    { title: "Step 2", description: "step_2_text", img: "how-it-works-step-2.svg"},
+                    { title: "Step 2", description: "step_2_text", img: "step_two_path"},
                     { isArrow: true},
-                    { title: "Step 3", description: "step_3_text", img: "how-it-works-step-3.svg"},
+                    { title: "Step 3", description: "step_3_text", img: "step_three_path"},
                 ]
             }
         },
