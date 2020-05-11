@@ -76,8 +76,8 @@
 <style scoped lang="scss">
 #animation{
     position: relative;
-    margin-bottom: 0;
-    height: 230px;
+    margin-bottom: 15px;
+    height: 144px;
     #trees {
         position: absolute;
         left: 0;
@@ -121,11 +121,11 @@
         bottom: 0;
         background-position: 60vw 0;
         background-repeat: no-repeat;
-        background-size: 600px;
+        background-size: 400px;
         width: 100%;
         height: 100%;
         z-index: 5;
-        transform: translateY(50%);
+        transform: translateY(60%);
         @media screen and (max-width:768px) {
             background-position: 90vw 0;
         }
@@ -143,47 +143,9 @@
         }
     }
 
-    @media screen and (max-width:1600px) {
-        height: 150px;
-        margin-bottom: 40px;
-        #truck {
-            transform: translateY(52%);
-        }
-    }
-
-    @media screen and (max-width:1300px) {
-        height: 140px;
-        margin-bottom: 40px;
-        #truck {
-            transform: translateY(50%);
-        }
-    }
-
-    @media screen and (max-width:1200px) {
-        height: 130px;
-        margin-bottom: 0;
-        #truck {
-            transform: translateY(43%);
-            background-size: 400px;
-        }
-    }
-
-    @media screen and (max-width:991px) {
-        height: 110px;
-        margin-bottom: 0;
-        #truck {
-            transform: translateY(50%);
-            background-size: 300px;
-        }
-        #homes,#trees{
-            background-size:1000px;
-        }
-    }
-
-    @media screen and (min-width:2100px) {
-        margin-bottom: 40px;
-        #truck {
-            transform: translateY(67%);
+    @media screen and (max-width:1500px) {
+        #homes,#trees {
+            background-size: cover;
         }
     }
 
