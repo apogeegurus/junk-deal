@@ -28,6 +28,6 @@
 
 <style scoped>
     main{
-        padding-top: 96px;
+        padding-top: 95px;
     }
 </style>

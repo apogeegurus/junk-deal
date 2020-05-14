@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="lg" type="light" variant="white" class="shadow pb-0" :fixed="isFixed ? 'top' : ''">
+    <b-navbar toggleable="lg" type="light" variant="white" class="shadow pb-md-2 pb-2" :fixed="isFixed ? 'top' : ''">
         <b-container class="align-items-center d-flex z-index-3">
             <b-navbar-brand :to="{ name: 'home' }">
                 <b-img src="/img/logo.svg" width="200px" height="69px"></b-img>
