@@ -23,9 +23,14 @@
             let intervalBackward = null;
 
             window.onresize = () => {
+                console.log(123);
+                truck.style.display = "none";
                 startPosition = document.body.offsetWidth < 768 ? 90 : 60;
                 endPosition = document.body.offsetWidth < 768 ? 7 : 20;
-                position = document.body.offsetWidth < 768 ? 90 : 60;
+                position = document.body.offsetWidth < 768 ? 7 : 60;
+                setTimeout(() => {
+                    truck.style.display = "block";
+                }, 2000)
             }
 
             function forward() {
