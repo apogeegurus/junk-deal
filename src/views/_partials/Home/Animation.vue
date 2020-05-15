@@ -87,7 +87,7 @@
         background-repeat: repeat-x;
         background-position: 0 0;
         background-size: contain;
-        width: 100%;
+        width: 100000000000000000000000000000000000000%;
         height: 100%;
         animation: moveTreesRight linear 15s infinite;
         z-index: 3;
@@ -105,7 +105,7 @@
         background-repeat: repeat-x;
         background-position: 0 0;
         background-size: contain;
-        width: 100%;
+        width: 100000000000000000000000000000000000000%;
         height: 100%;
         animation: moveTreesRight linear 30s infinite;
         z-index: 5;
@@ -145,7 +145,7 @@
 
     @media screen and (max-width:1500px) {
         #homes,#trees {
-            background-size: cover;
+            /*background-size: cover;*/
         }
     }
 
@@ -153,6 +153,6 @@
 
 @keyframes moveTreesRight {
     from {background-position: 0 0;}
-    to {background-position: 100vw 0;}
+    to {background-position: 100% 0;}
 }
 </style>
