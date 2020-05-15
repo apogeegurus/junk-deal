@@ -23,14 +23,14 @@
             let intervalBackward = null;
 
             window.onresize = () => {
-                console.log(123);
-                truck.style.display = "none";
+                truck.classList.add("no-animation");
                 startPosition = document.body.offsetWidth < 768 ? 90 : 60;
                 endPosition = document.body.offsetWidth < 768 ? 7 : 20;
                 position = document.body.offsetWidth < 768 ? 7 : 60;
+                truck.style.backgroundPositionX = `${position}vw`;
                 setTimeout(() => {
-                    truck.style.display = "block";
-                }, 2000)
+                    truck.classList.remove("no-animation");
+                }, 1000)
             }
 
             function forward() {
@@ -41,7 +41,7 @@
                         clearInterval(intervalForward);
                         setTimeout(() => {
                             backward()
-                        }, 3000)
+                        }, 1000)
                         return;
                     }
                     if(document.body.offsetWidth < 768) {
@@ -133,6 +133,9 @@
         transform: translateY(60%);
         @media screen and (max-width:768px) {
             background-position: 90vw 0;
+        }
+        &.no-animation {
+            transition-duration: 0s !important;
         }
         &.backward-animation{
             transition:background-position 3s linear;
