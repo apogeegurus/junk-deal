@@ -1,8 +1,8 @@
 <template>
     <div>
         <section id="animation">
-            <div id="trees" :style="{'background-image' : `url(${HOME_PAGE['animation_back_path']})`, 'animation-duration': `${HOME_PAGE['back_duration']}s`}"></div>
-            <div id="homes" :style="{'background-image' : `url(${HOME_PAGE['animation_front_path']})`, 'animation-duration': `${HOME_PAGE['front_duration']}s`}"></div>
+            <div id="trees" :style="{'background-image' : `url(${HOME_PAGE['animation_back_path']})`, 'animation-duration': `${HOME_PAGE['back_duration_original']}s`}"></div>
+            <div id="homes" :style="{'background-image' : `url(${HOME_PAGE['animation_front_path']})`, 'animation-duration': `${HOME_PAGE['front_duration_original']}s`}"></div>
             <div id="truck" :style="{'background-image' : `url(${HOME_PAGE['animation_truck_path']})`}"></div>
         </section>
     </div>
