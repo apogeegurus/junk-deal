@@ -1,13 +1,25 @@
 <template>
     <section>
-        <gallery :images="images" :index="index" @close="index = null"></gallery>
+        <gallery :images="imagesPath" :index="index" @close="index = null">
+            <template v-slot:next>
+                <b-img src="/img/icons/arrow_right.svg"></b-img>
+            </template>
+
+            <template v-slot:close>
+                <b-img src="/img/icons/GalleryClose.svg"></b-img>
+            </template>
+
+            <template v-slot:prev>
+                <b-img src="/img/icons/arrow_left.svg"></b-img>
+            </template>
+        </gallery>
         <b-row class="d-flex no-gutters flex-wrap">
             <b-col lg="2" md="3" sm="4" cols="6"
-                   v-for="(image, imageIndex) in images"
+                   v-for="(image, imageIndex) in imagesPath"
                    :key="imageIndex"
                    @click="index = imageIndex"
             >
-                <b-img :src="image"  class="w-100"></b-img>
+                <b-img :src="image"  class="w-100 h-200px"></b-img>
             </b-col>
         </b-row>
     </section>
@@ -17,31 +29,66 @@
     import VueGallery from 'vue-gallery';
 
     export default {
+        props: {
+          images: {
+              type: Array,
+              default: function () {
+                  return [];
+              }
+          }
+        },
         data() {
             return {
-                images: [
-                    '/img/gallery/1.png',
-                    '/img/gallery/2.png',
-                    '/img/gallery/3.png',
-                    '/img/gallery/4.png',
-                    '/img/gallery/5.png',
-                    '/img/gallery/6.png',
-                    '/img/gallery/7.png',
-                    '/img/gallery/8.png',
-                    '/img/gallery/9.png',
-                    '/img/gallery/10.png',
-                    '/img/gallery/11.png',
-                    '/img/gallery/12.png'
-                ],
                 index: null
             };
         },
         components: {
             'gallery': VueGallery
         },
+        computed: {
+            imagesPath: function() {
+                return this.images.map(item => item.path)
+            }
+        }
     }
 </script>
 
 <style scoped lang="scss">
+/deep/.h-200px{
+    height: 166px;
+    object-fit: cover;
+}
+/deep/.blueimp-gallery{
+    background: rgba(255,255,255,0.1);
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(27px);
+        filter: blur(27px);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
+        @-moz-document url-prefix() {
+            filter: blur(27px);
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#67686c), to(rgba(255, 255, 255, 0.5)));
+        }
+    }
+}
 
+/deep/#blueimp-gallery {
+    a.next, a.prev{
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border-color: #EF4E23;
+        background: #fff;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
 </style>

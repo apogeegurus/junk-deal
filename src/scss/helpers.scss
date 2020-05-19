@@ -1,3 +1,7 @@
+body,html{
+  overflow-x: hidden;
+}
+
 .jd-def-color{
   color: $fontColorLight;
 }
@@ -8,6 +12,9 @@
   border-right:none;
   border-left:none;
   background-color: rgba(255, 255, 255, 0.6);
+  &::placeholder{
+    font-size: 12px;
+  }
 }
 
 h2.jd-title {
@@ -28,12 +35,13 @@ h2.jd-title {
 .bottom-line-def-color{
   &:after{
     content: "";
-    height: 5px;
-    width: 50%;
+    height: 7px;
+    width: 100px;
     background: $themeColor;
     display: block;
     margin-top: 15px;
     margin-bottom: 15px;
+    border-radius: 150px;
   }
 }
 
@@ -61,4 +69,14 @@ h2.jd-title {
   &.aos-animate {
     transform: translateX(0);
   }
+}
+
+#tj-datetime-input{
+  min-width: 100%;
+  font-size: 12px;
+  @extend .jd-input
+}
+
+.owl-stage-outer{
+  overflow: visible !important;
 }

@@ -1,42 +1,37 @@
 <template>
     <div>
         <!--Slider Section Start-->
-        <slider :without-hero="true"></slider>
+        <slider :without-hero="true" :images="images" v-if="images.length"></slider>
         <!--Slider Section End-->
 
-        <b-container class="text-center">
-            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">Full Service Residential Junk Removal &
-                Hauling Services</h1>
-            <h2 class="jd-text-22 jd-text-18__mobile jd-text-light jd-font-medium">A Reliable Source For All Of Your
-                Junk Removal and Hauling Needs</h2>
-            <p class="jd-text-18 mt-3 jd-font-medium jd-text-16__mobile mt-4">Our homes can often easily be overwhelmed with
-                junk and clutter. Whether it’s in your garage, basement, attic or even your living room, these things
-                will usually happen over time – and before you realize, you might have a task at hand that is simply too
-                much for you to manage on your own. At that point, it might be a good idea to consider a junk removal
-                company to free up much-needed space in your home.</p>
+        <b-container class="text-center mt-0 mt-lg-4">
+            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ service.title }}</h1>
+            <h2 class="jd-text-22 jd-text-18__mobile jd-text-light jd-font-medium">{{ service.sub_title }}</h2>
+            <p class="jd-text-18 mt-3 jd-font-medium jd-text-16__mobile mt-4" v-html="service.long_description"></p>
         </b-container>
 
         <!--Specialize Section Start-->
-        <specialize></specialize>
+        <specialize :services="specialize" :classes="'mb-4 mb-lg-5'"></specialize>
         <!--Specialize Section End-->
 
 
         <!--Gallery Section Start-->
-        <gallery></gallery>
+        <gallery :images="service.gallery"></gallery>
         <!--Gallery Section End-->
 
-        <service-testimonials></service-testimonials>
+        <service-testimonials class="d-none d-lg-block"></service-testimonials>
+        <testimonials class="d-block d-lg-none mt-5" silver-quote></testimonials>
 
         <!--Services Section Start-->
         <section class="position-relative mt-5 px-lg-100 overflow-hidden">
-            <b-img src="/img/home/triangle-right.svg" class="triangle d-none d-lg-block" data-aos="left-right" data-aos-offset="300"></b-img>
+            <b-img src="/img/home/triangle-right.svg" class="triangle d-none d-lg-block" data-aos="left-right" data-aos-offset="100"></b-img>
             <section class="position-relative z-index-1">
                 <b-container>
-                    <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Our Additional Services Include but are Not Limited To:</h2>
+                    <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Our Additional Services Include but are <br> Not Limited To:</h2>
                 </b-container>
-                <services :services="services"></services>
+                <services :services="FILTERED_SERVICES" class="mt-4"></services>
             </section>
-            <b-img src="/img/home/triangle-left.svg" class="triangle--full__width d-none d-lg-block" data-aos="right-left" data-aos-offset="500"></b-img>
+            <b-img src="/img/home/triangle-left.svg" class="triangle--full__width traingle-bottom d-none d-lg-block" data-aos="right-left" data-aos-offset="100"></b-img>
         </section>
         <!--Services Section End-->
 
@@ -53,15 +48,43 @@
     import Gallery from "../components/Gallery";
     import Services from "./_partials/Home/Services";
     import ServiceTestimonials from "./_partials/Service/Testimonials"
+    import Testimonials from "./_partials/Home/Testimonials"
+    import { mapGetters } from "vuex";
+    import { RepositoryFactory } from "../api/RepositoryFactory"
 
     export default {
-        components: {Slider, Specialize, JdVideo, Gallery, Services, ServiceTestimonials},
+        components: {Slider, Specialize, JdVideo, Gallery, Services, ServiceTestimonials, Testimonials},
         data() {
             return {
-                services: [
-                    { title: "Commercial Junk Removal", img: "service-2.jpg", description: "Junk Deal is your one-stop-shop for your Commercial Junk Removal needs. We take anything from file cabinets to electronic waste."},
-                    { title: "Office Furniture Liquidators", img: "service-3.jpg", description: "Junk Deal offers an Office Furniture Liquidators service that can help you with getting rid of unwanted office furniture or anything else you need removed from your work space."},
-                ]
+                slug: this.$route.params.slug,
+                service: {},
+                specialize: []
+            }
+        },
+        beforeCreate() {
+            this.$store.dispatch("GET_SERVICES_NAMES");
+            this.$store.dispatch("GET_SLIDERS");
+            this.$store.dispatch("GET_SPECIALIZE_DETAILS");
+            this.$store.dispatch("GET_HOME_PAGE_INFO");
+        },
+        created() {
+            RepositoryFactory.get('service').show(this.slug).then(( {data: { service }}) => {
+                this.service = service;
+                this.$root.$emit('hideLoader');
+            });
+        },
+        computed: {
+            ...mapGetters(['SERVICES', 'SLIDERS', 'SPECIALIZES']),
+            FILTERED_SERVICES: function () {
+                return this.SERVICES.filter(item => item.slug !== this.slug);
+            },
+            images: function () {
+                return this.SLIDERS.map(item => item.path);
+            }
+        },
+        watch: {
+            'SPECIALIZES': function (newVal) {
+                this.specialize = this.chunk(newVal, Math.ceil(newVal.length / 3));
             }
         }
     }
@@ -71,20 +94,23 @@
 .triangle{
     position: absolute;
     left: 0;
-    top:0;
+    top:100px;
     z-index: 0;
     width: 100%;
+    height: 400px;
 }
-.triangle--full__width{
+.triangle--full__width {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 100px;
     z-index: 0;
     width: 100%;
+    height: 400px;
 }
 .z-index-1{
     z-index: 1;
 }
+
 @media screen and (min-width: 992px){
     .px-lg-100{
         padding-top: 130px !important;

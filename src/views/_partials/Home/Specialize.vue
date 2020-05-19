@@ -1,26 +1,25 @@
 <template>
     <div id="specialize">
-        <section class="headline jd-text-dark p-4">
+        <section class="headline jd-text-dark py-2" :class="{'jd-home-specialize' : isHome}">
             <b-container>
-                <p class="jd-text-29 m-0 text-center text-uppercase jd-text-20__mobile">
-                    We specialize in the following residential & commercial hauling services:
+                <p :class="{ 'jd-text-22 m-0 jd-text-20__mobile jd-font-regular jd-home-text text-wrap-pre' : isHome, 'jd-text-29 m-0 text-uppercase jd-text-20__mobile text-wrap-pre': !isHome, 'text-left text-wrap-none' : alignLeft, 'text-center' : !alignLeft}" >
+                    {{ isHome ? HOME_PAGE.sub_title :  HOME_PAGE.specialize_title}}
                 </p>
             </b-container>
         </section>
 
-        <b-container class="mt-3 mb-5 pb-5" data-aos="fade-up">
+        <b-container class="mt-3" data-aos="fade-up"  data-aos-duration="1000" :class="{ [classes] : classes}">
             <section class="d-flex text--service__rotate">
                 <h3 class="text--service__mobile d-block d-lg-none text-uppercase jd-font-bold">
-                    Full Service Junk Removal San Francisco Bay Area
+                    {{ HOME_PAGE.banner_one_text }}
                 </h3>
 
                 <b-row class="flex-lg-grow-1 flex-grow-0 d-flex flex-column flex-lg-row border--left__mobile">
-                    <b-col class="d-flex mt-0 mt-lg-3" v-for="(service, key) in services" :key="`service-${key}`">
+                    <b-col class="d-flex mt-0 mt-lg-3" v-for="(service, key) in services" :key="`service-${key}`" style="flex:1">
                         <ul class="list-unstyled m-0">
                             <li v-for="(item, itemKey) in service" :key="`service-item-${itemKey}`">
-                                <a href="#" class="jd-text-dark py-1 d-block jd-text-18">
-                                    <i class="fas fa-chevron-left jd-theme-color d-none d-lg-inline-block"></i>
-                                    <i class="fas fa-chevron-left jd-theme-color-50 ml--3 mr-2 d-none d-lg-inline-block"></i>
+                                <a href="#" class="jd-text-dark py-1 d-block jd-text-18 align-items-center d-flex">
+                                    <img src="/img/icons/arrow_left.svg"  alt="" width="18px" class="mr-2 d-none d-lg-block"/>
                                     {{ item.label }}
                                 </a>
                             </li>
@@ -33,38 +32,33 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
+        props: {
+            alignLeft: Boolean,
+            services: Array,
+            classes:String,
+            isHome: Boolean
+        },
         data() {
             return {
-                services: [
-                    [
-                        { label: 'Furniture Removal' },
-                        { label: 'Office Clean Outs' },
-                        { label: 'Appliance Removal' },
-                        { label: 'House Clean Outs' },
-                        { label: 'Construction Debris' },
-                    ],
-                    [
-                        { label: 'Foreclosure Clean Outs' },
-                        { label: 'Estate Clean Outs' },
-                        { label: 'Property Clean Outs' },
-                        { label: 'Water Heater Removal' },
-                        { label: 'Junk Hauling Services' },
-                    ],
-                    [
-                        { label: 'Garbage Removal' },
-                        { label: 'E-Waste Removal' },
-                        { label: 'TV Disposal & Recycle' },
-                        { label: 'Trash Removal' },
-                        { label: 'Refrigerator Disposal' },
-                    ]
-                ]
+
             }
-        }
+        },
+        computed: {
+            ...mapGetters(["HOME_PAGE"])
+        },
     }
 </script>
 
 <style scoped lang="scss">
+.text-wrap-pre{
+    white-space: pre-wrap;
+}
+.text-wrap-none{
+    white-space: initial;
+}
 @media screen and (max-width: 992px) {
     .text--service__rotate{
         border-left:100px solid  transparent;
@@ -83,5 +77,26 @@
     .border--left__mobile{
         border-left: 3px solid #EF4E23;
     }
+}
+
+.jd-home-specialize {
+    padding: 1px 0 !important;
+    .jd-home-text {
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.36 !important;
+        letter-spacing: normal;
+        text-align: center;
+        color: #8e8e8e;
+    }
+}
+
+.headline p {
+    line-height: 1.03;
+    letter-spacing: 1.74px;
+    text-align: center;
+    color: #959595;
+    padding: 6.5px 0 !important;
 }
 </style>

@@ -1,14 +1,18 @@
 <template>
-    <div class="p-0 p-lg-4 mt-4 junks" id="services" data-aos="fade">
+    <div class="p-0 p-lg-4 junks" id="services" data-aos="fade" data-aos-duration="1000">
         <b-container>
             <b-row>
-                <b-col class="text-center mt-3 mt-lg-0 p-0__mobile" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
-                    <b-img :src="`/img/home/services/${service.img}`" class="services--img_rounded"></b-img>
+                <b-col class="text-center mt-3 mt-lg-0 p-0__mobile service-item" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
+                    <router-link :to="{ name: 'services', params: { slug : service.slug } }">
+                        <b-img :src="service.main_image_path" class="services--img"></b-img>
+                    </router-link>
 
                     <section class="text-left px-3 px-lg-0">
-                        <h3 class="jd-text-22 jd-text-light jd-font-medium bottom-line-def-color mt-3 mt-lg-5">{{ service.title }}</h3>
+                        <router-link :to="{ name: 'services', params: { slug : service.slug } }">
+                            <h3 class="jd-text-22 jd-text-light jd-font-medium bottom-line-def-color mt-3 mt-lg-5">{{ service.title }}</h3>
+                        </router-link>
                         <p class="jd-text-18 jd-text-dark">
-                            {{ service.description }}
+                            {{ service.short_description }}
                         </p>
                     </section>
                 </b-col>
@@ -18,6 +22,7 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default {
         props: {
             services: Array
@@ -27,11 +32,11 @@
 
 
 <style scoped lang="scss">
-/deep/.services--img_rounded{
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    object-fit: cover;
+/deep/.services--img{
+    border-radius: 0;
+    width: 100%;
+    height: 221px;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 992px) {
@@ -51,6 +56,9 @@
 
     .p-0__mobile{
         padding: 0;
+    }
+    .service-item{
+        margin-top: 35.5px !important;
     }
 }
 </style>

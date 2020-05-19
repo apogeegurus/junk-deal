@@ -1,13 +1,15 @@
-import AuthRepository from './authRepository';
+import SiteRepository from './siteRepository';
+import LocationRepository from './locationRepository';
+import ServiceRepository from './serviceRepository';
+import BlogRepository from './blogRepository';
 
 const repositories = {
-    auth        : AuthRepository,
-    admin : {
-
-    }
+    site        : SiteRepository,
+    location    : LocationRepository,
+    service     : ServiceRepository,
+    blog        : BlogRepository
 }
 
 export const RepositoryFactory = {
     get      : name => repositories[name],
-    getAdmin : name => repositories['admin'][name]
 }

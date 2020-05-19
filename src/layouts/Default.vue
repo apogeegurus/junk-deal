@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header>
+        <header id="site-header">
             <j-header></j-header>
         </header>
         <main>
@@ -25,3 +25,9 @@
         }
     }
 </script>
+
+<style scoped>
+    main{
+        padding-top: 95px;
+    }
+</style>

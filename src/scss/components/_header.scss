@@ -1,6 +1,38 @@
-header{
-  position: relative;
-  z-index: 8;
+header#site-header{
+  position: fixed;
+  z-index: 990;
+  width: 100%;
+
+  & nav.fixed-top {
+    background: transparent !important;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: blur(27px);
+      z-index: 2;
+      @-moz-document url-prefix() {
+        filter: blur(27px);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
+      }
+    }
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(255,255,255,0.6);
+      z-index: 1;
+    }
+  }
+
   .dropdown-menu{
     border-top: 2px solid #EF4E23;
     border-bottom: 10px solid #EF4E23;
@@ -8,7 +40,54 @@ header{
     border-left: none;
     border-right: none;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    background: rgba(255,255,255,0.9);
+    background: transparent;
+    top: 36px;
+    .dropdown-item {
+      position: relative;
+      z-index: 4;
+      text-align: right;
+      @include media-breakpoint-down(md) {
+        text-align: left;
+      }
+      &:hover{
+        background: rgba(239, 78, 35, 0.2);
+      }
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: blur(27px);
+      z-index: 2;
+      @-moz-document url-prefix() {
+        filter: blur(27px);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
+      }
+
+      @media screen and (max-width: 991px) {
+        backdrop-filter: unset;
+        @-moz-document url-prefix() {
+          filter: unset;
+          background-image: unset;
+        }
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(255,255,255,0.6);
+      z-index: 1;
+      @media screen and (max-width: 991px) {
+        background: transparent;
+      }
+    }
     @include media-breakpoint-down(md) {
       box-shadow: none;
       border: none;
@@ -23,10 +102,15 @@ header{
     }
   }
 }
+.dropdown-nav:hover .dropdown-menu {
+  display: block;
+}
 .menu-item{
   border-right:1px solid #959595;
   font-size: 20px;
   a.nav-link {
+    position: relative;
+    z-index: 4;
     padding: 0 20px !important;
     @include media-breakpoint-down(md) {
       padding: 7px 0 !important;

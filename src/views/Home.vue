@@ -1,27 +1,29 @@
 <template>
-    <div>
-        <slider></slider>
+    <div class="home-section">
+        <slider :images="images" v-if="images.length"></slider>
 
-        <b-container class="text-center mt-5">
-            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">Junk Removal & Hauling Company</h1>
-            <p class="jd-text-22 mt-3 jd-font-medium jd-text-18__mobile">Junk Deal is more than an average junk removal & hauling company. We can help you with organizing,
-                sorting, donations, packing, moving, storage, light demo and hauling services. </p>
+        <b-container class="text-center mt-0 mt-lg-5">
+            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>
+            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase jd-specialize-title"
+               style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
         </b-container>
 
+        <animation></animation>
+
         <!--Specialize Section Start-->
-        <specialize></specialize>
+        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
-        <banner-right class="d-none d-lg-block"></banner-right>
+        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
         <!--Banner Section End-->
 
         <!--Services Section Start-->
-        <services :services="services"></services>
+        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>
         <!--Services Section End-->
 
         <!--Banner Section Start-->
-        <banner-left class="d-none d-lg-block"></banner-left>
+        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
         <!--Banner Section End-->
 
         <!--Works Section Start-->
@@ -47,23 +49,61 @@
     import Services from "./_partials/Home/Services";
     import Specialize from "./_partials/Home/Specialize";
     import Slider from "./_partials/Home/Slider";
+    import Animation from "./_partials/Home/Animation";
+    import {mapGetters} from 'vuex';
 
     export default {
-        components: { Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services },
+        components: {Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services, Animation},
+        beforeCreate() {
+            this.$store.dispatch("GET_SERVICES_NAMES");
+            this.$store.dispatch("GET_HOME_PAGE_INFO");
+            this.$store.dispatch("GET_SPECIALIZE_DETAILS");
+        },
         data() {
             return {
-                services : [
-                    { title: "Residential Junk Removal", img: "service-1.jpg", description: "Our Residential Junk Removal services gives you an easy solution for de-cluttering your home or clearing your yard from unwanted junk."},
-                    { title: "Commercial Junk Removal", img: "service-2.jpg", description: "Junk Deal is your one-stop-shop for your Commercial Junk Removal needs. We take anything from file cabinets to electronic waste."},
-                    { title: "Office Furniture Liquidators", img: "service-3.jpg", description: "Junk Deal offers an Office Furniture Liquidators service that can help you with getting rid of unwanted office furniture or anything else you need removed from your work space."},
-                ]
+                specialize: []
+            }
+        },
+        methods: {
+            hideLoader() {
+                if (this.SERVICES.length && this.SLIDERS.length && Object.keys(this.HOME_PAGE).length && this.SPECIALIZES.length) {
+                    this.$root.$emit('hideLoader');
+                }
+            }
+        },
+        computed: {
+            ...mapGetters(['SERVICES', "SLIDERS", "HOME_PAGE", "SPECIALIZES"]),
+            images: function () {
+                return this.SLIDERS.map(item => item.path);
+            }
+        },
+        watch: {
+            'SERVICES': function () {
+                this.hideLoader()
+            },
+            'SLIDERS': function () {
+                this.hideLoader()
+            },
+            'HOME_PAGE': function () {
+                this.hideLoader()
+            },
+            'SPECIALIZES': function (newVal) {
+                this.specialize = this.chunk(newVal, Math.ceil(newVal.length / 3));
+                this.hideLoader()
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
-    @media screen and (max-width:992px){
-
+    .jd-specialize-title {
+        font-size: 29px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.03;
+        letter-spacing: 1.74px;
+        text-align: center;
+        color: #959595;
     }
 </style>
