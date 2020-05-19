@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--Slider Section Start-->
-        <slider :without-hero="true" :images="images" v-if="images.length"></slider>
+        <slider :without-hero="true" :images="images" v-if="images.length" classes="service--slider"></slider>
         <!--Slider Section End-->
 
         <b-container class="text-center mt-0 mt-lg-4">
@@ -89,6 +89,22 @@
         }
     }
 </script>
+
+<style lang="scss">
+    @media screen and (max-width: 992px) {
+        .service--slider {
+            height: 45vh !important;
+
+            .trinagle-bottom {
+                height: 50px !important;
+            }
+        }
+
+        .mt-mobile-0 {
+            margin-top: 10px !important;
+        }
+    }
+</style>
 
 <style scoped lang="scss">
 .triangle{

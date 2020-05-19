@@ -1,6 +1,6 @@
 <template>
     <div class="home-section">
-        <slider :images="images" v-if="images.length"></slider>
+        <slider :images="images" v-if="images.length" classes="home--slider"></slider>
 
         <b-container class="text-center mt-0 mt-lg-5">
             <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>
@@ -94,6 +94,23 @@
         }
     }
 </script>
+
+<style lang="scss">
+    @media screen and (max-width: 992px) {
+        .home--slider {
+            height: 45vh !important;
+
+            .trinagle-bottom {
+                height: 50px !important;
+            }
+        }
+
+        .mt-mobile-0 {
+            margin-top: 10px !important;
+        }
+    }
+</style>
+
 
 <style scoped lang="scss">
     .jd-specialize-title {
