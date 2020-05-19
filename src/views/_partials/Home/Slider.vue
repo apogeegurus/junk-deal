@@ -1,5 +1,5 @@
 <template>
-    <div class="position-relative slide-section">
+    <div class="position-relative slide-section" :class="classes">
         <div class="slideshow">
             <div id="slideshow">
                 <b-img class="slideshow-image" :src="image" v-for="(image, key) in images" :key="key"></b-img>
@@ -36,6 +36,10 @@
                 default: function () {
                     return []
                 }
+            },
+            classes: {
+                type: String,
+                default: ""
             }
         },
         components: { QuoteForm },
