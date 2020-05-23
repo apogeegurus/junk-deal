@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="lg" type="light" variant="white" class="shadow pb-md-2 pb-2" :fixed="isFixed ? 'top' : ''">
+    <b-navbar toggleable="lg" type="light" variant="white" class="shadow pb-0" :fixed="isFixed ? 'top' : ''">
         <b-container class="align-items-center d-flex z-index-3">
             <b-navbar-brand :to="{ name: 'home' }">
                 <b-img src="/img/logo.svg" width="200px" height="69px"></b-img>
@@ -18,24 +18,24 @@
                     </b-nav-text>
 
                     <section class="d-md-flex justify-content-between text-uppercase mt-2 flex-lg-row flex-md-column">
-                        <div class="pb-2">
+                        <div class="pb-3">
                             <b-nav-item :to="{ name: 'home'}" class="menu-item">Home</b-nav-item>
                         </div>
-                        <div class="dropdown-nav pb-2">
+                        <div class="dropdown-nav pb-3">
                             <b-nav-item-dropdown text="Services" right no-caret class="menu-item">
                                 <b-dropdown-item :to="{name: 'services', params: { slug: item.slug }}" v-for="(item, key) in SERVICES" :key="key">{{ item.title }}</b-dropdown-item>
                             </b-nav-item-dropdown>
                         </div>
-                        <div class="pb-2">
+                        <div class="pb-3">
                             <b-nav-item :to="{ name: 'blogs'}" class="menu-item">Blog</b-nav-item>
                         </div>
-                        <div class="pb-2">
+                        <div class="pb-3">
                             <b-nav-item :to="{ name: 'locations'}" class="menu-item">Locations</b-nav-item>
                         </div>
-                        <div class="pb-2">
+                        <div class="pb-3">
                             <b-nav-item :to="{ name: 'about'}" class="menu-item">About</b-nav-item>
                         </div>
-                        <div class="pb-2">
+                        <div class="pb-3">
                             <b-nav-item :to="{ name: 'contact' }" class="menu-item">Contact</b-nav-item>
                         </div>
                     </section>

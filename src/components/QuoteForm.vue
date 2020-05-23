@@ -148,7 +148,9 @@
         },
         created() {
             window.onresize = () => {
-                this.$emit('update:shown', false);
+                if(window.innerWidth > 992) {
+                    this.$emit('update:shown', false);
+                }
             }
         }
     }

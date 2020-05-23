@@ -26,8 +26,11 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     main{
-        padding-top: 95px;
+        padding-top: 101px;
+        @media screen and (max-width: 991px) {
+            padding-top: 80px;
+        }
     }
 </style>
