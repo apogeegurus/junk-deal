@@ -22,7 +22,7 @@
             let intervalForward = null;
             let intervalBackward = null;
 
-            window.onresize = () => {
+            window.onload = () => {
                 truck.classList.add("no-animation");
                 startPosition = document.body.offsetWidth < 768 ? 90 : 60;
                 endPosition = document.body.offsetWidth < 768 ? 7 : 20;
