@@ -345,7 +345,7 @@
 
         @media screen and (max-width: 991px) {
             position: fixed;
-            top: 95px;
+            top: 80px;
             bottom: 0;
             left: 0;
             right: 0;
