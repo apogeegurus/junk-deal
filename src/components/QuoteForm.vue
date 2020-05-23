@@ -1,7 +1,7 @@
 <template>
     <b-form id="get-quote" class="p-3 d-none d-lg-block"
             :class="{ 'd-must-show' : shown, 'd-lg-none-important' : hideDesktop}">
-        <section class="position-relative index-1">
+        <section class="position-relative index-200">
             <div class="text-right mb-5 d-block d-lg-none">
                 <a :href="`tel:650 995 7500`" class="jd-font-medium jd-text-20">
                     <i class="fas fa-phone-square"></i>
@@ -269,6 +269,10 @@
         z-index: 1;
     }
 
+    .index-200 {
+        z-index: 200;
+    }
+
     .calendar-icon {
         z-index: 1;
         left: 5px;
@@ -327,6 +331,7 @@
             bottom: 0;
             left: 0;
             backdrop-filter: blur(27px);
+            z-index: 1;
             @-moz-document url-prefix() {
                 filter: blur(27px);
                 background-image: -webkit-gradient(linear, left top, left bottom, from(#444549), to(rgba(255, 255, 255, 0.5)));
