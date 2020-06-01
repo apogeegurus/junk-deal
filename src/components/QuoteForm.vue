@@ -57,7 +57,7 @@
                 </b-col>
             </b-row>
             <b-form-group class="mb-4">
-                <b-textarea placeholder="Enter Description" rows="4" class="jd-input" v-validate="'required|min:50'"
+                <b-textarea placeholder="Enter Description" rows="4" class="jd-input" v-validate="'required'"
                             v-model="quote.description"
                             name="description"></b-textarea>
                 <span v-if="veeErrors.has('description')" class="text-danger jd-text-10 position-absolute">
