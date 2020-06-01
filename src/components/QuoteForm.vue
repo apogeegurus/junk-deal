@@ -65,7 +65,7 @@
                                 </span>
             </b-form-group>
 
-            <b-btn variant="primary" block class="submit-btn-qoute jd-text-14 p-1 br-150" @click="submitForm">SUBMIT</b-btn>
+            <b-btn variant="primary" block class="submit-btn-qoute jd-text-12 jd-text-14__mobile p-1 p-md-0 br-150" @click="submitForm">SUBMIT</b-btn>
         </section>
     </b-form>
 </template>
