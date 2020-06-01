@@ -47,11 +47,12 @@
         <section class="d-flex d-lg-none mobile-bottom-btn">
             <a :href="`tel:${ SITE_DETAILS.phone }`" >
                 <i class="fas fa-phone mr-2"></i>
-                MAKE A CALL
+                {{ SITE_DETAILS.phone }}
             </a>
-            <p  @click="$root.$emit('openQuote')">
-                <i class="fas fa-align-right mr-2"></i>
-                GET QUOTE
+            <p  @click="openQuote()">
+                <i class="fas fa-align-right mr-2" v-if="!quoteForm"></i>
+                <i class="fas fa-times mr-2" v-else></i>
+                QUICK QUOTE
             </p>
         </section>
     </b-navbar>
@@ -66,7 +67,8 @@
             return {
                 isFixed : true,
                 scrollY: null,
-                showCollapse: false
+                showCollapse: false,
+                quoteForm: false
             }
         },
         beforeCreate() {
@@ -92,6 +94,10 @@
                     this.$router.push({name: 'home'})
                 }
                 window.scrollTo(0,0);
+            },
+            openQuote() {
+                this.quoteForm = !this.quoteForm;
+                this.$root.$emit('openQuote')
             }
         },
         watch: {

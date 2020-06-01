@@ -50,7 +50,7 @@
         },
         created() {
             this.$root.$on('openQuote',  () => {
-                this.openQuote = true;
+                this.openQuote = !this.openQuote;
             })
         },
         mounted() {
