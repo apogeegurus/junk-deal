@@ -43,7 +43,7 @@
             </b-collapse>
         </b-container>
 
-        <section id="get-quote-now" v-if="isFixed" @click="scrollToTop" class="d-none d-lg-block">GET QUOTE NOW!</section>
+        <section id="get-quote-now" v-if="showTop" @click="scrollToTop" class="d-none d-lg-block">GET QUOTE NOW!</section>
         <section class="d-flex d-lg-none mobile-bottom-btn">
             <a :href="`tel:${ SITE_DETAILS.phone }`" >
                 <i class="fas fa-phone mr-2"></i>
@@ -66,6 +66,7 @@
         data() {
             return {
                 isFixed : true,
+                showTop: false,
                 scrollY: null,
                 showCollapse: false,
                 quoteForm: false
@@ -77,6 +78,7 @@
         mounted() {
             window.addEventListener('scroll', (event) => {
                 this.scrollY = Math.round(window.scrollY);
+                this.showTop = this.scrollY > window.innerHeight - 400;
             });
 
             window.addEventListener('click', (event) => {

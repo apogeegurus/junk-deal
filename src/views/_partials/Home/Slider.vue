@@ -93,7 +93,7 @@ top: 0;
 .home-heroes{
 position: absolute;
 bottom: -20px;
-z-index: 1;
+z-index: 2;
 left: 0;
 right: 0;
 margin: auto;
