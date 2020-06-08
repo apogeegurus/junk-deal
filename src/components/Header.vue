@@ -33,10 +33,10 @@
                             <b-nav-item :to="{ name: 'locations'}" class="menu-item">Locations</b-nav-item>
                         </div>
                         <div class="pb-3">
-                            <b-nav-item :to="{ name: 'about'}" class="menu-item">About</b-nav-item>
+                            <b-nav-item :to="{ name: 'about'}" class="menu-item" style="white-space: nowrap;">About Us</b-nav-item>
                         </div>
                         <div class="pb-3">
-                            <b-nav-item :to="{ name: 'contact' }" class="menu-item">Contact</b-nav-item>
+                            <b-nav-item :to="{ name: 'contact' }" class="menu-item" style="white-space: nowrap;">Contact Us</b-nav-item>
                         </div>
                     </section>
                 </b-navbar-nav>
