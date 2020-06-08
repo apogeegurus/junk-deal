@@ -23,12 +23,12 @@
             </b-row>
         </b-container>
 
-        <b-container class="my-5">
-            <a class="hiring d-flex justify-content-center align-items-center align-content-center my-5" :href="`tel:${SITE_DETAILS.phone}`">
-                <b-img src="/img/icons/phone_orange.png" class="ml-5 mr-2"></b-img>
-                <p class="mb-0 text-uppercase text-center jd-text-18__mobile pr-5">We ARE HAIRING!!! CALL US IF YOU INTERESTED IN MOOVING OR HAULING INDUSTRY CAREER!</p>
-            </a>
-        </b-container>
+<!--        <b-container class="my-5">-->
+<!--            <a class="hiring d-flex justify-content-center align-items-center align-content-center my-5" :href="`tel:${SITE_DETAILS.phone}`">-->
+<!--                <b-img src="/img/icons/phone_orange.png" class="ml-5 mr-2"></b-img>-->
+<!--                <p class="mb-0 text-uppercase text-center jd-text-18__mobile pr-5">We ARE HAIRING!!! CALL US IF YOU INTERESTED IN MOOVING OR HAULING INDUSTRY CAREER!</p>-->
+<!--            </a>-->
+<!--        </b-container>-->
 
         <b-container>
             <div class="text-center my-5">

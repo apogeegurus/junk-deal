@@ -49,7 +49,7 @@ Vue.use(VeeValidate, {
   dictionary: {
     en: {
       messages: {
-        required: (field, args) => `* required`,
+        required: (field, args) => `Required`,
       }
     }
   }

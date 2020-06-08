@@ -49,7 +49,8 @@
                     <b-form-group class="mb-4 position-relative">
                         <i class="fas fa-calendar-alt position-absolute calendar-icon"></i>
                         <datepicker v-validate="'required'" data-vv-name="date" placeholder="Service date" format="MMM dd yyyy"
-                                    v-model="quote.date" :input-class="`jd-input w-100 pl-25__input ${veeErrors.has('zip_code') ? 'is-invalid' : ''} hover-show-tooltip`"></datepicker>
+                                    class="hover-show-tooltip is-invalid"
+                                    v-model="quote.date" :input-class="` jd-input form-control  bg-input w-100 pl-25__input ${veeErrors.has('zip_code') ? 'is-invalid' : ''}`"></datepicker>
                         <span v-if="veeErrors.has('date')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('date') }}
                                 </span>
@@ -365,7 +366,7 @@
     }
 
     .hover-show-tooltip.is-invalid{
-        + span {
+        ~ span {
             position: absolute !important;
             right: 0;
             top: -27px;
@@ -378,9 +379,15 @@
             transition: 0.2s ease;
         }
 
-        &:hover + span {
+        &:hover ~ span {
             visibility: visible;
             opacity: 1;
         }
+    }
+</style>
+
+<style>
+    .form-control.bg-input:disabled, .form-control[readonly].bg-input{
+        background-color: rgba(255, 255, 255, 0.6) !important;
     }
 </style>
