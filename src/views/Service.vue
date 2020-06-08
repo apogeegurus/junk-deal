@@ -36,7 +36,7 @@
         <!--Services Section End-->
 
         <!--Video Section Start-->
-        <jd-video :hide-triangle="true"></jd-video>
+<!--        <jd-video :hide-triangle="true"></jd-video>-->
         <!--Video Section End-->
     </div>
 </template>

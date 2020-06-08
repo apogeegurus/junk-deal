@@ -10,24 +10,24 @@
             </div>
             <h3 class="jd-text-light jd-font-medium mb-3 jd-text-16 text-center jd-text-18__mobile get--quote-free-text">
                 GET YOUR FREE QUOTE</h3>
-            <b-form-group class="mb-4">
-                <b-input type="text" placeholder="Enter Name" class="jd-input" v-validate="'required|max:80'"
+            <b-form-group class="mb-4 position-relative">
+                <b-input type="text" placeholder="Name" :class="`jd-input ${veeErrors.has('name') ? 'is-invalid' : ''} hover-show-tooltip`" v-validate="'required|max:80'"
                          v-model="quote.name"
                          name="name"></b-input>
                 <span v-if="veeErrors.has('name')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('name') }}
                                 </span>
             </b-form-group>
-            <b-form-group class="mb-4">
-                <b-input type="text" placeholder="Enter Phone number" class="jd-input" v-validate="'required|max:80'"
+            <b-form-group class="mb-4 position-relative">
+                <b-input type="text" placeholder="Phone number" :class="`jd-input ${veeErrors.has('phone') ? 'is-invalid' : ''} hover-show-tooltip`" v-validate="'required|max:80'"
                          v-model="quote.phone"
                          name="phone"></b-input>
                 <span v-if="veeErrors.has('phone')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('phone') }}
                                 </span>
             </b-form-group>
-            <b-form-group class="mb-4">
-                <b-input type="email" placeholder="Enter Email" class="jd-input" v-validate="'required|email|max:80'"
+            <b-form-group class="mb-4 position-relative">
+                <b-input type="email" placeholder="Email" :class="`jd-input ${veeErrors.has('email') ? 'is-invalid' : ''} hover-show-tooltip`" v-validate="'required|email|max:80'"
                          v-model="quote.email"
                          name="email"></b-input>
                 <span v-if="veeErrors.has('email')" class="text-danger jd-text-10 position-absolute">
@@ -36,8 +36,8 @@
             </b-form-group>
             <b-row>
                 <b-col cols="12" md="6" class="pr-md-2">
-                    <b-form-group class="mb-4">
-                        <b-input type="text" placeholder="Enter Zip code" class="jd-input"
+                    <b-form-group class="mb-4 position-relative">
+                        <b-input type="text" placeholder="Zip code" :class="`jd-input ${veeErrors.has('zip_code') ? 'is-invalid' : ''} hover-show-tooltip`"
                                  v-validate="'required|max:80'" v-model="quote.zip_code"
                                  name="zip_code" data-vv-as="zip code"></b-input>
                         <span v-if="veeErrors.has('zip_code')" class="text-danger jd-text-10 position-absolute">
@@ -48,16 +48,16 @@
                 <b-col cols="12" md="6" class="pl-md-2">
                     <b-form-group class="mb-4 position-relative">
                         <i class="fas fa-calendar-alt position-absolute calendar-icon"></i>
-                        <datepicker v-validate="'required'" data-vv-name="date" placeholder="Date" format="MMM dd yyyy"
-                                    v-model="quote.date" input-class="jd-input w-100 pl-25__input"></datepicker>
+                        <datepicker v-validate="'required'" data-vv-name="date" placeholder="Service date" format="MMM dd yyyy"
+                                    v-model="quote.date" :input-class="`jd-input w-100 pl-25__input ${veeErrors.has('zip_code') ? 'is-invalid' : ''} hover-show-tooltip`"></datepicker>
                         <span v-if="veeErrors.has('date')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('date') }}
                                 </span>
                     </b-form-group>
                 </b-col>
             </b-row>
-            <b-form-group class="mb-4">
-                <b-textarea placeholder="Enter Description" rows="4" class="jd-input" v-validate="'required'"
+            <b-form-group class="mb-4 position-relative">
+                <b-textarea placeholder="Describe your junk" rows="4" :class="`jd-input ${veeErrors.has('description') ? 'is-invalid' : ''} hover-show-tooltip`" v-validate="'required'"
                             v-model="quote.description"
                             name="description"></b-textarea>
                 <span v-if="veeErrors.has('description')" class="text-danger jd-text-10 position-absolute">
@@ -65,7 +65,7 @@
                                 </span>
             </b-form-group>
 
-            <b-btn variant="primary" block class="submit-btn-qoute jd-text-12 jd-text-14__mobile p-1 p-md-0 br-150" @click="submitForm">SUBMIT</b-btn>
+            <b-btn variant="primary" block class="submit-btn-qoute jd-text-12 jd-text-14__mobile p-1 p-md-0 br-150" @click="submitForm">Let’s go!</b-btn>
         </section>
     </b-form>
 </template>
@@ -354,12 +354,33 @@
         .submit-btn-qoute {
             background: #fff;
             color: #EF4E23;
+            font-weight: 600;
         }
     }
 
     @media screen and (min-width: 991px) {
         .d-lg-none-important {
             display: none !important;
+        }
+    }
+
+    .hover-show-tooltip.is-invalid{
+        + span {
+            position: absolute !important;
+            right: 0;
+            top: -27px;
+            background: #dc3545;
+            color: #fff !important;
+            padding: 5px;
+            border-radius: 4px;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.2s ease;
+        }
+
+        &:hover + span {
+            visibility: visible;
+            opacity: 1;
         }
     }
 </style>

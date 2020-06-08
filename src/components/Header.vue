@@ -47,12 +47,12 @@
         <section class="d-flex d-lg-none mobile-bottom-btn">
             <a :href="`tel:${ SITE_DETAILS.phone }`" >
                 <i class="fas fa-phone mr-2"></i>
-                {{ SITE_DETAILS.phone }}
+                <b>{{ SITE_DETAILS.phone }}</b>
             </a>
             <p  @click="openQuote()">
                 <i class="fas fa-align-right mr-2" v-if="!quoteForm"></i>
                 <i class="fas fa-times mr-2" v-else></i>
-                QUICK QUOTE
+                <b>QUICK QUOTE</b>
             </p>
         </section>
     </b-navbar>

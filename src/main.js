@@ -40,11 +40,19 @@ Vue.component('default-layout', DefaultLayout);
 Vue.component('admin-layout', AdminLayout);
 Vue.component('no-layout', NoLayout);
 Vue.component('loader', Loader);
+Vue.use(require('vue-moment'));
 Vue.use(BootstrapVue);
 Vue.use(VeeValidate, {
   inject: true,
   fieldsBagName: 'veeFields',
-  errorBagName: 'veeErrors'
+  errorBagName: 'veeErrors',
+  dictionary: {
+    en: {
+      messages: {
+        required: (field, args) => `* required`,
+      }
+    }
+  }
 });
 
 const options = {

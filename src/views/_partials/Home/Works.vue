@@ -38,11 +38,11 @@
         data() {
             return {
                 steps: [
-                    { title: "Step 1", description: "step_1_text", img: "step_one_path"},
+                    { title: "Get Quote", description: "step_1_text", img: "step_one_path"},
                     { isArrow: true},
-                    { title: "Step 2", description: "step_2_text", img: "step_two_path"},
+                    { title: "Schedule Pickup", description: "step_2_text", img: "step_two_path"},
                     { isArrow: true},
-                    { title: "Step 3", description: "step_3_text", img: "step_three_path"},
+                    { title: "Relax", description: "step_3_text", img: "step_three_path"},
                 ]
             }
         },
