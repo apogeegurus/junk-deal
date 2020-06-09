@@ -9,7 +9,7 @@
 
         <div class="w-100 position-absolute w-100 h-100 top-0 z-index-max">
             <b-container class="position-relative w-100 h-100">
-                <b-img src="/img/home/heroes.png" class="home-heroes d-none d-lg-block" v-if="!withoutHero"></b-img>
+                <b-img src="/img/home/heroes.png" class="home-heroes" v-if="!withoutHero"></b-img>
             </b-container>
 
             <quote-form :shown.sync="openQuote"></quote-form>
@@ -42,14 +42,14 @@
                 default: ""
             }
         },
-        components: { QuoteForm },
+        components: {QuoteForm},
         data() {
             return {
                 openQuote: false
             }
         },
         created() {
-            this.$root.$on('openQuote',  () => {
+            this.$root.$on('openQuote', () => {
                 this.openQuote = !this.openQuote;
             })
         },
@@ -60,61 +60,68 @@
 </script>
 
 <style scoped lang="scss">
-@import "../../../utils/ken-burns/main.css";
+    @import "../../../utils/ken-burns/main.css";
 
-.trinagle-bottom{
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    transform: rotate(-5deg);
-    bottom: -290px;
-    z-index: 10;
-    background: #fff;
-    padding: 0 20px;
-    box-sizing: initial;
-    left: 0;
-    border-bottom: 280px solid #fff;
-}
+    .trinagle-bottom {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        transform: rotate(-5deg);
+        bottom: -290px;
+        z-index: 10;
+        background: #fff;
+        padding: 0 20px;
+        box-sizing: initial;
+        left: 0;
+        border-bottom: 280px solid #fff;
+    }
 
-.slide-section{
-height: 60vh;
-}
-.slideshow {
-position: relative;
-width: 100%;
-height: 100%;
-overflow: hidden;
-}
+    .slide-section {
+        height: 60vh;
+    }
+
+    .slideshow {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
 
-.top-0{
-top: 0;
-}
-.home-heroes{
-position: absolute;
-bottom: -20px;
-z-index: 999;
-left: 0;
-right: 0;
-margin: auto;
-}
-.z-index-max{
-z-index: 980;
-}
+    .top-0 {
+        top: 0;
+    }
 
-/deep/.vue-flux{
-animation: zoominoutsinglefeatured 20s infinite;
-}
+    .home-heroes {
+        position: absolute;
+        bottom: -20px;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @media screen and (max-width: 992px) {
+            bottom: 0;
+            width: 260px;
+        }
+    }
 
-@keyframes zoominoutsinglefeatured {
-0% {
-    transform: scale(1,1);
-}
-50% {
-    transform: scale(1.4,1.4);
-}
-100% {
-    transform: scale(1,1);
-}
-}
+    .z-index-max {
+        z-index: 980;
+    }
+
+    /deep/ .vue-flux {
+        animation: zoominoutsinglefeatured 20s infinite;
+    }
+
+    @keyframes zoominoutsinglefeatured {
+        0% {
+            transform: scale(1, 1);
+        }
+        50% {
+            transform: scale(1.4, 1.4);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+    }
 </style>
