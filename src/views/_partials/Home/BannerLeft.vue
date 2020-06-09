@@ -18,8 +18,8 @@
                     {{ HOME_PAGE.banner_two_text }}
                 </h2>
             </b-container>
-            <b-img src="/img/home/banner-triangle-left.svg" class="triangle small"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
-            <b-img src="/img/home/banner-triangle-left-big.svg" class="triangle big"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+            <b-img src="/img/home/banner-triangle-left.png" class="triangle small"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+            <b-img src="/img/home/banner-triangle-left-big.png" class="triangle big"  data-aos="right-left"  data-aos-offset="20" data-aos-duration="1000"></b-img>
         </template>
     </div>
 </template>

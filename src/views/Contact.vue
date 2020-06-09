@@ -5,7 +5,7 @@
         </section>
 
         <section class="position-relative">
-            <b-img src="/img/home/triangle-right.svg" class="triangle" data-aos="left-right"></b-img>
+            <b-img src="/img/home/triangle-right.png" class="triangle" data-aos="left-right"></b-img>
 
             <b-container class="my-5">
                 <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Contact Us</h1>

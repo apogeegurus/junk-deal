@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 mt-4 position-relative" id="how-it-works">
-        <b-img src="/img/home/triangle-right.svg" class="triangle" data-aos="left-right" data-aos-duration="1000"></b-img>
+        <b-img src="/img/home/triangle-right.png" class="triangle" data-aos="left-right" data-aos-duration="1000"></b-img>
         <b-container class="position-relative">
             <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold jd-text-25__mobile mb-5 mb-lg-3">{{ HOME_PAGE.how_it_works_title }}</h2>
             <p class="text-center jd-text-22 jd-text-dark jd-text-18__mobile mb-5">{{ HOME_PAGE.how_it_works_sub_title }}</p>

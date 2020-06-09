@@ -1,8 +1,8 @@
 <template>
     <div class="position-relative">
         <template v-if="!onlyImage">
-            <b-img src="/img/home/banner-triangle-right.svg" class="triangle small"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
-            <b-img src="/img/home/banner-triangle-right-big.svg" class="triangle big"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+            <b-img src="/img/home/banner-triangle-right.png" class="triangle small"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
+            <b-img src="/img/home/banner-triangle-right-big.png" class="triangle big"  data-aos="left-right"  data-aos-offset="20" data-aos-duration="1000"></b-img>
             <b-container class="fade--text__rotate text-center z-index-2 position-relative">
                 <h2 class="jd-theme-color mb-0 jd-text-27 jd-font-bold text-uppercase"  data-aos="left-right"  data-aos-offset="200" data-aos-duration="1500">
                     {{ HOME_PAGE.banner_one_text }}
