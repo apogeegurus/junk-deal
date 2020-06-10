@@ -1,11 +1,11 @@
 <template>
-    <div class="p-4 mb-4 position-relative d-none d-lg-block overflow-hidden" >
+    <div class="p-4 mb-4 position-relative overflow-hidden">
         <b-img src="/img/home/triangle-left.png" class="triangle--full__width" data-aos="right-left" v-if="!hideTriangle" data-aos-offset="300" data-aos-duration="1000"></b-img>
         <b-container>
             <h2 class="jd-text-32 text-uppercase jd-text-dark text-center jd-font-bold">{{ HOME_PAGE.video_title }}</h2>
 
             <b-row class="mt-4">
-                <b-col v-for="(video, key) in VIDEOS" :key="`video-${key}`">
+                <b-col v-for="(video, key) in VIDEOS" :key="`video-${key}`" :class="{'d-none d-lg-block' : !video.is_mobile, 'd-block d-lg-none' : video.is_mobile}">
                     <a :href="video.video_url" class="text-decoration-none" target="_blank">
                         <b-img :src="`http://img.youtube.com/vi/${video.video_id}/0.jpg`" class="w-100"></b-img>
                         <h5 class="jd-text-18 jd-text-dark jd-font-medium text-uppercase mt-3">{{ video.title }}</h5>
