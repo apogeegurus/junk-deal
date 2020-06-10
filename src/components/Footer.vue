@@ -160,7 +160,7 @@
                                 </section>
 
                                 <section class="d-none d-lg-block">
-                                    <h2 class="jd-title mt-3 jd-text-22">We Provide Services In The Following Areas:</h2>
+                                    <h2 class="jd-title mt-3 jd-text-22">SERVICE LOCATIONS</h2>
                                     <section class="footer-areas mt-3">
                                         <router-link :to="{ name: 'location', params: { slug: item.slug }}" v-for="(item, key) in LOCATIONS" :key="key">{{ item.city }}</router-link>
                                     </section>

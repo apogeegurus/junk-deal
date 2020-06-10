@@ -20,7 +20,7 @@
 
                 <b-row class="d-flex flex-column flex-lg-row step--content__mobile flex-column flex-lg-row">
                     <b-col v-for="(step, key) in steps" :key="`step-${key}`" :class="{ 'd-block d-lg-none' : step.isArrow }">
-                        <h3 class="text-uppercase jd-text-22 jd-text-light jd-font-medium bottom-line-def-color d-none d-lg-block">{{ step.title }}</h3>
+                        <h3 class="text-uppercase jd-text-22 jd-text-light jd-font-medium bottom-line-def-color" :class="{ 'd-none d-lg-block' : step.isArrow }">{{ step.title }}</h3>
                         <p class="jd-text-18 jd-text-dark">
                             {{ HOME_PAGE[step.description] }}
                         </p>
