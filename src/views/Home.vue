@@ -1,6 +1,6 @@
 <template>
     <div class="home-section">
-        <slider :images="images" v-if="images.length" classes="home--slider"></slider>
+<!--        <slider :images="images" v-if="images.length" classes="home&#45;&#45;slider"></slider>-->
 
         <b-container class="text-center mt-0 mt-lg-5">
             <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>
