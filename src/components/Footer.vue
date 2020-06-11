@@ -129,7 +129,7 @@
         <section class="footer--bottom p-4">
             <b-container>
                 <b-row>
-                    <b-col cols="4" class="pr-5 d-none d-lg-block">
+                    <b-col lg="4" sm="12" class="pr-5 d-lg-block">
                         <h2 class="jd-title jd-text-22">Get in touch</h2>
 
                         <section class="mt-3">
@@ -166,7 +166,7 @@
                                     </section>
                                 </section>
                             </b-col>
-                            <b-col class="d-none d-lg-block">
+                            <b-col>
                                 <section class="mb-3">
                                     <b-img src="/img/footer/payments-desktop.svg"></b-img>
                                 </section>

@@ -309,7 +309,7 @@
         right: 120px;
         top: 0;
         width: 254px;
-        height: calc(100% + 30px);
+        height: calc(100% - 20px);
         overflow-y: auto;
 
         input, textarea {
@@ -346,7 +346,7 @@
             right: 0;
             width: 100%;
             height: 100%;
-            z-index: 6;
+            z-index: 999999;
             padding-bottom: 180px !important;
         }
     }

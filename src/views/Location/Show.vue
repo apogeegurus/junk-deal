@@ -25,8 +25,7 @@
 
         <section class="d-flex flex-column">
             <section class="order-lg-0 order-2 mt-4 mt-lg-0">
-                <h2 class="jd-text-25 jd-font-bold jd-text-dark d-block d-lg-none text-center">Our Services Include but
-                    are Not Limited To:</h2>
+                <h2 class="jd-text-25 jd-font-bold jd-text-dark d-block d-lg-none text-center">Additional services</h2>
                 <services :services="SERVICES"></services>
             </section>
 
@@ -49,7 +48,8 @@
                 <h2 class="jd-text-27 text-uppercase text-lg-center text-left jd-text-23__mobile">
                     <span class="jd-text-dark jd-font-bold">Facts about</span>
                     <br class="d-block d-lg-none">
-                    <span class="jd-theme-color jd-font-bold"> {{ location.city }}</span> You probably didn’t know
+                    <span class="jd-theme-color jd-font-bold"> {{ location.city }}</span>
+                    <span class="brake-mobile"> You probably didn’t know</span>
                 </h2>
 
                 <b-row class="mt-5 mb-5">
@@ -129,6 +129,10 @@
 
         .mt-mobile-0 {
             margin-top: 10px !important;
+        }
+
+        .brake-mobile{
+            display: block;
         }
     }
 

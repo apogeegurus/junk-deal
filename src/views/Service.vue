@@ -27,7 +27,7 @@
             <b-img src="/img/home/triangle-right.png" class="triangle d-none d-lg-block" data-aos="left-right" data-aos-offset="100"></b-img>
             <section class="position-relative z-index-1">
                 <b-container>
-                    <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Our additional services</h2>
+                    <h2 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile text-center">Additional services</h2>
                 </b-container>
                 <services :services="FILTERED_SERVICES" class="mt-4"></services>
             </section>
@@ -118,7 +118,7 @@
 .triangle--full__width {
     position: absolute;
     right: 0;
-    bottom: 100px;
+    bottom: 0;
     z-index: 0;
     width: 100%;
     height: 400px;

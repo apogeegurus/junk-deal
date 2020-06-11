@@ -10,7 +10,7 @@
         </b-container>
 
         <section class="headline-our-team my-5">
-            Our Team:
+            Our Team
         </section>
 
         <b-container>
