@@ -80,3 +80,8 @@ h2.jd-title {
 .owl-stage-outer{
   overflow: visible !important;
 }
+
+#get-quote .form-control.is-invalid {
+  background-image: url("/img/icons/required.png");
+  background-size: 12px;
+}

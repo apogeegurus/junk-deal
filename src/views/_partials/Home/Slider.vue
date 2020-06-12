@@ -2,7 +2,9 @@
     <div class="position-relative slide-section" :class="classes">
         <div class="slideshow">
             <div id="slideshow">
-                <b-img class="slideshow-image" :src="image" v-for="(image, key) in images" :key="key"></b-img>
+                <a class="slide" v-for="(image, key) in images" :key="key">
+                    <span :class="`animate ${getAnimationPosition(key)}` " :style="{'backgroundImage' : `url(${image})`}"></span>
+                </a>
             </div>
             <div class="trinagle-bottom"></div>
         </div>
@@ -19,7 +21,6 @@
 
 <script>
     import QuoteForm from "../../../components/QuoteForm";
-    import KenBurn from "../../../utils/ken-burns/index";
 
     export default {
         props: {
@@ -48,13 +49,28 @@
                 openQuote: false
             }
         },
+        methods: {
+            getAnimationPosition(key) {
+                const animations = ['in', 'out'];
+                return key % 2 === 0 ? animations[0] : animations[1];
+            }
+        },
         created() {
             this.$root.$on('openQuote', () => {
                 this.openQuote = !this.openQuote;
             })
         },
         mounted() {
-            KenBurn();
+            // KenBurn();
+            // These are te default settings.
+            $('#slideshow').slideshow({
+                randomize: false,      // Randomize the play order of the slides.
+                slideDuration: 8000,  // Duration of each induvidual slide.
+                fadeDuration: 4000,    // Duration of the fading transition. Should be shorter than slideDuration.
+                animate: true,        // Turn css animations on or off.
+                pauseOnTabBlur: true,
+                enableLog: false      // Enable log messages to the console. Useful for debugging.
+            });
         }
     }
 </script>

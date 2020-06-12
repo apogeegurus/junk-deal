@@ -66,7 +66,7 @@
                                 </span>
             </b-form-group>
 
-            <b-btn variant="primary" block class="submit-btn-qoute jd-text-12 jd-text-14__mobile p-1 p-md-0 br-150" @click="submitForm">Let’s go!</b-btn>
+            <b-btn :disabled="loading" variant="primary" block class="submit-btn-qoute jd-text-12 jd-text-14__mobile p-1 p-md-0 br-150" @click="submitForm">Let’s go!</b-btn>
         </section>
     </b-form>
 </template>
@@ -93,7 +93,8 @@
                     zip_code: null,
                     date: null,
                     description: null
-                }
+                },
+                loading: false
             }
         },
         watch: {
@@ -111,6 +112,7 @@
             submitForm() {
                 this.$validator.validateAll().then((res) => {
                     if (res) {
+                        this.loading = true;
                         RepositoryFactory.get('site').submitForm(this.quote)
                             .then((res) => {
                                 this.quote = {
@@ -138,6 +140,8 @@
                             } else {
                                 this.$snotify.error("Oops, Something went wrong please try again later.");
                             }
+                        }).finally(() => {
+                            this.loading = false;
                         })
                     }
                 })
