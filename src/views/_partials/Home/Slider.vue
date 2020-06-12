@@ -68,7 +68,7 @@
                 slideDuration: 8000,  // Duration of each induvidual slide.
                 fadeDuration: 4000,    // Duration of the fading transition. Should be shorter than slideDuration.
                 animate: true,        // Turn css animations on or off.
-                pauseOnTabBlur: true,
+                pauseOnTabBlur: false,
                 enableLog: false      // Enable log messages to the console. Useful for debugging.
             });
         }
