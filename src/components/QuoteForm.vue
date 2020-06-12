@@ -20,8 +20,10 @@
             </b-form-group>
             <b-form-group class="mb-4 position-relative">
                 <b-input type="text" placeholder="Phone" :class="`jd-input ${veeErrors.has('phone') ? 'is-invalid' : ''} hover-show-tooltip`"
-                         v-validate="{required : true, max : 30}"
+                         v-validate="{required : true, max: 14, min: 14}"
                          v-model="quote.phone"
+                         maxlength="14"
+                         @input="acceptNumber"
                          name="phone"></b-input>
                 <span v-if="veeErrors.has('phone')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('phone') }}
@@ -39,7 +41,8 @@
                 <b-col cols="12" md="6" class="pr-md-2">
                     <b-form-group class="mb-4 position-relative">
                         <b-input type="text" placeholder="Zip code" :class="`jd-input ${veeErrors.has('zip_code') ? 'is-invalid' : ''} hover-show-tooltip`"
-                                 v-validate="'required|max:80'" v-model="quote.zip_code"
+                                 v-validate="'required|max:5'" v-model="quote.zip_code"
+                                 maxlength="5"
                                  name="zip_code" data-vv-as="zip code"></b-input>
                         <span v-if="veeErrors.has('zip_code')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('zip_code') }}
@@ -107,9 +110,18 @@
                     document.querySelector('body').classList.remove('overflow-hidden');
                     document.querySelector('html').classList.remove('overflow-hidden');
                 }
+            },
+            "quote.phone" : function (newVal) {
+                if(newVal.length === 4) {
+                    this.quote.phone += ") ";
+                }
             }
         },
         methods: {
+            acceptNumber() {
+                let x = this.quote.phone.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                this.quote.phone = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+            },
             submitForm() {
                 this.$validator.validateAll().then((res) => {
                     if (res) {
@@ -374,11 +386,11 @@
         ~ span {
             position: absolute !important;
             right: 0;
-            top: -27px;
+            top: -22px;
             background: #dc3545;
             color: #fff !important;
-            padding: 5px;
-            border-radius: 4px;
+            padding: 3px 8px;
+            border-radius: 2px;
             visibility: hidden;
             opacity: 0;
             transition: 0.2s ease;
