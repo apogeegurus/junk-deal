@@ -19,7 +19,8 @@
                                 </span>
             </b-form-group>
             <b-form-group class="mb-4 position-relative">
-                <b-input type="text" placeholder="Phone" :class="`jd-input ${veeErrors.has('phone') ? 'is-invalid' : ''} hover-show-tooltip`" v-validate="'required|max:80'"
+                <b-input type="text" placeholder="Phone" :class="`jd-input ${veeErrors.has('phone') ? 'is-invalid' : ''} hover-show-tooltip`"
+                         v-validate="{required : true, max : 30}"
                          v-model="quote.phone"
                          name="phone"></b-input>
                 <span v-if="veeErrors.has('phone')" class="text-danger jd-text-10 position-absolute">
@@ -50,7 +51,7 @@
                         <i class="fas fa-calendar-alt position-absolute calendar-icon"></i>
                         <datepicker v-validate="'required'" data-vv-name="date" placeholder="Date" format="MMM dd yyyy"
                                     class="hover-show-tooltip is-invalid"
-                                    v-model="quote.date" :input-class="` jd-input form-control  bg-input w-100 pl-25__input ${veeErrors.has('zip_code') ? 'is-invalid' : ''}`"></datepicker>
+                                    v-model="quote.date" :input-class="` jd-input form-control  bg-input w-100 pl-25__input ${veeErrors.has('date') ? 'is-invalid' : ''}`"></datepicker>
                         <span v-if="veeErrors.has('date')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('date') }}
                                 </span>
