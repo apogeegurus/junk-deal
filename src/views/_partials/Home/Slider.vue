@@ -1,10 +1,8 @@
 <template>
     <div class="position-relative slide-section" :class="classes">
         <div class="slideshow">
-            <div id="slideshow">
-                <a class="slide" v-for="(image, key) in images" :key="key">
-                    <span :class="`animate ${getAnimationPosition(key)}` " :style="{'backgroundImage' : `url(${image})`}"></span>
-                </a>
+            <div id="slideshow__ken__burns">
+                <div v-for="(image, key) in images" :key="key" :style="{'backgroundImage' : `url(${image})`}"></div>
             </div>
             <div class="trinagle-bottom"></div>
         </div>
@@ -59,18 +57,6 @@
             this.$root.$on('openQuote', () => {
                 this.openQuote = !this.openQuote;
             })
-        },
-        mounted() {
-            // KenBurn();
-            // These are te default settings.
-            $('#slideshow').slideshow({
-                randomize: false,      // Randomize the play order of the slides.
-                slideDuration: 8000,  // Duration of each induvidual slide.
-                fadeDuration: 4000,    // Duration of the fading transition. Should be shorter than slideDuration.
-                animate: true,        // Turn css animations on or off.
-                pauseOnTabBlur: false,
-                enableLog: false      // Enable log messages to the console. Useful for debugging.
-            });
         }
     }
 </script>

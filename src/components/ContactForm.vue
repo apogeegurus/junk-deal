@@ -19,7 +19,7 @@
                                     </span>
         </b-form-group>
         <b-form-group class="mb-3">
-            <b-textarea placeholder="Enter Message" rows="4" class="jd-input" v-validate="'required|min:50'" name="message" v-model="contact.message"></b-textarea>
+            <b-textarea placeholder="Enter Message" rows="4" class="jd-input" v-validate="'required'" name="message" v-model="contact.message"></b-textarea>
             <span v-if="veeErrors.has('message')" class="text-danger jd-text-12">
                                         {{ veeErrors.first('message') }}
                                     </span>
