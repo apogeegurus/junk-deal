@@ -25,7 +25,7 @@
 
         <section class="d-flex flex-column">
             <section class="order-lg-0 order-2 mt-4 mt-lg-0">
-                <h2 class="jd-text-25 jd-font-bold jd-text-dark d-block d-lg-none text-center">Additional services</h2>
+                <h2 class="jd-text-25 jd-font-bold jd-text-dark d-block d-lg-none text-center">Additional Services</h2>
                 <services :services="SERVICES"></services>
             </section>
 
