@@ -370,8 +370,8 @@
 
     @media screen and (max-width: 991px) {
         .submit-btn-qoute {
-            background: #fff;
-            color: #EF4E23;
+            /*background: #fff;*/
+            /*color: #EF4E23;*/
             font-weight: 600;
         }
     }
