@@ -136,7 +136,7 @@
                             <p class="jd-text-18">
                                 {{ SITE_DETAILS.about_footer }}
 
-                                <a href="" class="mt-3 d-block text-white">{{ SITE_DETAILS.location }}</a>
+                                <a href="" class="mt-3 d-block text-white" v-html="SITE_DETAILS.location"></a>
 
                                 <a :href="`mailto:${ SITE_DETAILS.email }`" class="mt-3 d-block text-white">{{ SITE_DETAILS.email }}</a>
 
@@ -167,7 +167,7 @@
                                 </section>
                             </b-col>
                             <b-col>
-                                <section class="mb-3">
+                                <section class="mb-3 d-none d-lg-block">
                                     <b-img src="/img/footer/payments-desktop.svg"></b-img>
                                 </section>
 

@@ -18,15 +18,31 @@
                     <router-link class="btn btn-jd" :to="{ name: 'home'}">Go Back</router-link>
                 </div>
             </div>
+            <div style="position: relative; z-index: 10">
+                <quote-form :shown.sync="openQuote"></quote-form>
+            </div>
         </b-container>
     </div>
 </template>
 
 <script>
+    import QuoteForm from "../components/QuoteForm";
+
     export default {
+        components: {QuoteForm},
+        data() {
+            return {
+                openQuote: false
+            }
+        },
         mounted() {
             initTruck();
             this.$root.$emit('hideLoader');
+        },
+        created() {
+            this.$root.$on('openQuote', () => {
+                this.openQuote = !this.openQuote;
+            })
         }
     }
 </script>
