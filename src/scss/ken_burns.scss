@@ -45,20 +45,20 @@ $scale-base-1: (1 + $scale / 100%);
     $t5: (100% - $transition-time-percent / 2);
     $t6: (($t4 - $t1) * 100% / $t5);
 
-    #{$t1} { opacity: 1; transform: scale($scale-base-1); }
+    #{$t1} { opacity: 1; transform: scale(1); }
     #{$t2} { opacity: 1; }
     #{$t3} { opacity: 1; }
-    #{$t4} { opacity: 0; transform: scale(1); }
+    #{$t4} { opacity: 0; transform: scale($scale-base-1); }
 
     @if($i != $items) {
-      100% { opacity: 0; transform: scale($scale-base-1); }
+      100% { opacity: 0; transform: scale(1); }
     }
 
     @if($i == 1) {
       $scale-plus: ($scale * (100% - $t5) / $t4);
       $scale-plus-base-1: (1 + ($scale + $scale-plus) / 100%);
 
-      #{$t5} { opacity: 0; transform: scale($scale-plus-base-1); }
+      #{$t5} { opacity: 0; transform: scale(1); }
       100% { opacity: 1; }
     }
   }
