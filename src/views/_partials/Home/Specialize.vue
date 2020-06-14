@@ -18,10 +18,10 @@
                     <b-col class="d-flex mt-0 mt-lg-3" v-for="(service, key) in services" :key="`service-${key}`" style="flex:1">
                         <ul class="list-unstyled m-0">
                             <li v-for="(item, itemKey) in service" :key="`service-item-${itemKey}`">
-                                <a href="#" class="jd-text-dark py-1 d-block jd-text-18 align-items-center d-flex">
+                                <span class="jd-text-dark py-1 d-block jd-text-18 align-items-center d-flex">
                                     <img src="/img/icons/arrow_left.svg"  alt="" width="18px" class="mr-2 d-none d-lg-block"/>
                                     {{ item.label }}
-                                </a>
+                                </span>
                             </li>
                         </ul>
                     </b-col>
