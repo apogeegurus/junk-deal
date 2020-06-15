@@ -25,7 +25,7 @@
                                     </span>
         </b-form-group>
 
-        <b-btn variant="primary" block @click="submit">SUBMIT</b-btn>
+        <b-btn variant="primary" block @click="submit" :disabled="loading">SUBMIT</b-btn>
     </b-form>
 </template>
 
@@ -40,13 +40,15 @@
                     email: null,
                     subject: null,
                     message: null
-                }
+                },
+                loading: false
             }
         },
         methods: {
             submit() {
                 this.$validator.validateAll().then((res) => {
                     if(res) {
+                        this.loading = true;
                         RepositoryFactory.get('site').contact(this.contact)
                             .then((res) => {
                             this.contact = {
@@ -69,6 +71,8 @@
                             } else {
                                 this.$snotify.error("Oops, Something went wrong please try again later.");
                             }
+                        }).finally(() => {
+                            this.loading = false;
                         })
                     }
                 })

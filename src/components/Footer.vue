@@ -143,10 +143,17 @@
                                 <a href="tel:6509957500" class="mt-3 d-block text-white">{{ SITE_DETAILS.phone_footer }}</a>
                             </p>
                         </section>
+
+                        <section class="d-none d-lg-block">
+                            <h2 class="jd-title mt-3 jd-text-22">SERVICE LOCATIONS</h2>
+                            <section class="footer-areas mt-3">
+                                <router-link :to="{ name: 'location', params: { slug: item.slug }}" v-for="(item, key) in LOCATIONS" :key="key">{{ item.city }}</router-link>
+                            </section>
+                        </section>
                     </b-col>
                     <b-col lg="8" sm="12">
                         <b-row>
-                            <b-col class="pr-5">
+                            <b-col cols="12" lg="6" class="pr-5">
                                 <h2 class="jd-title jd-text-22">Services</h2>
                                 <router-link :to="{name: 'services', params: { slug: SERVICE.slug }}" class="jd-text-18 mb-0 d-block text-white" v-for="(SERVICE, key) in SERVICES" :key="key">{{ SERVICE.title }}</router-link>
 
@@ -158,15 +165,8 @@
                                 <section class="mb-3 d-block d-lg-none">
                                     <b-img src="/img/footer/payments-mobile.svg" class="w-100"></b-img>
                                 </section>
-
-                                <section class="d-none d-lg-block">
-                                    <h2 class="jd-title mt-3 jd-text-22">SERVICE LOCATIONS</h2>
-                                    <section class="footer-areas mt-3">
-                                        <router-link :to="{ name: 'location', params: { slug: item.slug }}" v-for="(item, key) in LOCATIONS" :key="key">{{ item.city }}</router-link>
-                                    </section>
-                                </section>
                             </b-col>
-                            <b-col>
+                            <b-col cols="12" lg="6">
                                 <section class="mb-3 d-none d-lg-block">
                                     <b-img src="/img/footer/payments-desktop.svg"></b-img>
                                 </section>

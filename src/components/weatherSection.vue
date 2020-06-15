@@ -33,7 +33,7 @@
                 </section>
 
                 <section class="mt-2">
-                    <b-img src="/img/icons/phone.svg" class="contain-img mr-3"></b-img>
+<!--                    <b-img src="/img/icons/phone.svg" class="contain-img mr-3"></b-img>-->
                     <a :href="`mailto:${location.police_email}`" target="_blank" class="text-link">{{ location.police_email }}</a>
                 </section>
             </section>
