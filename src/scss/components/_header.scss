@@ -95,6 +95,7 @@ header#site-header{
     @include media-breakpoint-down(md) {
       box-shadow: none;
       border: none;
+      padding-left: 15px;
       .dropdown-item{
         padding: 7px 0 !important;
       }
