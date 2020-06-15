@@ -33,7 +33,9 @@
                 </b-row>
             </b-container>
 
-            <quote-form :shown.sync="openQuote" :hide-desktop="true"></quote-form>
+            <div style="position: relative; z-index: 10">
+                <quote-form :shown.sync="openQuote"></quote-form>
+            </div>
             <div class="map-container" @click="clickedMap = true" @mouseleave="clickedMap = false" :class="{ clicked : clickedMap }">
                 <iframe width="100%" height="650" frameborder="0" style="margin-bottom:-6px"
                         :src="`https://www.google.com/maps/embed/v1/place?q=${SITE_DETAILS.location}&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk`"
@@ -56,8 +58,8 @@
             }
         },
         created() {
-            this.$root.$on('openQuote',  () => {
-                this.openQuote = true;
+            this.$root.$on('openQuote', () => {
+                this.openQuote = !this.openQuote;
             })
         },
         computed: {

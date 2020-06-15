@@ -17,23 +17,35 @@
             <div slot="no-more"><span  v-if="total > 20">No more items</span></div>
             <div slot="no-results">No items created</div>
         </infinite-loading>
+
+        <div style="position: relative; z-index: 10">
+            <quote-form :shown.sync="openQuote"></quote-form>
+        </div>
     </b-container>
 </template>
 
 <script>
     import InfiniteLoading from "vue-infinite-loading";
     import { RepositoryFactory } from "../../api/RepositoryFactory";
+    import QuoteForm from "../../components/QuoteForm";
 
     export default {
         components: {
+            QuoteForm,
             InfiniteLoading
         },
         data() {
             return {
+                openQuote: false,
                 total: 0,
                 page: 1,
                 locations: [],
             }
+        },
+        created() {
+            this.$root.$on('openQuote', () => {
+                this.openQuote = !this.openQuote;
+            })
         },
         methods: {
             getData($state) {

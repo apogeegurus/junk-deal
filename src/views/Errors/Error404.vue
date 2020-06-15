@@ -9,14 +9,30 @@
                 </div>
             </div>
         </b-container>
+
+        <div style="position: relative; z-index: 10">
+            <quote-form :shown.sync="openQuote"></quote-form>
+        </div>
     </div>
 </template>
 
 <script>
+    import QuoteForm from "../../components/QuoteForm";
     export default {
+        components: {QuoteForm},
+        data() {
+            return {
+                openQuote: false
+            }
+        },
         mounted() {
             this.$root.$emit('hideLoader');
-        }
+        },
+        created() {
+            this.$root.$on('openQuote', () => {
+                this.openQuote = !this.openQuote;
+            })
+        },
     }
 </script>
 
