@@ -23,7 +23,7 @@
         </infinite-loading>
 
         <div style="position: relative; z-index: 10">
-            <quote-form :shown.sync="openQuote"></quote-form>
+            <quote-form :shown.sync="openQuote" :hide-desktop="true"></quote-form>
         </div>
     </b-container>
 </template>

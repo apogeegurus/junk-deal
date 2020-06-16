@@ -34,7 +34,7 @@
             </b-container>
 
             <div style="position: relative; z-index: 10">
-                <quote-form :shown.sync="openQuote"></quote-form>
+                <quote-form :shown.sync="openQuote" :hide-desktop="true"></quote-form>
             </div>
             <div class="map-container" @click="clickedMap = true" @mouseleave="clickedMap = false" :class="{ clicked : clickedMap }">
                 <iframe width="100%" height="650" frameborder="0" style="margin-bottom:-6px"

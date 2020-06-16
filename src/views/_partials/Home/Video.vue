@@ -10,7 +10,7 @@
                        lg="4"
                        :class="{'d-none d-lg-block' : !video.is_mobile, 'd-block d-lg-none' : video.is_mobile}">
                     <a :href="video.video_url" class="text-decoration-none" target="_blank">
-                        <b-img :src="`http://img.youtube.com/vi/${video.video_id}/0.jpg`" class="w-100"></b-img>
+                        <b-img :src="`https://img.youtube.com/vi/${video.video_id}/0.jpg`" class="w-100"></b-img>
                     </a>
                     <a :href="video.video_url" class="text-decoration-none" target="_blank">
                         <h5 class="jd-text-18 jd-text-dark jd-font-medium text-uppercase mt-3">{{ video.title }}</h5>
