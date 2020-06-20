@@ -13,6 +13,7 @@ import './scss/main.scss';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Snotify, {SnotifyPosition} from 'vue-snotify'
+import VueGtag from "vue-gtag";
 
 Vue.mixin({
     data() {
@@ -74,6 +75,19 @@ const options = {
 Vue.use(Snotify, options);
 
 Vue.config.productionTip = process.env.VUE_APP_PROD;
+
+Vue.use(VueGtag, {
+    config: { id: "UA-122933306-12" },
+    includes: [
+        { id: 'UA-1234567-2' },
+        {
+            id: 'AW-1039045850',
+            params: {
+                phone_conversion_number: '650-995-7500'
+            }
+        }
+    ]
+}, router);
 
 new Vue({
     created() {

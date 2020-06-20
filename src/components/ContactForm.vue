@@ -25,14 +25,26 @@
                                     </span>
         </b-form-group>
 
+        <b-form-group class="mb-3">
+            <vue-recaptcha
+                    ref="recaptcha"
+                    @verify="onVerify"
+                    :loadRecaptchaScript="true"
+                    sitekey="6LcfLacZAAAAAKrKGdoq9d6ETcbRoZF2Tn0J453a">
+            </vue-recaptcha>
+            <span v-if="!recaptchaVerified && isSubmitted" class="text-danger jd-text-12">Please verify recaptcha.</span>
+        </b-form-group>
+
         <b-btn variant="primary" block @click="submit" :disabled="loading">SUBMIT</b-btn>
     </b-form>
 </template>
 
 <script>
     import {RepositoryFactory} from "../api/RepositoryFactory";
+    import VueRecaptcha from 'vue-recaptcha';
 
     export default {
+        components: { VueRecaptcha },
         data() {
             return {
                 contact: {
@@ -41,11 +53,23 @@
                     subject: null,
                     message: null
                 },
-                loading: false
+                loading: false,
+                recaptchaVerified: false,
+                isSubmitted: false
             }
         },
         methods: {
+            onVerify: function (response) {
+                this.recaptchaVerified = true;
+            },
             submit() {
+                this.isSubmitted = true;
+                if(!this.recaptchaVerified) {
+                    this.recaptchaVerified = false;
+                    return;
+                }
+
+                this.isSubmitted = false;
                 this.$validator.validateAll().then((res) => {
                     if(res) {
                         this.loading = true;
@@ -59,6 +83,7 @@
                             };
                             this.$validator.reset();
                             this.veeErrors.clear();
+                            this.$refs.recaptcha.reset();
                             this.$snotify.success("Successfully submitted, We will contact you soon.")
                         }).catch((err) => {
                            if (err.response.status === 422) {

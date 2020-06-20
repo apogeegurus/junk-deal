@@ -355,6 +355,11 @@
             }
         }
 
+        @media screen and (max-width: 1100px) {
+            right: 60px;
+            z-index: 99999999;
+        }
+
         @media screen and (max-width: 991px) {
             position: fixed;
             top: 80px;
