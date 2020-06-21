@@ -24,7 +24,7 @@
 
                         <div class="d-flex align-content-center align-items-center mt-2">
                             <b-img src="/img/contact/location.png"></b-img>
-                            <a href="tel:650-995-7500" class="ml-3 jd-text-18 jd-font-bold jd-text-light"> {{ SITE_DETAILS.location }}</a>
+                            <a href="tel:650-995-7500" class="ml-3 jd-text-18 jd-font-bold jd-text-light" v-html="SITE_DETAILS.location"></a>
                         </div>
                     </b-col>
                     <b-col md="12" lg="6" offset-md="0" offset-lg="2">
@@ -38,7 +38,7 @@
             </div>
             <div class="map-container" @click="clickedMap = true" @mouseleave="clickedMap = false" :class="{ clicked : clickedMap }">
                 <iframe width="100%" height="650" frameborder="0" style="margin-bottom:-6px"
-                        :src="`https://www.google.com/maps/embed/v1/place?q=${SITE_DETAILS.location}&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk`"
+                        :src="`https://www.google.com/maps/embed/v1/place?q=${SITE_DETAILS.map_address}&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk`"
                         allowfullscreen></iframe>
             </div>
         </section>
