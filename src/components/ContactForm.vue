@@ -85,6 +85,7 @@
                             this.veeErrors.clear();
                             this.$refs.recaptcha.reset();
                             this.$snotify.success("Successfully submitted, We will contact you soon.")
+                            this.$router.push({ name: 'thankyou' });
                         }).catch((err) => {
                            if (err.response.status === 422) {
                                 let errors = err.response.data.errors;
