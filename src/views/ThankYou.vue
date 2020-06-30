@@ -12,7 +12,7 @@
             <div class="transformY-n-300 position-relative z-index-5">
                 <p class="jd-text-22 jd-font-medium text-center mt-5">
                     Our team will get back to you shortly. <br>
-                    If you need immediate assistance please call <a href="tel:650-995-7500" >650-995-7500</a>
+                    If you need immediate assistance please call <br> <a href="tel:650-995-7500" >650-995-7500</a>
                 </p>
                 <div class="text-center">
                     <router-link class="btn btn-jd" :to="{ name: 'home'}">Go Back</router-link>
