@@ -55,7 +55,7 @@
                         <datepicker v-validate="'required'" data-vv-name="date" placeholder="Date" format="MMM dd yyyy"
                                     :disabled-dates=disabledFn
                                     class="hover-show-tooltip is-invalid"
-                                    v-model="quote.date" :input-class="` jd-input form-control  bg-input w-100 pl-25__input ${veeErrors.has('date') ? 'is-invalid' : ''}`"></datepicker>
+                                    v-model="quote.date" :input-class="` jd-input form-control  pr-0 bg-input w-100 pl-25__input ${veeErrors.has('date') ? 'is-invalid' : ''}`"></datepicker>
                         <span v-if="veeErrors.has('date')" class="text-danger jd-text-10 position-absolute">
                                     {{ veeErrors.first('date') }}
                                 </span>
@@ -333,6 +333,7 @@
         width: 254px;
         height: calc(100% - 20px);
         overflow-y: auto;
+        z-index: 999;
 
         input, textarea {
             font-size: 12px;
