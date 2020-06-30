@@ -53,6 +53,7 @@
                     <b-form-group class="mb-4 position-relative">
                         <i class="fas fa-calendar-alt position-absolute calendar-icon"></i>
                         <datepicker v-validate="'required'" data-vv-name="date" placeholder="Date" format="MMM dd yyyy"
+                                    :disabled-dates=disabledFn
                                     class="hover-show-tooltip is-invalid"
                                     v-model="quote.date" :input-class="` jd-input form-control  bg-input w-100 pl-25__input ${veeErrors.has('date') ? 'is-invalid' : ''}`"></datepicker>
                         <span v-if="veeErrors.has('date')" class="text-danger jd-text-10 position-absolute">
@@ -78,6 +79,7 @@
 <script>
     import Datepicker from 'vuejs-datepicker';
     import {RepositoryFactory} from "../api/RepositoryFactory";
+    import moment from "moment";
 
     export default {
         components: {Datepicker},
@@ -98,7 +100,10 @@
                     date: null,
                     description: null
                 },
-                loading: false
+                loading: false,
+                disabledFn: {
+                    to: moment().subtract(1, "day").toDate()
+                }
             }
         },
         watch: {
