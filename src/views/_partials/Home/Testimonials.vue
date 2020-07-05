@@ -90,4 +90,13 @@
 .bg-5{
     background: rgba(158, 172, 53, 0.3);
 }
+
+/deep/.owl-carousel .owl-stage {
+    display: flex;
+}
+
+/deep/.owl-carousel .owl-item  > div  {
+    width: auto;
+    height: 100%;
+}
 </style>

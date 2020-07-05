@@ -103,6 +103,11 @@
         margin: auto;
         @media screen and (max-width: 992px) {
             bottom: 0;
+            width: 420px;
+        }
+
+        @media screen and (max-width: 560px) {
+            bottom: 0;
             width: 260px;
         }
     }

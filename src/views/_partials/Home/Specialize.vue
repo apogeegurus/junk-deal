@@ -72,6 +72,7 @@
             transform-origin: -15px 85px;
             transform: rotate(-90deg);
             width: 530px;
+            text-align: right;
         }
     }
     .border--left__mobile{

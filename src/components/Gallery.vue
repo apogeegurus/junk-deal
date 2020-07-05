@@ -78,6 +78,25 @@
 }
 
 /deep/#blueimp-gallery {
+    a.close {
+        display: block;
+        padding: 0;
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid #EF4E23;
+        margin: 5px 0;
+        opacity: 0.6;
+        transition: 0.3s ease;
+        text-align: center;
+        &:hover{
+            opacity: 1;
+        }
+        img {
+            width: 40px;
+            height: 40px;
+            transform: scale(1.08) translateX(-0.1px);
+        }
+    }
     a.next, a.prev{
         display: flex;
         align-items: center;
