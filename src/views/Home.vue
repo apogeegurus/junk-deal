@@ -15,27 +15,27 @@
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
-        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
+<!--        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>-->
         <!--Banner Section End-->
 
         <!--Services Section Start-->
-        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>
+<!--        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>-->
         <!--Services Section End-->
 
         <!--Banner Section Start-->
-        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
+<!--        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>-->
         <!--Banner Section End-->
 
         <!--Works Section Start-->
-        <works></works>
+<!--        <works></works>-->
         <!--Works Section End-->
 
         <!--Testimonials Section Start-->
-        <testimonials></testimonials>
+<!--        <testimonials></testimonials>-->
         <!--Testimonials Section End-->
 
         <!--Video Section Start-->
-        <jd-video></jd-video>
+<!--        <jd-video></jd-video>-->
         <!--Video Section End-->
     </div>
 </template>
