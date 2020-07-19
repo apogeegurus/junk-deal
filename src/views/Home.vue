@@ -8,11 +8,11 @@
                style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
         </b-container>
 
-<!--        <animation></animation>-->
+        <animation></animation>
 
-<!--        &lt;!&ndash;Specialize Section Start&ndash;&gt;-->
-<!--        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>-->
-<!--        &lt;!&ndash;Specialize Section End&ndash;&gt;-->
+        <!--Specialize Section Start-->
+        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
+        <!--Specialize Section End-->
 
 <!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
 <!--        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>-->
