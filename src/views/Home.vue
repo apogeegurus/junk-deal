@@ -15,7 +15,7 @@
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
-<!--        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>-->
+        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
         <!--Banner Section End-->
 
         <!--Services Section Start-->
