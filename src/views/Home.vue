@@ -11,32 +11,32 @@
 <!--        <animation></animation>-->
 
         <!--Specialize Section Start-->
-<!--        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>-->
+        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
         <!--Specialize Section End-->
 
-<!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
-<!--        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>-->
-<!--        &lt;!&ndash;Banner Section End&ndash;&gt;-->
+        <!--Banner Section Start-->
+        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
+        <!--Banner Section End-->
 
-<!--        &lt;!&ndash;Services Section Start&ndash;&gt;-->
-<!--        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>-->
-<!--        &lt;!&ndash;Services Section End&ndash;&gt;-->
+        <!--Services Section Start-->
+        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>
+        <!--Services Section End-->
 
-<!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
-<!--        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>-->
-<!--        &lt;!&ndash;Banner Section End&ndash;&gt;-->
+        <!--Banner Section Start-->
+        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
+        <!--Banner Section End-->
 
-<!--        &lt;!&ndash;Works Section Start&ndash;&gt;-->
-<!--        <works></works>-->
-<!--        &lt;!&ndash;Works Section End&ndash;&gt;-->
+        <!--Works Section Start-->
+        <works></works>
+        <!--Works Section End-->
 
-<!--        &lt;!&ndash;Testimonials Section Start&ndash;&gt;-->
-<!--        <testimonials></testimonials>-->
-<!--        &lt;!&ndash;Testimonials Section End&ndash;&gt;-->
+        <!--Testimonials Section Start-->
+        <testimonials></testimonials>
+        <!--Testimonials Section End-->
 
-<!--        &lt;!&ndash;Video Section Start&ndash;&gt;-->
-<!--        <jd-video></jd-video>-->
-<!--        &lt;!&ndash;Video Section End&ndash;&gt;-->
+        <!--Video Section Start-->
+        <jd-video></jd-video>
+        <!--Video Section End-->
     </div>
 </template>
 
