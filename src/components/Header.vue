@@ -158,7 +158,7 @@
     }
 
     a {
-        margin-right: 1px;
+        margin-right: 5px;
         border-radius: 0 20px 0 0;
     }
 
