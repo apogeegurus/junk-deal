@@ -91,6 +91,9 @@
     background: rgba(158, 172, 53, 0.3);
 }
 
+/deep/.owl-carousel .owl-stage-outer {
+    overflow: hidden !important;
+}
 /deep/.owl-carousel .owl-stage {
     display: flex;
 }

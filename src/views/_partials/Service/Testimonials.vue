@@ -117,6 +117,10 @@
 }
 
 
+/deep/.owl-carousel .owl-stage-outer {
+    overflow: hidden !important;
+}
+
 /deep/.owl-carousel .owl-stage {
     display: flex;
 }
