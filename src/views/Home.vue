@@ -8,7 +8,7 @@
                style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
         </b-container>
 
-        <animation></animation>
+<!--        <animation></animation>-->
 
         <!--Specialize Section Start-->
         <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
@@ -35,7 +35,7 @@
         <!--Testimonials Section End-->
 
         <!--Video Section Start-->
-<!--        <jd-video></jd-video>-->
+        <jd-video></jd-video>
         <!--Video Section End-->
     </div>
 </template>
