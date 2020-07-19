@@ -10,29 +10,29 @@
 
         <animation></animation>
 
-        <!--Specialize Section Start-->
-        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
-        <!--Specialize Section End-->
+<!--        &lt;!&ndash;Specialize Section Start&ndash;&gt;-->
+<!--        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>-->
+<!--        &lt;!&ndash;Specialize Section End&ndash;&gt;-->
 
-        <!--Banner Section Start-->
-        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
-        <!--Banner Section End-->
+<!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
+<!--        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>-->
+<!--        &lt;!&ndash;Banner Section End&ndash;&gt;-->
 
         <!--Services Section Start-->
         <services :services="SERVICES" class="mt-1 mt-lg-2"></services>
         <!--Services Section End-->
 
-        <!--Banner Section Start-->
-        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
-        <!--Banner Section End-->
+<!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
+<!--        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>-->
+<!--        &lt;!&ndash;Banner Section End&ndash;&gt;-->
 
         <!--Works Section Start-->
         <works></works>
         <!--Works Section End-->
 
-        <!--Testimonials Section Start-->
-        <testimonials></testimonials>
-        <!--Testimonials Section End-->
+<!--        &lt;!&ndash;Testimonials Section Start&ndash;&gt;-->
+<!--        <testimonials></testimonials>-->
+<!--        &lt;!&ndash;Testimonials Section End&ndash;&gt;-->
 
         <!--Video Section Start-->
         <jd-video></jd-video>
