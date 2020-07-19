@@ -19,7 +19,7 @@
         <!--Banner Section End-->
 
         <!--Services Section Start-->
-<!--        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>-->
+        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>
         <!--Services Section End-->
 
         <!--Banner Section Start-->
