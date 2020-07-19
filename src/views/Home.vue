@@ -31,7 +31,7 @@
         <!--Works Section End-->
 
         <!--Testimonials Section Start-->
-        <testimonials></testimonials>
+<!--        <testimonials></testimonials>-->
         <!--Testimonials Section End-->
 
         <!--Video Section Start-->
