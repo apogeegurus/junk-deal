@@ -11,11 +11,11 @@
 <!--        <animation></animation>-->
 
         <!--Specialize Section Start-->
-        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
+<!--        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>-->
         <!--Specialize Section End-->
 
         <!--Banner Section Start-->
-        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
+<!--        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>-->
         <!--Banner Section End-->
 
         <!--Services Section Start-->
@@ -23,15 +23,15 @@
         <!--Services Section End-->
 
         <!--Banner Section Start-->
-        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
+<!--        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>-->
         <!--Banner Section End-->
 
         <!--Works Section Start-->
-        <works></works>
+<!--        <works></works>-->
         <!--Works Section End-->
 
         <!--Testimonials Section Start-->
-        <testimonials></testimonials>
+<!--        <testimonials></testimonials>-->
         <!--Testimonials Section End-->
 
         <!--Video Section Start-->
