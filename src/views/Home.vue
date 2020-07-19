@@ -11,7 +11,7 @@
         <animation></animation>
 
         <!--Specialize Section Start-->
-        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
+<!--        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>-->
         <!--Specialize Section End-->
 
 <!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
