@@ -27,7 +27,7 @@
         <!--Banner Section End-->
 
         <!--Works Section Start-->
-<!--        <works></works>-->
+        <works></works>
         <!--Works Section End-->
 
         <!--Testimonials Section Start-->
