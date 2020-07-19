@@ -2,13 +2,13 @@
     <div class="home-section">
         <slider :images="images" v-if="images.length" classes="home--slider"></slider>
 
-<!--        <b-container class="text-center mt-0 mt-lg-5">-->
-<!--            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>-->
-<!--            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase jd-specialize-title"-->
-<!--               style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>-->
-<!--        </b-container>-->
+        <b-container class="text-center mt-0 mt-lg-5">
+            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>
+            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase jd-specialize-title"
+               style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
+        </b-container>
 
-<!--        <animation></animation>-->
+        <animation></animation>
 
         <!--Specialize Section Start-->
         <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
@@ -27,7 +27,7 @@
         <!--Banner Section End-->
 
         <!--Works Section Start-->
-        <works></works>
+<!--        <works></works>-->
         <!--Works Section End-->
 
         <!--Testimonials Section Start-->
