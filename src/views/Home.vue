@@ -2,40 +2,40 @@
     <div class="home-section">
         <slider :images="images" v-if="images.length" classes="home--slider"></slider>
 
-        <b-container class="text-center mt-0 mt-lg-5">
-            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>
-            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase jd-specialize-title"
-               style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>
-        </b-container>
+<!--        <b-container class="text-center mt-0 mt-lg-5">-->
+<!--            <h1 class="jd-text-dark jd-font-bold jd-text-36 jd-text-25__mobile">{{ HOME_PAGE.title }}</h1>-->
+<!--            <p class="jd-text-29 mt-3 jd-font-light jd-text-18__mobile text-uppercase jd-specialize-title"-->
+<!--               style="white-space: pre-wrap;">{{ HOME_PAGE.specialize_title }}</p>-->
+<!--        </b-container>-->
 
-        <animation></animation>
+<!--        <animation></animation>-->
 
-<!--        &lt;!&ndash;Specialize Section Start&ndash;&gt;-->
-<!--        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>-->
-<!--        &lt;!&ndash;Specialize Section End&ndash;&gt;-->
+        <!--Specialize Section Start-->
+        <specialize :services="specialize" :classes="'mb-0 mb-lg-5'" :is-home="true"></specialize>
+        <!--Specialize Section End-->
 
-<!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
-<!--        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>-->
-<!--        &lt;!&ndash;Banner Section End&ndash;&gt;-->
+        <!--Banner Section Start-->
+        <banner-right class="d-none d-lg-block" :image="HOME_PAGE.banner_first_path"></banner-right>
+        <!--Banner Section End-->
 
         <!--Services Section Start-->
-        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>
+<!--        <services :services="SERVICES" class="mt-1 mt-lg-2"></services>-->
         <!--Services Section End-->
 
-<!--        &lt;!&ndash;Banner Section Start&ndash;&gt;-->
-<!--        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>-->
-<!--        &lt;!&ndash;Banner Section End&ndash;&gt;-->
+        <!--Banner Section Start-->
+        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
+        <!--Banner Section End-->
 
         <!--Works Section Start-->
         <works></works>
         <!--Works Section End-->
 
-<!--        &lt;!&ndash;Testimonials Section Start&ndash;&gt;-->
-<!--        <testimonials></testimonials>-->
-<!--        &lt;!&ndash;Testimonials Section End&ndash;&gt;-->
+        <!--Testimonials Section Start-->
+        <testimonials></testimonials>
+        <!--Testimonials Section End-->
 
         <!--Video Section Start-->
-        <jd-video></jd-video>
+<!--        <jd-video></jd-video>-->
         <!--Video Section End-->
     </div>
 </template>
