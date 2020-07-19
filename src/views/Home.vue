@@ -23,7 +23,7 @@
         <!--Services Section End-->
 
         <!--Banner Section Start-->
-<!--        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>-->
+        <banner-left class="d-none d-lg-block" :image="HOME_PAGE.banner_second_path"></banner-left>
         <!--Banner Section End-->
 
         <!--Works Section Start-->
