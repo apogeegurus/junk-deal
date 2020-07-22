@@ -43,6 +43,12 @@ h2.jd-title {
     margin-bottom: 15px;
     border-radius: 150px;
   }
+
+  &.mt--4 {
+    &:after {
+      margin-top: 4px;
+    }
+  }
 }
 
 .ml--3{margin-left: -3px;}
