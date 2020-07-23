@@ -31,7 +31,7 @@
 
             <testimonials class="mt-5 order-lg-0 order-1"></testimonials>
 
-            <div class="map-container order-lg-0 order-0" @click="clickedMap = true" @mouseleave="clickedMap = false"
+            <div class="map-container order-lg-0 order-0 mt-4 mt-lg-0" @click="clickedMap = true" @mouseleave="clickedMap = false"
                  :class="{ clicked : clickedMap }">
                 <iframe width="100%" height="250" frameborder="0" style="margin-bottom:-6px"
                         :src="`https://www.google.com/maps/embed/v1/place?q=${location.lat},${location.lon}&key=AIzaSyB2kXXO6fWPG_-L5IQXn96fx8qUg-_3GLk`"
