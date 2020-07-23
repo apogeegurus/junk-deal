@@ -23,16 +23,19 @@
                 <p>Median Income</p>
                 <p>{{ location.median_income }}</p>
             </li>
-            <li class="d-flex justify-content-between">
+            <li class="d-flex justify-content-between border-bottom-0">
                 <p>Median Home Value</p>
                 <p>${{ location.median_home_value }}</p>
             </li>
             <li class="align-self-end">
-                <a :href="location.wiki_link" target="_blank">Learn More on Wikipedia</a>
+                <a :href="location.wiki_link" target="_blank">
+                    Learn More on Wikipedia
+                </a>
+                <img src="/img/icons/arrow_right_blue.svg" alt="" title="" />
             </li>
         </ul>
-        <h3 class="jd-text-18 jd-text-dark jd-font-medium">Palo Alto City Hall</h3>
-        <section class="jd-text-18">
+        <h3 class="jd-text-18 jd-text-dark jd-font-medium jd-text--city">{{ location.city }} City Hall</h3>
+        <section class="jd-text-18 text-styles">
             <section class="d-flex align-items-center">
                 <b-img src="/img/icons/globus.png" class="contain-img mr-3"></b-img>
                 <a :href="location.website" target="_blank" class="text-link">{{ location.website }}</a>
@@ -46,48 +49,6 @@
                 <a :href="`tel:${location.address}`" target="_blank" class="jd-text-dark">{{ location.address }}</a>
             </section>
         </section>
-
-<!--        <section class="jd-text-18">-->
-<!--            <section>-->
-<!--                <p class="mb-0">City of {{ location.city }}</p>-->
-<!--                <section>-->
-<!--                    <b-img src="/img/icons/globus.png" class="contain-img mr-3"></b-img>-->
-<!--                    <a :href="location.website" target="_blank" class="text-link">{{ location.website }}</a>-->
-<!--                </section>-->
-<!--            </section>-->
-
-<!--            <section class="mt-4">-->
-<!--                <p class="mb-0">City Hall</p>-->
-<!--                <section>-->
-<!--                    <b-img src="/img/icons/phone.svg" class="contain-img mr-3"></b-img>-->
-<!--                    <a :href="`tel:${location.city_phone}`" target="_blank" class="jd-text-dark">{{ location.city_phone }}</a>-->
-<!--                </section>-->
-<!--            </section>-->
-
-<!--            <section class="mt-4">-->
-<!--                <p class="mb-0">Police Department,</p>-->
-<!--                <p class="mb-0">{{ location.police_address }}</p>-->
-<!--                <section>-->
-<!--                    <b-img src="/img/icons/phone.svg" class="contain-img mr-3"></b-img>-->
-<!--                    <a :href="`tel:${location.police_phone}`" target="_blank" class="jd-text-dark">{{ location.police_phone }}</a>-->
-<!--                </section>-->
-
-<!--                <section class="mt-2">-->
-<!--&lt;!&ndash;                    <b-img src="/img/icons/phone.svg" class="contain-img mr-3"></b-img>&ndash;&gt;-->
-<!--                    <a :href="`mailto:${location.police_email}`" target="_blank" class="text-link">{{ location.police_email }}</a>-->
-<!--                </section>-->
-<!--            </section>-->
-<!--        </section>-->
-
-<!--        <h2 class="jd-text-22 jd-font-medium bottom-line-def-color mt-4 jd-text-light">Places to donate:</h2>-->
-
-<!--        <section class="jd-text-18">-->
-<!--            <p class="mb-0">{{ location.donate_address }}</p>-->
-<!--            <section>-->
-<!--                <b-img src="/img/icons/phone.svg" class="contain-img mr-3"></b-img>-->
-<!--                <a :href="`tel:${location.donate_phone}`" target="_blank" class="jd-text-dark">{{ location.donate_phone }}</a>-->
-<!--            </section>-->
-<!--        </section>-->
     </div>
 </template>
 
@@ -106,8 +67,36 @@
 
 <style scoped lang="scss">
     .weather-text-color {
-        color: #8e8e8e;
         font-size: 22px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.36;
+        letter-spacing: normal;
+        text-align: left;
+        color: #8e8e8e;
+    }
+
+    .text-styles {
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.44;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4a4a4a;
+    }
+
+    .jd-text--city {
+        font-size: 18px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.44;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4a4a4a;
     }
 
     .list-info {
@@ -119,15 +108,34 @@
             padding: 3px 0;
             &:last-child {
                 border: none;
+                display: flex;
+                align-items: center;
                 a {
-                    color: #0091ff;
                     font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.43;
+                    letter-spacing: normal;
+                    text-align: right;
+                    color: #0091ff;
+                }
+
+                img {
+                    width: 12px;
+                    margin-left: 4px;
                 }
             }
             p {
                 font-size: 18px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.44;
+                letter-spacing: normal;
+                text-align: left;
                 color: #4a4a4a;
-                margin: 0;
+                margin-bottom: 0;
             }
         }
     }
