@@ -431,10 +431,6 @@
         overflow: hidden !important;
     }
 
-    /deep/.owl-carousel .owl-stage {
-        display: flex;
-    }
-
     /deep/.owl-carousel .owl-item  > div  {
         width: auto;
         height: 100%;
