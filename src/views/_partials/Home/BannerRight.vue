@@ -10,7 +10,7 @@
             </b-container>
         </template>
         <div class="position-relative">
-            <div class="banner-images" :style="{backgroundImage : `url(${image})`}" :class="{'mt-0' : onlyImage}">
+            <div class="banner-images" :style="{backgroundImage : `url(${image})`}" :class="{'mt-0' : onlyImage, 'w-100--mobile' : width}">
                 <div class="arrow"></div>
                 <div class="arrow"></div>
             </div>
@@ -30,6 +30,10 @@
         props: {
             image: String,
             onlyImage: {
+                type: Boolean,
+                default: false
+            },
+            width: {
                 type: Boolean,
                 default: false
             }
@@ -112,7 +116,10 @@
     }
 
     @media screen and (max-width:992px){
-        background-attachment:scroll
+        background-attachment:scroll;
+        &.w-100--mobile {
+            width:100%;
+        }
     }
 
     .arrow{

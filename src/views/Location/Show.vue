@@ -73,6 +73,7 @@
                              :location="location"></weather-section>
 
             <banner-right :only-image="true" :image="location.banner_first_path"
+                          width
                           class="order-lg-0 order-2 overflow-hidden"></banner-right>
 
             <b-container class="d-none d-lg-block">
@@ -147,7 +148,7 @@
                                                 <img :src="yelp_place.img" alt="" title=""/>
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <p>{{ yelp_place.address }}</p>
+                                                <p v-html="yelp_place.address" class="text-center"></p>
                                                 <div class="d-flex">
                                                     <img :src="`/img/yelp/regular_${yelp_place.rating}.png`" alt="" title=""
                                                          style="object-fit: contain;height: 20px;"/>
@@ -166,6 +167,7 @@
 
 
             <banner-left :only-image="true" :image="location.banner_second_path"
+                         width
                          class="mb-5 d-none d-lg-block"></banner-left>
 
             <section class="order-lg-0 order-5">
@@ -204,7 +206,7 @@
                                                 <img :src="yelp_place.img" alt="" title=""/>
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <p>{{ yelp_place.address }}</p>
+                                                <p v-html="yelp_place.address" class="text-center"></p>
                                                 <div class="d-flex">
                                                     <img :src="`/img/yelp/regular_${yelp_place.rating}.png`" alt="" title=""
                                                          style="object-fit: contain;height: 20px;"/>
