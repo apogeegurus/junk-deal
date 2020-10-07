@@ -1,7 +1,7 @@
 <template>
     <div class="position-relative slide-section" :class="classes">
         <div class="slideshow">
-            <div id="slideshow__ken__burns">
+            <div id="slideshow__ken__burns" v-if="loaded">
                 <div v-for="(image, key) in images" :key="key" :style="{'backgroundImage' : `url(${image})`}"></div>
             </div>
             <div class="trinagle-bottom"></div>
@@ -44,7 +44,8 @@
         components: {QuoteForm},
         data() {
             return {
-                openQuote: false
+                openQuote: false,
+                loaded: false
             }
         },
         methods: {
@@ -57,6 +58,9 @@
             this.$root.$on('openQuote', () => {
                 this.openQuote = !this.openQuote;
             })
+        },
+        mounted() {
+            this.loaded = true;
         }
     }
 </script>

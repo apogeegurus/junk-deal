@@ -79,7 +79,7 @@
                 return this.SERVICES.filter(item => item.slug !== this.slug);
             },
             images: function () {
-                return this.SLIDERS.map(item => item.path);
+                return this.service && this.service.sliders && this.service.sliders.map(item => item.path) || [];
             }
         },
         watch: {
