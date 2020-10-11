@@ -61,6 +61,18 @@
                 specialize: []
             }
         },
+        metaInfo() {
+            return {
+                title: this.service.title,
+                meta: [
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: this.getTextFromHTML(this.service.long_description)
+                    }
+                ]
+            };
+        },
         beforeCreate() {
             this.$store.dispatch("GET_SERVICES_NAMES");
             this.$store.dispatch("GET_SLIDERS");

@@ -13,6 +13,18 @@
     data: () => ({
 
     }),
+    metaInfo() {
+      return {
+        title: process.env.VUE_APP_NAME,
+        meta: [
+          {
+            vmid: "description",
+            name: "description",
+            content: ""
+          }
+        ]
+      };
+    },
     computed : {
       layout() {
         return (this.$route.meta.layout || 'default') + '-layout';

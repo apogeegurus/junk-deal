@@ -14,6 +14,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Snotify, {SnotifyPosition} from 'vue-snotify'
 import VueGtag from "vue-gtag";
+import Meta from "vue-meta";
 
 Vue.mixin({
     data() {
@@ -30,6 +31,11 @@ Vue.mixin({
                 chunked_arr.push(copied.splice(0, size));
             }
             return chunked_arr;
+        },
+        getTextFromHTML(html) {
+            let escape = document.createElement('div');
+            escape.innerHTML = html;
+            return escape.innerText;
         }
     },
     updated() {
@@ -45,6 +51,7 @@ Vue.component('no-layout', NoLayout);
 Vue.component('loader', Loader);
 Vue.use(require('vue-moment'));
 Vue.use(BootstrapVue);
+Vue.use(Meta);
 Vue.use(VeeValidate, {
     inject: true,
     fieldsBagName: 'veeFields',
