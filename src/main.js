@@ -15,6 +15,7 @@ import 'aos/dist/aos.css'
 import Snotify, {SnotifyPosition} from 'vue-snotify'
 import VueGtag from "vue-gtag";
 import Meta from "vue-meta";
+import VueGtm from 'vue-gtm';
 
 Vue.mixin({
     data() {
@@ -73,6 +74,16 @@ Vue.use(VeeValidate, {
     }
 });
 
+Vue.use(VueGtm, {
+    id: 'GTM-NLWZW59',
+    defer: false,
+    enabled: true,
+    debug: false,
+    loadScript: true,
+    vueRouter: router,
+    trackOnNextTick: false,
+});
+
 const options = {
     toast: {
         position: SnotifyPosition.rightTop
@@ -84,16 +95,7 @@ Vue.use(Snotify, options);
 Vue.config.productionTip = process.env.VUE_APP_PROD;
 
 Vue.use(VueGtag, {
-    config: { id: "UA-122933306-12" },
-    includes: [
-        { id: 'UA-1234567-2' },
-        {
-            id: 'AW-1039045850',
-            params: {
-                phone_conversion_number: '650-995-7500'
-            }
-        }
-    ]
+    config: { id: "UA-178409303-1" }
 }, router);
 
 new Vue({

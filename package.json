@@ -27,6 +27,7 @@
     "vue-carousel": "^0.18.0",
     "vue-gallery": "^2.0.1",
     "vue-gtag": "^1.6.5",
+    "vue-gtm": "3.0.0-vue2",
     "vue-infinite-loading": "^2.4.4",
     "vue-meta": "^2.4.0",
     "vue-moment": "^4.1.0",
