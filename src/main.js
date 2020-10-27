@@ -16,6 +16,8 @@ import Snotify, {SnotifyPosition} from 'vue-snotify'
 import VueGtag from "vue-gtag";
 import Meta from "vue-meta";
 import VueGtm from 'vue-gtm';
+import VueYandexMetrika from 'vue-yandex-metrika'
+
 
 Vue.mixin({
     data() {
@@ -53,6 +55,17 @@ Vue.component('loader', Loader);
 Vue.use(require('vue-moment'));
 Vue.use(BootstrapVue);
 Vue.use(Meta);
+Vue.use(VueYandexMetrika, {
+    id: '68695942',
+    router: router,
+    env: process.env.NODE_ENV,
+    options: {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    }
+})
 Vue.use(VeeValidate, {
     inject: true,
     fieldsBagName: 'veeFields',
