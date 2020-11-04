@@ -16,7 +16,7 @@
         <b-container>
             <b-row>
                 <b-col cols="12" md="6" lg="3" v-for="(member, key) in members" :key="key" class="member-section mb-3">
-                    <b-img :src="member.avatar_path"></b-img>
+                    <b-img :src="member.avatar_path" :alt="member.name"></b-img>
                     <h2 class="jd-text-dark jd-text-18 jd-font-medium mt-3">{{ member.name }}</h2>
                     <p class="jd-font-regular">{{ member.position }}</p>
                 </b-col>
@@ -32,7 +32,7 @@
 
         <b-container>
             <div class="text-center my-5">
-                <b-img :src="about.image_path" class="banner mt-5"></b-img>
+                <b-img :src="about.image_path" :alt="about.alt" class="banner mt-5"></b-img>
             </div>
         </b-container>
     </div>

@@ -2,7 +2,7 @@
     <b-container class="my-5">
         <h2 class="title jd-text-36 text-center jd-font-bold jd-text-dark text-capitalize">{{ blog.headline }}</h2>
         <p class="mb-0 jd-text-16 text-center">Author: <span class="text-uppercase">{{ blog.author }}</span></p>
-        <b-img :src="blog.main_image_path" class="img-style my-4" height="380px"></b-img>
+        <b-img :src="blog.main_image_path" :alt="blog.alt" class="img-style my-4" height="380px"></b-img>
 
         <b-row>
             <b-col cols="12" lg="9" class="text-break">

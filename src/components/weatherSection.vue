@@ -1,7 +1,7 @@
 <template>
     <div class="position-relative" style="z-index: 980;margin: 0 -7px;">
         <div class="text-center mb-20">
-            <img :src="location.city_emblem_path" alt="" title="" class="emblem" width="122px" height="122px"/>
+            <img :src="location.city_emblem_path" :alt="location.alt_city_emblem" title="" class="emblem" width="122px" height="122px"/>
         </div>
         <h2 class="jd-text-22 jd-font-medium bottom-line-def-color jd-text-light weather-text-color jd-font-medium">Weather in <br> {{ location.city }}</h2>
         <h3 class="jd-font-light d-flex justify-content-lg-between justify-content-start">

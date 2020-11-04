@@ -124,7 +124,7 @@
                                      class="gallery-container">
                                     <div v-if="gallery.hex_code" class="gallery hex"
                                          :style="{'background-color': gallery.hex_code}"></div>
-                                    <img :src="gallery.path" alt="" title="" v-else class="gallery img"/>
+                                    <img :src="gallery.path" :alt="gallery.alt" title="" v-else class="gallery img"/>
                                 </div>
                             </section>
                         </b-col>
@@ -184,7 +184,7 @@
                                      class="gallery-container">
                                     <div v-if="gallery.hex_code" class="gallery hex"
                                          :style="{'background-color': gallery.hex_code}"></div>
-                                    <img :src="gallery.path" alt="" title="" v-else class="gallery img"/>
+                                    <img :src="gallery.path" :alt="gallery.alt" title="" v-else class="gallery img"/>
                                 </div>
                             </section>
                         </b-col>

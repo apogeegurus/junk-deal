@@ -1,6 +1,6 @@
 <template>
     <section>
-        <gallery :images="imagesPath" :index="index" @close="index = null">
+        <gallery :images="imagesPathOnly" :index="index" @close="index = null">
             <template v-slot:next>
                 <b-img src="/img/icons/arrow_right.svg"></b-img>
             </template>
@@ -19,7 +19,7 @@
                    :key="imageIndex"
                    @click="index = imageIndex"
             >
-                <b-img :src="image"  class="w-100 h-200px"></b-img>
+                <b-img :src="image.path" :alt="image.alt"   class="w-100 h-200px"></b-img>
             </b-col>
         </b-row>
     </section>
@@ -47,8 +47,11 @@
         },
         computed: {
             imagesPath: function() {
-                return this.images.map(item => item.path)
-            }
+                return this.images.map(item => { return {path: item.path, alt: item.alt}})
+            },
+            imagesPathOnly: function() {
+                return this.images.map(item => { return item.path})
+            },
         }
     }
 </script>

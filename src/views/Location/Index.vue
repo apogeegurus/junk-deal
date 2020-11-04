@@ -5,7 +5,7 @@
         <b-row>
             <b-col v-for="(location, key) in locations" :key="key" cols="12" md="6"  lg="4" class="blog-section mt-5">
                 <router-link :to="{ name: 'location', params: { slug: location.slug }}">
-                    <b-img :src="location.main_image_path"  class="img-style"></b-img>
+                    <b-img :src="location.main_image_path" :alt="location.alt_main" class="img-style"></b-img>
                 </router-link>
                 <router-link :to="{ name: 'location', params: { slug: location.slug }}">
                     <p class="jd-text-dark text-uppercase headline jd-font-medium">{{ location.city }}</p>

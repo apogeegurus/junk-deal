@@ -4,7 +4,7 @@
             <b-row>
                 <b-col class="text-center mt-3 mt-lg-0 p-0__mobile service-item" :lg="services.length < 3 ? 6 : 4" sm="12" v-for="(service, key) in services" :key="`service-top-${key}`">
                     <router-link :to="{ name: 'services', params: { slug : service.slug } }">
-                        <b-img :src="service.main_image_path" class="services--img"></b-img>
+                        <b-img :src="service.main_image_path" :alt="service .alt" class="services--img"></b-img>
                     </router-link>
 
                     <section class="text-left px-3 px-lg-0">

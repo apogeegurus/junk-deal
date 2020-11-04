@@ -11,7 +11,7 @@
                     <h2 class="headline">{{ blog.headline }}</h2>
                     <h4 class="sub-headline">{{ blog.sub_headline }}</h4>
                     <p class="author jd-text-dark jd-font-light mt-2 mb-2">Author: <b class="text-uppercase"> {{ blog.author }}</b></p>
-                    <b-img :src="blog.main_image_path"  class="img-style"></b-img>
+                    <b-img :src="blog.main_image_path" :alt="blog.alt"  class="img-style"></b-img>
 
                     <div v-html="blog.description" style="word-break: break-all;"></div>
                 </div>
