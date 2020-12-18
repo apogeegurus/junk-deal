@@ -63,12 +63,17 @@
         },
         metaInfo() {
             return {
-                title: this.service.title,
+                title: this.service.meta_title,
                 meta: [
                     {
                         vmid: "description",
                         name: "description",
-                        content: this.getTextFromHTML(this.service.long_description)
+                        content: this.service.meta_description
+                    },
+                    {
+                        vmid: "title",
+                        name: "title",
+                        content: this.service.meta_title
                     }
                 ]
             };

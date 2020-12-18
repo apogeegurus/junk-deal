@@ -254,6 +254,23 @@
     import carousel from 'vue-owl-carousel'
 
     export default {
+        metaInfo() {
+            return {
+                title: this.location.meta_title,
+                meta: [
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: this.location.meta_description
+                    },
+                    {
+                        vmid: "title",
+                        name: "title",
+                        content: this.location.meta_title
+                    }
+                ]
+            };
+        },
         components: {
             Slider,
             Testimonials,

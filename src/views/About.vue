@@ -44,6 +44,23 @@
     import { RepositoryFactory } from "../api/RepositoryFactory"
 
     export default {
+        metaInfo() {
+            return {
+                title: 'Full-Service Junk Removal and Hauling Company',
+                meta: [
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: 'Junk Deal is a local San Francisco Bay Area company, we provide reliable junk removal services, including furniture removal, storage and garage cleanouts'
+                    },
+                    {
+                        vmid: "title",
+                        name: "title",
+                        content: 'Full-Service Junk Removal and Hauling Company'
+                    }
+                ]
+            };
+        },
         components: { Slider },
         data() {
             return {

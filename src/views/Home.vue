@@ -53,6 +53,23 @@
     import {mapGetters} from 'vuex';
 
     export default {
+        metaInfo() {
+            return {
+                title: 'Best Junk Removal Services | Junk Deal ',
+                meta: [
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: 'Junk Deal is a full-service junk removal company based in Menlo Park, we provide commercial and residential junk removal services, best office furniture liquidators in San Francisco bay area.'
+                    },
+                    {
+                        vmid: "title",
+                        name: "title",
+                        content: 'Best Junk Removal Services | Junk Deal '
+                    }
+                ]
+            };
+        },
         components: {Specialize, Slider, BannerRight, BannerLeft, Works, Testimonials, JdVideo, Services, Animation},
         beforeCreate() {
             this.$store.dispatch("GET_SERVICES_NAMES");
