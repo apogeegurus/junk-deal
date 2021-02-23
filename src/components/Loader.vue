@@ -1,6 +1,6 @@
 <template>
     <div class="loading" v-if="show">
-        <b-img src="/img/loading.gif"></b-img>
+        <video src="/img/loading.mp4" autoplay loop muted />
     </div>
 </template>
 
