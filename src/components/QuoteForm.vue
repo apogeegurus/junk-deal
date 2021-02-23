@@ -79,7 +79,6 @@
 <script>
     import Datepicker from 'vuejs-datepicker';
     import {RepositoryFactory} from "../api/RepositoryFactory";
-    import moment from "moment";
 
     export default {
         components: {Datepicker},
@@ -102,7 +101,7 @@
                 },
                 loading: false,
                 disabledFn: {
-                    to: moment().subtract(1, "day").toDate()
+                    to: this.$moment().subtract(1, "day").toDate()
                 }
             }
         },
