@@ -37,4 +37,10 @@ router.beforeEach((to, from, next) => {
     else next();
 });
 
+
+router.afterEach((to, from) => {
+    let url = `${window.location.origin}${to.fullPath}`;
+    document.querySelector('[rel="canonical"]').setAttribute('href', url);
+})
+
 export default router;
