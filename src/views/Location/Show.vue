@@ -40,9 +40,9 @@
 
             <b-container class="order-lg-0 order-3">
                 <h2 class="jd-text-27 text-uppercase text-center text-left jd-text-23__mobile mb-5 jd-title-style mt-0 mt-lg-5">
-                    <span class="jd-text-dark jd-font-bold">Places Around</span>
-                    <span class="jd-theme-color jd-font-bold"> <br class="d-block d-lg-none">{{ location.city }}</span>
-                    <span class="brake-mobile text--light"> You can find useful</span>
+                    <span class="jd-text-dark jd-font-bold" v-html="location.places_around"></span>
+<!--                    <span class="jd-theme-color jd-font-bold"> <br class="d-block d-lg-none"> {{ location.city }}</span>-->
+<!--                    <span class="brake-mobile text&#45;&#45;light"> You can find useful</span>-->
                 </h2>
             </b-container>
 
