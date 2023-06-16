@@ -88,7 +88,7 @@ Vue.use(VeeValidate, {
 });
 
 Vue.use(VueGtm, {
-    id: 'GTM-NLWZW59',
+    id: 'GTM-PQQDHHW',
     defer: false,
     enabled: true,
     debug: false,
