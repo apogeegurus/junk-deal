@@ -38,6 +38,15 @@
         mounted() {
             initTruck();
             this.$root.$emit('hideLoader');
+            const adrollScript = document.createElement('script');
+      adrollScript.innerHTML = `
+        adroll.track("pageView", {
+          segment_name: "+f6d1a04f"
+        });
+      `;
+
+    // Append the script to the document's body
+    document.body.appendChild(adrollScript);
         },
         created() {
             this.$root.$on('openQuote', () => {
