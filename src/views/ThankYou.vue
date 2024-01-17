@@ -41,7 +41,7 @@
             const adrollScript = document.createElement('script');
       adrollScript.innerHTML = `
         adroll.track("pageView", {
-          segment_name: "+f6d1a04f"
+          segment_name: "f6d1a04f"
         });
       `;
 
